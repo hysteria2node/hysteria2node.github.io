@@ -1,4 +1,4 @@
-# 7月31日 | Hysteria2每天更新20.2M/S免费节点订阅链接  更新时间 2024-07-31 22:00:39
+# 7月31日 | Hysteria2每天更新20.3M/S免费节点订阅链接  更新时间 2024-07-31 22:07:15
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://hysteria2node.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
