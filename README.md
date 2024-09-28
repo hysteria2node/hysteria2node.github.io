@@ -1,4 +1,4 @@
-# 9月27日 | Hysteria2每天更新18.9M/S免费节点订阅链接  更新时间 2024-09-27 10:58:07
+# 9月28日 | Hysteria2每天更新20.2M/S免费节点订阅链接  更新时间 2024-09-28 11:10:13
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://hysteria2node.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://hysteria2node.github.io/uploads/2024/09/0-20240927.yaml
-- https://hysteria2node.github.io/uploads/2024/09/1-20240927.yaml
-- https://hysteria2node.github.io/uploads/2024/09/2-20240927.yaml
-- https://hysteria2node.github.io/uploads/2024/09/3-20240927.yaml
-- https://hysteria2node.github.io/uploads/2024/09/4-20240927.yml
+- https://hysteria2node.github.io/uploads/2024/09/0-20240928.yaml
+- https://hysteria2node.github.io/uploads/2024/09/1-20240928.yaml
+- https://hysteria2node.github.io/uploads/2024/09/2-20240928.yaml
+- https://hysteria2node.github.io/uploads/2024/09/3-20240928.yaml
+- https://hysteria2node.github.io/uploads/2024/09/4-20240928.yml
 
 ### V2ray订阅链接
 
-- https://hysteria2node.github.io/uploads/2024/09/0-20240927.txt
-- https://hysteria2node.github.io/uploads/2024/09/1-20240927.txt
-- https://hysteria2node.github.io/uploads/2024/09/2-20240927.txt
-- https://hysteria2node.github.io/uploads/2024/09/3-20240927.txt
-- https://hysteria2node.github.io/uploads/2024/09/4-20240927.txt
+- https://hysteria2node.github.io/uploads/2024/09/0-20240928.txt
+- https://hysteria2node.github.io/uploads/2024/09/1-20240928.txt
+- https://hysteria2node.github.io/uploads/2024/09/2-20240928.txt
+- https://hysteria2node.github.io/uploads/2024/09/3-20240928.txt
+- https://hysteria2node.github.io/uploads/2024/09/4-20240928.txt
 
 ## 更多clash节点订阅 ：
 
