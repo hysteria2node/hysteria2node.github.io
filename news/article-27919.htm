@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-27919.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>mysql中的date、datetime、timestamp你还不知道怎么使用吗_在线工具</title>
+        <meta name="description" content="在后端开发中经常会碰到涉及数据库的场景，不知道屏幕前的你有这样的疑惑没有，每每在遇到时间、日期字段总是让人头疼，分不清到底是选date还是datetime，亦或是timestamp，真是抓耳挠腮啊，怎" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+                        <a class="navbar-brand" href="/">
+                Hysteria2 Node
+            </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>mysql中的date、datetime、timestamp你还不知道怎么使用吗_在线工具</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>在后端开发中经常会碰到涉及数据库的场景，不知道屏幕前的你有这样的疑惑没有，每每在遇到时间、日期字段总是让人头疼，分不清到底是选date还是datetime，亦或是timestamp，真是抓耳挠腮啊，怎么办呐，大都翻看之前的表结构，把之前的时间、日期类型抄过来，草草了事。以至于在后面的开发中总是为时间、日期类型做特殊处理，过后便不再理会这事了，今天就把这事一次性说明白。这里的环境是mysql</p> </h1> <p>在mysql中表示日期和时间的数据类型，大体上有下面几种，</p> <table style="height: 269px; width: 1010px" border="0"> <tbody> <tr> <td style="border: 1px solid rgba(128, 104, 151, 1)">序号</td> <td>名称</td> <td>描述</td> <td>定义方式</td> <td>格式</td> <td>范围</td> </tr> <tr> <td>1</td> <td>date</td> <td>日期</td> <td>date</td> <td>YYYY-MM-DD</td> <td>'1000-01-01' to '9999-12-31'</td> </tr> <tr> <td>2</td> <td>time</td> <td>时间</td> <td>time[.fraction]</td> <td>hh:mm:ss[.000000]</td> <td>'-838:59:59.000000' to '838:59:59.000000'</td> </tr> <tr> <td>3</td> <td>datetime</td> <td>日期+时间</td> <td>datetime[.fraction]</td> <td>YYYY-MM-DD hh:mm:ss[.000000]</td> <td>'1000-01-01 00:00:00' to '9999-12-31 23:59:59'</td> </tr> <tr> <td>4</td> <td>timestamp</td> <td>时间戳</td> <td>timestamp[.fraction]</td> <td>YYYY-MM-DD hh:mm:ss[.000000]</td> <td>'1970-01-01 00:00:01' UTC to '2038-01-19 03:14:07' UTC</td> </tr> <tr> <td>5</td> <td>year</td> <td>年</td> <td>year</td> <td>YYYY</td> <td>'1901' to '2155'</td> </tr> </tbody> </table> <p>注意在上面的表格中，我把日期和时间分开进行了描述，主要是因为在很多场景中很容易把这两个词当作同一个意思，在这里时间指的时分秒，日期指的是年月日。</p> <p>比较常用的有date、datetime、timestamp，今天就对这三种表示日期和时间的类型进行分析，看下在实际开发过程中如何选择？</p> </h1> <p>为了弄清楚这三种类型之间的区别，我从网上也看了不少资料，最后发现还是要去官网找寻真理，感兴趣的小伙伴可以看下mysql的官方文档：https://dev.mysql.com/doc/refman/8.0/en/date-and-time-types.html，</p> <p>关于这些内容从下方的官方截图都可以找到，</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9177ed0cb459ae7ef4c8702b91cadcad.jpg" alt="mysql中的date、datetime、timestamp你还不知道怎么使用吗_在线工具"></p> <p>下面具体总结下</p> <h2>1、date</h2> <p>date仅包含日期，mysql存储和显示的格式是'YYYY-MM-DD'，可以表示的范围是'1000-01-01' to '9999-12-31'</p> <h2>2、datetime</h2> <p>datetime包含日期、时间两部分，mysql存储和显示的格式是'YYYY-MM-DD hh:mm:ss'，可以表示的范围是'1000-01-01 00:00:00' to '9999-12-31 23:59:59'</p> <h2>3、timestamp</h2> <p>timestamp包含日期、时间两部分，在存储时存储的是时间戳，可以表示的范围是'1970-01-01 00:00:01' UTC to '2038-01-19 03:14:07' UTC，这里需要注意timestamp是有时区概念的，该类型可跟随时区变化，默认情况下是服务器的时区，如果一个数据库连接设置了时区参数，那么该类型的值会根据连接设置的时区来存储和返回值。</p> <p>在前面说到在存储时存储的是时间戳，也就是从1970-01-01 00:00:00 UTC到要存储的时间所相差的毫秒数。关于UTC是世界协调是，感兴趣的可以自己查阅资料。</p> <p>还有强调下，</p> <ol> <li>上面介绍了date、datetime、timestamp这三种数据类型，还有一个点需要着重强调，datetime、timestamp是可以有小数位的，一共最多可以有6位，所以在定义是可以是datetime(3)，要说明的是默认情况下是datetime(0)，由于是0所以通常情况下就倍省略了；</li> <li>timestamp的范围刚才也看到了，最大到'2038-01-19 03:14:07' UTC，所以很多情况下最好不用该类型，避免超过最大范围产生问题，可以datetime来代替；</li> <li>datetime、tiemstap类型有自动初始话和更新为当前的日期和时间的功能；</li> </ol> </h1> <p>上面说了那么多理论知识，下面肯定要实践下，实践出真知嘛，</p> <p>下面是一个建表语句，</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">create</span><span style="color: rgba(0, 0, 255, 1)">table</span><span style="color: rgba(0, 0, 0, 1)"> test(  id</span><span style="color: rgba(0, 0, 255, 1)">int</span><span style="color: rgba(128, 128, 128, 1)">not</span><span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 0, 1)">  auto_increment,  t_date date</span><span style="color: rgba(0, 0, 255, 1)">default</span><span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 0, 1)">,  t_date_time</span><span style="color: rgba(0, 0, 255, 1)">datetime</span><span style="color: rgba(128, 128, 128, 1)">not</span><span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 255, 1)">default</span><span style="color: rgba(255, 0, 255, 1)">current_timestamp</span><span style="color: rgba(0, 0, 0, 1)">,  t_timestamp</span><span style="color: rgba(0, 0, 255, 1)">timestamp</span><span style="color: rgba(128, 128, 128, 1)">not</span><span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 255, 1)">default</span><span style="color: rgba(255, 0, 255, 1)">current_timestamp</span><span style="color: rgba(0, 0, 255, 1)">on</span><span style="color: rgba(0, 0, 255, 1)">update</span><span style="color: rgba(255, 0, 255, 1)">current_timestamp</span><span style="color: rgba(0, 0, 0, 1)">,  t_date_time2</span><span style="color: rgba(0, 0, 255, 1)">datetime</span>(<span style="color: rgba(128, 0, 0, 1); font-weight: bold">3</span>)<span style="color: rgba(128, 128, 128, 1)">not</span><span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 255, 1)">default</span><span style="color: rgba(255, 0, 255, 1)">current_timestamp</span>(<span style="color: rgba(128, 0, 0, 1); font-weight: bold">3</span><span style="color: rgba(0, 0, 0, 1)">),</span><span style="color: rgba(0, 0, 255, 1)">primary</span><span style="color: rgba(0, 0, 255, 1)">key</span><span style="color: rgba(0, 0, 0, 1)">(id)    );</span></pre> </div> <p>可以看到t_date_time是datetime类型，默认是自动插入当前日期+时间</p> <p>t_timestamp是timestamp类型，默认自动插入当前日期+时间，且更新是更新为当前日期和时间</p> <p>t_date_time2是datetime(3)类型，默认自动插入当前日期+时间，且current_timestamp(3)，</p> <p>下面插入数据，</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/49b806db30792362b1173fa27ac1bbfa.jpg" alt="mysql中的date、datetime、timestamp你还不知道怎么使用吗_在线工具"></p> <p>可以看到t_date_time、t_timestamp、t_date_time2都是可以自动赋值为当前日期+时间（我这里系统时间就是2022-05-01，大家不用误会），下面修改下，</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5515b05679e31bfabdeb251764cdbc0a.jpg" alt="mysql中的date、datetime、timestamp你还不知道怎么使用吗_在线工具"></p> <p>可以看到t_timestamp的时间已经自动更新为当前'2022-05-01 06:37:32'了。很奇怪吧。</p> </h1> <p>本文主要分享了，mysql中常见的日期、时间数据类型，下面几条需谨记，</p> <p><strong>1、datetime、timestamp都可以满足需求的情况下，优先选择datetime，因为其表示的范围更大；</strong></p> <p><strong>2、格式化方式为'YYYY-MM-DD hh:mm:ss[.000000]'，在进行插入的时候使用的是相应的字符串的格式进行插入；</strong></p> <p><strong>3、自动初始化和更新语句要牢记，'dt datetime not null default current_timestamp on update current_timestamp'；</strong></p> <p><strong>4、current_timestamp可以写成current_timestamp(0)；</strong></p> <p><strong>5、标识记录的新增或更新时间的字段，设置为数据“default current_timestamp on update current_timestamp‘更省心；</strong></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-27451.htm">河南兽药品牌排名（河南最好兽药厂家直销）</a></p>
+                                        <p>下一个：<a href="/news/article-27920.htm">免费领养宠物的应用叫什么名字（免费领养宠物的app）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-18741.htm" title="动物疫苗的种类有哪些,各有什么特点呢英语（动物疫苗的种类和制备原理）">动物疫苗的种类有哪些,各有什么特点呢英语（动物疫苗的种类和制备原理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-31-sing-hysteria-windows.htm" title="8月31日 | Hysteria2每天更新19.4M/S免费节点订阅链接">8月31日 | Hysteria2每天更新19.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-node-subscribe-links.htm" title="10月20日 | Hysteria2每天更新21.7M/S免费节点订阅链接">10月20日 | Hysteria2每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-node-subscribe.htm" title="11月20日 | Hysteria2每天更新20M/S免费节点订阅链接">11月20日 | Hysteria2每天更新20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-4-latest-hysteria-node.htm" title="10月4日 | Hysteria2每天更新23M/S免费节点订阅链接">10月4日 | Hysteria2每天更新23M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-latest-hysteria-node.htm" title="11月14日 | Hysteria2每天更新22.4M/S免费节点订阅链接">11月14日 | Hysteria2每天更新22.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-sing-hysteria-windows.htm" title="11月23日 | Hysteria2每天更新19.8M/S免费节点订阅链接">11月23日 | Hysteria2每天更新19.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-1-node-share.htm" title="8月1日 | Hysteria2每天更新22.3M/S免费节点订阅链接">8月1日 | Hysteria2每天更新22.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26519.htm" title="宠物寄养协议合同电子版有效吗怎么写（宠物店寄养协议文字pdf文件）">宠物寄养协议合同电子版有效吗怎么写（宠物店寄养协议文字pdf文件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-2-node-share.htm" title="10月2日 | Hysteria2每天更新20.2M/S免费节点订阅链接">10月2日 | Hysteria2每天更新20.2M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
