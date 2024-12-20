@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>VsCode调试docker中的NodeJS程序</title>
         <meta name="description" content="最近在写NodeJS相关的项目，运行在docker容器中，也是想研究一下断点调试，于是查阅相关资料，最终顺利配置好了。 首先我选择了VsCode作为ide，并用VsCode来做NodeJS可视化deb" />
-        <link rel="icon" href="__ADDON__/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
     <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
     <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
-    
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -87,7 +86,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<p>最近在写NodeJS相关的项目，运行在docker容器中，也是想研究一下断点调试，于是查阅相关资料，最终顺利配置好了。</p> <p>首先我选择了VsCode作为ide，并用VsCode来做NodeJS可视化debug的工作。</p> <p>由于VsCode 已将调试工具内置，所以只需要增加调试配置。应遵循以下步骤：</p> <p>第一步：单击首选项 -&gt; 设置，打开设置选项卡。如下面的屏幕截图。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/6aefb490fd9dc633c0e3836a644710d4.jpg" alt="VsCode调试docker中的NodeJS程序"></p> <p>第二步：在搜索输入中搜索“node debug”，你会看到Debug&gt; JavaScript:Auto Attach Filter选项，选择“smart”作为选项的值。它将启用nodeJs的调试。</p> <p><span id="docs-internal-guid-26a7aeba-7fff-377d-209d-c7868a6196b3"><img fetchpriority="high" decoding="async" src="http://img.555519.xyz/uploads3/20220509/6542dc4b4b4fa9674eb797a84823b939.jpg" alt="VsCode调试docker中的NodeJS程序" width="477" height="226"/></span></p> <p>第三步： 单击左侧工具栏上的调试图标，如图所示<span id="docs-internal-guid-e97b3309-7fff-a295-de34-334772f7f76a"><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5bc55200c77b69cca9b3126c6438add2.jpg" alt="VsCode调试docker中的NodeJS程序" width="68" height="63"/></span>。然后单击运行和调试按钮，并添加配置。</p> <p>点击Add Configuration将跳转到一个名为 launch.json(./vscode/launch.json) 的文件，编写后的完整配置如下所示。</p> <div class="cnblogs_Highlighter"> <pre class="brush:javascript;gutter:true;">{  // Use IntelliSense to learn about possible attributes.  // Hover to view descriptions of existing attributes.  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387  "version": "0.2.0",  "configurations": [    {      "type": "node",      "request": "attach",      "name": "Debug super api in docker",      "restart": true,      "port": 7676,      "address": "localhost",      "localRoot": "${workspaceFolder}",      "remoteRoot": "/super-api",      "protocol": "inspector"    }  ] }</pre> </div> <p>对上面的配置，我简单介绍一下。由于docker中的容器是被宿主机挂载进来的，所以要单独配置一个remoteRoot配置项，它的值就是实际项目在容器中的目录路径。</p> <p>而port填写的不是项目运行的端口号，而是node命令中--inspect设置的端口号，在我的项目中我在运行该容器的时候会把这个7676的端口暴露给宿主机（真实电脑）</p> <p>编辑好这个配置文件后，就可以设置一下断点，然后点击start debug按钮即可开始debug了。</p> <p>运行的效果，如图所示。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/835046846589e603aad9de1f6cf8dd3a.jpg" alt="VsCode调试docker中的NodeJS程序"></p> <p>&nbsp;可以看到Variables面板里面有显示运行到断点处的相关变量情况，而CALL STACK部分记录调用堆，方便我们追踪整个程序的调用层级和过程。左边最下面显示的是我们设置的所有断点（breakpoint），标记红色的是被执行到的断点。</p> <p>一句话总结：<strong>一个后端程序员最基本的修养是能断点调试程序。</strong></p> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>最近在写NodeJS相关的项目，运行在docker容器中，也是想研究一下断点调试，于是查阅相关资料，最终顺利配置好了。</p> <p>首先我选择了VsCode作为ide，并用VsCode来做NodeJS可视化debug的工作。</p> <p>由于VsCode 已将调试工具内置，所以只需要增加调试配置。应遵循以下步骤：</p> <p>第一步：单击首选项 -&gt; 设置，打开设置选项卡。如下面的屏幕截图。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/6aefb490fd9dc633c0e3836a644710d4.jpg" alt="VsCode调试docker中的NodeJS程序"></p> <p>第二步：在搜索输入中搜索“node debug”，你会看到Debug&gt; JavaScript:Auto Attach Filter选项，选择“smart”作为选项的值。它将启用nodeJs的调试。</p> <p><span id="docs-internal-guid-26a7aeba-7fff-377d-209d-c7868a6196b3"><img fetchpriority="high" decoding="async" src="http://img.555519.xyz/uploads3/20220509/6542dc4b4b4fa9674eb797a84823b939.jpg" alt="VsCode调试docker中的NodeJS程序" width="477" height="226"/></span></p> <p>第三步： 单击左侧工具栏上的调试图标，如图所示<span id="docs-internal-guid-e97b3309-7fff-a295-de34-334772f7f76a"><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5bc55200c77b69cca9b3126c6438add2.jpg" alt="VsCode调试docker中的NodeJS程序" width="68" height="63"/></span>。然后单击运行和调试按钮，并添加配置。</p> <p>点击Add Configuration将跳转到一个名为 launch.json(./vscode/launch.json) 的文件，编写后的完整配置如下所示。</p> <div class="cnblogs_Highlighter"> <pre class="brush:javascript;gutter:true;">{  // Use IntelliSense to learn about possible attributes.  // Hover to view descriptions of existing attributes.  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387  "version": "0.2.0",  "configurations": [    {      "type": "node",      "request": "attach",      "name": "Debug super api in docker",      "restart": true,      "port": 7676,      "address": "localhost",      "localRoot": "${workspaceFolder}",      "remoteRoot": "/super-api",      "protocol": "inspector"    }  ] }</pre> </div> <p>对上面的配置，我简单介绍一下。由于docker中的容器是被宿主机挂载进来的，所以要单独配置一个remoteRoot配置项，它的值就是实际项目在容器中的目录路径。</p> <p>而port填写的不是项目运行的端口号，而是node命令中--inspect设置的端口号，在我的项目中我在运行该容器的时候会把这个7676的端口暴露给宿主机（真实电脑）</p> <p>编辑好这个配置文件后，就可以设置一下断点，然后点击start debug按钮即可开始debug了。</p> <p>运行的效果，如图所示。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/835046846589e603aad9de1f6cf8dd3a.jpg" alt="VsCode调试docker中的NodeJS程序"></p> <p>&nbsp;可以看到Variables面板里面有显示运行到断点处的相关变量情况，而CALL STACK部分记录调用堆，方便我们追踪整个程序的调用层级和过程。左边最下面显示的是我们设置的所有断点（breakpoint），标记红色的是被执行到的断点。</p> <p>一句话总结：<strong>一个后端程序员最基本的修养是能断点调试程序。</strong></p> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-21434.htm">宠物零食加工需要什么资质呢（宠物零食加工需要什么资质呢多少钱）</a></p>
                                         <p>下一个：<a href="/news/article-21900.htm">买狗狗在哪买（买狗狗在哪儿买）</a></p>
@@ -100,16 +100,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-9-13-free-subscribe-node.htm" title="9月13日 | Hysteria2每天更新18.2M/S免费节点订阅链接">9月13日 | Hysteria2每天更新18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27920.htm" title="免费领养宠物的应用叫什么名字（免费领养宠物的app）">免费领养宠物的应用叫什么名字（免费领养宠物的app）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-4-node-share-links.htm" title="9月4日 | Hysteria2每天更新20.8M/S免费节点订阅链接">9月4日 | Hysteria2每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-high-speed-nodes.htm" title="11月13日 | Hysteria2每天更新20.9M/S免费节点订阅链接">11月13日 | Hysteria2每天更新20.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share-links.htm" title="11月29日 | Hysteria2每天更新18.8M/S免费节点订阅链接">11月29日 | Hysteria2每天更新18.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-18-hysteria-node-share.htm" title="9月18日 | Hysteria2每天更新19.2M/S免费节点订阅链接">9月18日 | Hysteria2每天更新19.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-today-hysteria-node.htm" title="10月25日 | Hysteria2每天更新18.6M/S免费节点订阅链接">10月25日 | Hysteria2每天更新18.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24204.htm" title="Nacos基本使用：注册中心、配置中心">Nacos基本使用：注册中心、配置中心</a></li>
+                        <li class="py-2"><a href="/news/article-26035.htm" title="Sequelize数据库中文排序">Sequelize数据库中文排序</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-6-hysteria-node-share.htm" title="8月6日 | Hysteria2每天更新18.9M/S免费节点订阅链接">8月6日 | Hysteria2每天更新18.9M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-9-14-node-share.htm" title="9月14日 | Hysteria2每天更新19.1M/S免费节点订阅链接">9月14日 | Hysteria2每天更新19.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-19153.htm" title="上海宠物领养中心免费领养狗狗的地方在哪（上海宠物领养中心免费领养狗狗的地方在哪儿）">上海宠物领养中心免费领养狗狗的地方在哪（上海宠物领养中心免费领养狗狗的地方在哪儿）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-24-free-hysteria-node.htm" title="9月24日 | Hysteria2每天更新20.4M/S免费节点订阅链接">9月24日 | Hysteria2每天更新20.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-22-free-hysteria-node.htm" title="8月22日 | Hysteria2每天更新19.9M/S免费节点订阅链接">8月22日 | Hysteria2每天更新19.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-27-free-node-subscribe.htm" title="9月27日 | Hysteria2每天更新20M/S免费节点订阅链接">9月27日 | Hysteria2每天更新20M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-24-free-subscribe-node.htm" title="10月24日 | Hysteria2每天更新19.8M/S免费节点订阅链接">10月24日 | Hysteria2每天更新19.8M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-2-free-node-subscribe-links.htm" title="8月2日 | Hysteria2每天更新19.1M/S免费节点订阅链接">8月2日 | Hysteria2每天更新19.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-3-free-node-subscribe.htm" title="9月3日 | Hysteria2每天更新18.1M/S免费节点订阅链接">9月3日 | Hysteria2每天更新18.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-22354.htm" title="动物疫病预防控制中心能打疫苗吗（动物疫控中心可以打疫苗吗）">动物疫病预防控制中心能打疫苗吗（动物疫控中心可以打疫苗吗）</a></li>
                     </ul>
     </div>
 </div>
@@ -121,7 +121,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -150,6 +150,15 @@
             =================-->
     <footer>
         <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
             <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
         </div>
     </footer>
