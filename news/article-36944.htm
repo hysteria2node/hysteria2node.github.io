@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-36944.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Git基础 Tree对象详解</title>
+        <meta name="description" content="目录  1、Tree对象介绍 2、Tree对象说明  （1）初始化一个新的本地版本库 （2）创建一个树对象（重点） （3）创建第二个文件（重点） （4）将第一个树对象加入暂存区，使其成为新的树对   " />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+                        <a class="navbar-brand" href="/">
+                Hysteria2 Node
+            </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>Git基础 Tree对象详解</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#1tree%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D" rel="nofollow">1、Tree对象介绍</a></li> <li><a href="#2tree%E5%AF%B9%E8%B1%A1%E8%AF%B4%E6%98%8E" rel="nofollow">2、Tree对象说明</a> <ul> <li><a href="#1%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E5%BA%93" rel="nofollow">（1）初始化一个新的本地版本库</a></li> <li><a href="#2%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%91%E5%AF%B9%E8%B1%A1%E9%87%8D%E7%82%B9" rel="nofollow">（2）创建一个树对象（重点）</a></li> <li><a href="#3%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%96%87%E4%BB%B6%E9%87%8D%E7%82%B9" rel="nofollow">（3）创建第二个文件（重点）</a></li> <li><a href="#4%E5%B0%86%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%A0%91%E5%AF%B9%E8%B1%A1%E5%8A%A0%E5%85%A5%E6%9A%82%E5%AD%98%E5%8C%BA%E4%BD%BF%E5%85%B6%E6%88%90%E4%B8%BA%E6%96%B0%E7%9A%84%E6%A0%91%E5%AF%B9" rel="nofollow">（4）将第一个树对象加入暂存区，使其成为新的树对</a></li> </ul> </li> <li><a href="#3%E6%80%BB%E7%BB%93" rel="nofollow">3、总结</a> <ul> <li><a href="#1%E5%88%86%E6%9E%90%E6%AF%8F%E4%B8%AA%E6%A0%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84" rel="nofollow">（1）分析每个树对象的存储结构</a></li> <li><a href="#2blob%E5%AF%B9%E8%B1%A1%E5%92%8Ctree%E5%AF%B9%E8%B1%A1%E9%87%8D%E7%82%B9" rel="nofollow">（2）blob对象和tree对象（重点）</a></li> <li><a href="#3%E6%80%BB%E7%BB%93%E9%87%8D%E7%82%B9" rel="nofollow">（3）总结（重点）</a></li> </ul> </li> <li><a href="#4%E9%97%AE%E9%A2%98" rel="nofollow">4、问题</a></li> <li><a href="#5%E6%9C%AC%E6%96%87%E7%94%A8%E5%88%B0%E7%9A%84%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93" rel="nofollow">5、本文用到的命令总结</a></li> </ul> </div> <h2 id="1tree对象介绍">1、Tree对象介绍</h2> <p>接下来要探讨的 Git 对象类型是树对象（<code>tree object</code>），它能解决文件名保存的问题。<code>tree</code>对象可以存储文件名，也允许我们将多个文件组织到一起。</p> <p>Git以一种类似于UNIX文件系统的方式存储内容，但做了一些简化。所有内容均以树（<code>tree</code>）对象和数据（<code>blob</code>）对象的形式存储，其中树对象对应了UNIX中的目录项，数据对象<code>blob</code>则大致上对应了文件中的内容。</p> <p>一个树对象可以包含一条或多条记录（<code>tree</code>对象和<code>blob</code>对象），每条记录含有一个指向<code>blob</code>对象或者子<code>tree</code>对象的<code>SHA-1</code>指针，以及相应的模式、类型、文件名信息。</p> <p>如下图：</p> <pre><code class="language-bash"># 文件模式、对象类型、对象的SHA-1指针、文件名 100644 blob fa49b077972391ad58037050f2a75f74e3671e92    new.txt</code></pre> <p><strong>Tree对象存储方式如下图所示</strong>：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/02e1514e91cef034407f56041e804a84.jpg" alt="Git基础 Tree对象详解"></p> <h2 id="2tree对象说明">2、Tree对象说明</h2> <h3 id="1初始化一个新的本地版本库">（1）初始化一个新的本地版本库</h3> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning $ git init Initialized empty Git repository in J:/git-repository/git_learning/.git/  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ ll -a total 8 drwxr-xr-x 1 L 197121 0  4月 11 14:50 ./ drwxr-xr-x 1 L 197121 0  4月 10 20:23 ../ drwxr-xr-x 1 L 197121 0  4月 11 14:50 .git/</code></pre> <h3 id="2创建一个树对象重点">（2）创建一个树对象（重点）</h3> <p><strong>1）新建一个文件，然后把文件提交到本地版本库。</strong></p> <p>例如：新建文件<code>test.txt</code>，文件内容<code>version 1</code>。</p> <pre><code class="language-bash"># 创建文件 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ echo "version 1" &gt;&gt; test.txt  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ ll total 1 -rw-r--r-- 1 L 197121 10  4月 11 14:57 test.txt  # 查看文件内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ cat test.txt version 1</code></pre> <p><strong>2）把<code>test.txt</code>文件，提交到本地版本库。</strong></p> <pre><code class="language-bash"># 1.test.txt文件提交到本地版本库 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git hash-object -w ./test.txt 83baae61804e65cc73a7201a7252750c76066a30  # 2.查看Git数据库内容，可以看到新增了一个blob对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ find .git/objects -type f .git/objects/83/baae61804e65cc73a7201a7252750c76066a30  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git cat-file -t 83baae61804e65cc73a7201a7252750c76066a30 blob  # 3.查看blob对象对象内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git cat-file -p 83baae61804e65cc73a7201a7252750c76066a30 version 1</code></pre> <p>以上就和我们讲<code>blob</code>对象的操作一样。</p> <p>此时<code>test.txt</code>文件被管理在Git本地版本库中。</p> <p><strong>3）创建一个树对象。</strong></p> <p>通常Git是<strong>根据暂存区或者索引文件index来创建tree对象</strong>，因此要把文件存储到暂存区进并建立<code>index</code>文件。</p> <p>提示1：</p> <blockquote> <p><code>index</code>文件在<code>.git</code>目录中，最新初始化的Git本地仓库是没有<code>index</code>文件，只有添加过一次数据到暂存区之后，才会在<code>.git</code>目录中自动生成<code>index</code>文件。</p> </blockquote> <p>新初始化的<code>.git</code>目录内容如下：是没有<code>index</code>文件的。</p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ ll .git/ total 7 -rw-r--r-- 1 L 197121 130  4月 11 14:50 config -rw-r--r-- 1 L 197121  73  4月 11 14:50 description -rw-r--r-- 1 L 197121  23  4月 11 14:50 HEAD drwxr-xr-x 1 L 197121   0  4月 11 14:50 hooks/ drwxr-xr-x 1 L 197121   0  4月 11 14:50 info/ drwxr-xr-x 1 L 197121   0  4月 11 14:59 objects/ drwxr-xr-x 1 L 197121   0  4月 11 14:50 refs/</code></pre> <p>提示2：</p> <p>可以通过<code>git ls-files</code>命令查看暂存区的文件信息。</p> <p>参数信息如下，括号中简写：</p> <ul> <li><code>--cached(-c)</code>： 查看暂存区中文件。<code>git ls-files</code>命令默认执行此选项。</li> <li><code>--midified(-m)</code>：查看修改的文件。</li> <li><code>--delete(-d)</code>：查看删除过的文件。</li> <li><code>--other(-o)</code> ：查看没有被Git跟踪的文件。</li> <li><code>--stage(-s)</code>：显示mode以及文件对应的Blob对象，进而我们可以获取暂存区中对应文件里面的内容。</li> </ul> <p>例如：<code>git ls-files -c</code>或者<code>git ls-files --cached</code> （其他命令同理）</p> <p>我们常用<code>git ls-files -s</code>命令查看暂存区的文件信息。</p> <p>接下来，我们可以通过底层命令：<code>update-index</code>、<code>write-tree</code>、<code>read-tree</code>等命令，轻松创建自己的<code>tree</code>对象。</p> <pre><code class="language-bash"># 1.查看暂存区当前状态，可以看到没有任何显示 # 说明暂存区没有存储任何文件 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s  # 2.把test.txt文件存入暂存区 # 通过git update-index命令实现 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git update-index --add --cacheinfo 100644 \ &gt; 83baae61804e65cc73a7201a7252750c76066a30 test.txt  # 3.再次查看暂存区当前状态，可以看到暂存区中有一个文件了。 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s 100644 83baae61804e65cc73a7201a7252750c76066a30 0       test.txt # 这里就说明了为什么之前要把test.txt文件先存入到本地版本库中了， # 因为需要文件的hash键，来添加到暂存区。 ### 这里也说明了文件名和文件hash键的结合。（重点）</code></pre> <p>命令说明：</p> <ul> <li>为创建一个树对象，首先需要通过暂存一些文件到暂存区。<br /> 通过底层命令<code>git update-index</code>将一个单独文件存入暂存区中。</li> <li><code>--add</code> 选项：因为此前该文件并不在暂存区中，一个文件首次添加到暂存区，需要使用<code>--add</code> 选项。</li> <li><code>--cacheinfo</code> 选项：因为要添加的<code>test.txt</code>文件位于Git 数据库中（上一步的操作），而不是位于当前工作目录，所以需要<code>--cacheinfo</code> 选项。</li> <li>最后需要指定<code>文件模式</code>、<code>SHA-1</code> 与<code>文件名</code>。</li> </ul> <p>文件模式说明：</p> <ul> <li><code>100644</code>：表明这是一个普通文件。（blob对象的文件模式一般都为100644）</li> <li><code>100755</code>：表示一个可执行文件。</li> <li><code>120000</code>：表示一个符号链接。</li> </ul> <p>继续，下面来观察生成的树对象：：</p> <pre><code class="language-bash"># 4.完成上面步骤后，查看.git目录 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ ll .git/ total 8 -rw-r--r-- 1 L 197121 130  4月 11 14:50 config -rw-r--r-- 1 L 197121  73  4月 11 14:50 description -rw-r--r-- 1 L 197121  23  4月 11 14:50 HEAD drwxr-xr-x 1 L 197121   0  4月 11 14:50 hooks/ -rw-r--r-- 1 L 197121 104  4月 11 15:39 index	# 出现了index文件 drwxr-xr-x 1 L 197121   0  4月 11 14:50 info/ drwxr-xr-x 1 L 197121   0  4月 11 14:59 objects/ drwxr-xr-x 1 L 197121   0  4月 11 14:50 refs/ # 这里提示一下，暂存区Stage可以理解成是一个简单的索引文件。 # 指的就是.git/index文件。（重点）  # 5.现在先查看一下Git数据库内容，还是之前那一个blob对象。 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ find .git/objects -type f .git/objects/83/baae61804e65cc73a7201a7252750c76066a30  # 6.把暂存区中的内容提交到本地版本库 # 换句话说就是把暂存区中存放的文件索引（快照）提交到本地版本库。 # 使用write-tree命令实现 # 也就是通过write-tree命令生成树对像 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git write-tree d8329fc1cc938780ffdd9f94e0d364e0ea74f579  # 7.再次查看Git数据库内容，多了一个d8对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ find .git/objects -type f .git/objects/83/baae61804e65cc73a7201a7252750c76066a30 .git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579  # 8.查看d8对象的类型，可以看到是一个树对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git cat-file -t d8329fc1cc938780ffdd9f94e0d364e0ea74f579 tree  # 9.再次查看暂存区当前状态，发现暂存区的内容没有清空 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s 100644 83baae61804e65cc73a7201a7252750c76066a30 0       test.txt # 说明：在查看暂存区，发现暂存区的内容没有清空，即：暂存区内容写到版本库，暂存区不清空。（重点）</code></pre> <p><strong>4）总结</strong></p> <p>以上就是在Git中，使用底层命令手动创建一个树对象的过程。</p> <ul> <li>创建一个文件，把该文件通过<code>git hash-object</code>命令存储到本地版本库中。</li> <li>通过<code>git update-index</code>命令，把文件存储到暂存区中。</li> <li>通过<code>git write-tree</code>命令，把暂存区中的文件索引信息提交到本地版本库，生成了一个树对象。</li> </ul> <h3 id="3创建第二个文件重点">（3）创建第二个文件（重点）</h3> <p><strong>1）新增<code>new.txt</code>文件，并修改<code>test.txt</code>文件内容。</strong></p> <pre><code class="language-bash"># 1.创建new.txt文件 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ echo "new file" &gt; new.txt  # 2.修改test.txt文件内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ echo "version 2" &gt;&gt; test.txt  # 3.查看两个文件的内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ cat new.txt new file  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ cat test.txt version 1 version 2  # 4.查看工作目录中的文件 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ ll total 2 -rw-r--r-- 1 L 197121  9  4月 11 16:25 new.txt -rw-r--r-- 1 L 197121 20  4月 11 16:25 test.txt</code></pre> <p><strong>2）将<code>new.txt</code>文件和<code>test.txt</code>文件的第二个版本添加到暂存区。</strong></p> <p>将<code>test.txt</code>文件添加到暂存区。</p> <pre><code class="language-bash"># 1.查看暂存区当前文件信息 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s 100644 83baae61804e65cc73a7201a7252750c76066a30 0       test.txt  # 2.把test.txt文件提交到本地版本库 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git hash-object -w ./test.txt 0c1e7391ca4e59584f8b773ecdbbb9467eba1547  # 3.查看Git数据库内容，可以看到又多出一个0c对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ find .git/objects -type f .git/objects/0c/1e7391ca4e59584f8b773ecdbbb9467eba1547 .git/objects/83/baae61804e65cc73a7201a7252750c76066a30 .git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 # 提示：因上面修改了test.txt文件内容，在提交到版本库，内容不一样了hash就变了。  # 4.把修改后的test.txt文件加入暂存区 # 因为之前提交过test.txt文件到暂存区，所以不用加--add选项 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git update-index --cacheinfo 100644 \ &gt; 0c1e7391ca4e59584f8b773ecdbbb9467eba1547 test.txt  # 5.查看暂存区当前文件信息 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s 100644 0c1e7391ca4e59584f8b773ecdbbb9467eba1547 0       test.txt # 我们可以看到，暂存区的test.txt文件被最新修改的版本覆盖了， # 之前是83开头的 # 提示：暂存区是按对应文件覆盖的，新修改的文件，覆盖之前的原文件， # 不会覆盖其他文件，即暂存区不是整体覆盖的。（重点）</code></pre> <p>将<code>new.txt</code>文件添加到暂存区。</p> <pre><code class="language-bash"># 1.new.txt文件添加到暂存区 # 这次我们直接用一个命令把new.txt文件从工作区直接添加到暂存区 # 说明： # 因为是new.txt文件是第一次添加到暂存区，所以需要--add选项 # 因为是从new.txt文件是在工作区，所以不需要--cacheinfo选项 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git update-index --add new.txt  # 2.查看Git数据库内容，可以看到对了一个fa对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ find .git/objects -type f .git/objects/0c/1e7391ca4e59584f8b773ecdbbb9467eba1547 .git/objects/83/baae61804e65cc73a7201a7252750c76066a30 .git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 .git/objects/fa/49b077972391ad58037050f2a75f74e3671e92  # 3.查看暂存区当前文件信息，new.txt文件已经添加到暂存区中 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s 100644 fa49b077972391ad58037050f2a75f74e3671e92 0       new.txt 100644 0c1e7391ca4e59584f8b773ecdbbb9467eba1547 0       test.txt</code></pre> <p>说明：<code>git update-index --add 文件名</code>完成了之前的两步操作。</p> <ol> <li>把<code>new.txt</code>文件内容存入了Git版本库。</li> <li>把<code>new.txt</code>文件添加到了暂存区中。</li> </ol> <p><strong>3）把暂存区的内容提交的本地版本库。</strong></p> <p>此时工作目录和暂存区中的文件状态是一样的， 可以通过<code>git write-tree</code>命令提交到本地版本库，生成树对像了。</p> <pre><code class="language-bash"># 1.提交暂存区内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git write-tree 163b45f0a0925b0655da232ea8a4188ccec615f5  # 2.查看Git数据库内容，可以看到又多了一个名为16的tree对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ find .git/objects -type f .git/objects/0c/1e7391ca4e59584f8b773ecdbbb9467eba1547 .git/objects/16/3b45f0a0925b0655da232ea8a4188ccec615f5 .git/objects/83/baae61804e65cc73a7201a7252750c76066a30 .git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 .git/objects/fa/49b077972391ad58037050f2a75f74e3671e92  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git cat-file -t 163b45f0a0925b0655da232ea8a4188ccec615f5 tree</code></pre> <p>此时Git版本库中的5个对象，即表示了项目的2个版本。（不明白这句话？继续往下看）</p> <h3 id="4将第一个树对象加入暂存区使其成为新的树对">（4）将第一个树对象加入暂存区，使其成为新的树对</h3> <pre><code class="language-bash"># 1.查看暂存区当前文件信息 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s 100644 fa49b077972391ad58037050f2a75f74e3671e92 0       new.txt 100644 0c1e7391ca4e59584f8b773ecdbbb9467eba1547 0       test.txt  # 2.将第一个树对象加入暂存区 # 第一个树对象hash:d8329fc1cc938780ffdd9f94e0d364e0ea74f579 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git read-tree --prefix=bak d8329fc1cc938780ffdd9f94e0d364e0ea74f579  # 3.再次查看暂存区当前文件信息，有多了一个bak/test.txt文件 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git ls-files -s 100644 83baae61804e65cc73a7201a7252750c76066a30 0       bak/test.txt 100644 fa49b077972391ad58037050f2a75f74e3671e92 0       new.txt 100644 0c1e7391ca4e59584f8b773ecdbbb9467eba1547 0       test.txt</code></pre> <p>说明：</p> <ul> <li><code>read-tree</code>命令：可以把树对象读入暂存区。</li> <li><code>--prefix=bak</code>选项：将一个已有的树对象作为子树读入暂存区。</li> </ul> <p>接下来继续，再提交暂存区的内容，会继续生成一个新的<code>tree</code>对象在Git仓库中。</p> <pre><code class="language-bash"># 把暂存区的内容生成新的tree对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git write-tree 01ab2a43b1eb150bcf00f375800727df240cf653  # 查看新生成的对象 # 查看tree对象的类型 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git cat-file -t 01ab2a43b1eb150bcf00f375800727df240cf653 tree  # 查看tree对象的内容，也就是记录暂存区的内容。 # 可以看到该tree对象，包含了两个blob对象和一个tree对象。 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ git cat-file -p 01ab2a43b1eb150bcf00f375800727df240cf653 040000 tree d8329fc1cc938780ffdd9f94e0d364e0ea74f579    bak 100644 blob fa49b077972391ad58037050f2a75f74e3671e92    new.txt 100644 blob 0c1e7391ca4e59584f8b773ecdbbb9467eba1547    test.txt   # 查看当前Git仓库中的对象 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/git_learning (master) $ find .git/objects -type f .git/objects/01/ab2a43b1eb150bcf00f375800727df240cf653 .git/objects/0c/1e7391ca4e59584f8b773ecdbbb9467eba1547 .git/objects/16/3b45f0a0925b0655da232ea8a4188ccec615f5 .git/objects/83/baae61804e65cc73a7201a7252750c76066a30 .git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 .git/objects/fa/49b077972391ad58037050f2a75f74e3671e92</code></pre> <p>到这里我们的演示就完成了，请看下面的总结。</p> <h2 id="3总结">3、总结</h2> <h3 id="1分析每个树对象的存储结构">（1）分析每个树对象的存储结构</h3> <p>我们可以先查看一下Git本地库中的对象，如下</p> <pre><code class="language-bash">.git/objects/01/ab2a43b1eb150bcf00f375800727df240cf653 # 第三个tree树对象 .git/objects/0c/1e7391ca4e59584f8b773ecdbbb9467eba1547 # test.txt第二个版本（blob对象） .git/objects/16/3b45f0a0925b0655da232ea8a4188ccec615f5 # 第二个tree树对象 .git/objects/83/baae61804e65cc73a7201a7252750c76066a30 # test.txt第一个版本（blob对象） .git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 # 第一个tree树对象 .git/objects/fa/49b077972391ad58037050f2a75f74e3671e92 # new.txt第一个版本（blob对象）</code></pre> <p>我们接下来用三个图，描述一下三个树对象的结构关系。</p> <p><strong>第一个树对象结构如下图</strong>：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/36074f36a8c1b44e6bb858614af9e6a1.jpg" alt="Git基础 Tree对象详解"></p> <p><strong>第二个树对象结构如下图</strong>：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/356363356bd7852c85d9c8054b740a7d.jpg" alt="Git基础 Tree对象详解"></p> <p><strong>第三个树对象结构如下图</strong>：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/b6d7b8da72f7cc297b26ec8dbee28e68.jpg" alt="Git基础 Tree对象详解"></p> <p>也可以换Git对象类型表示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/64d0ec836483650f4940ece5620ceed9.jpg" alt="Git基础 Tree对象详解"></p> <h3 id="2blob对象和tree对象重点">（2）blob对象和tree对象（重点）</h3> <p>从上图我们可以分析出：</p> <ul> <li><code>blob</code>对象代表文件一次次的版本。</li> <li><code>tree</code>对象代表项目的一次次的版本。</li> </ul> <p>这就是我前面<code>2-(3)</code>描述过的<strong>Git版本库中的5个对象，即表示了项目的2个版本。</strong></p> <p>（就先这样理解）</p> <h3 id="3总结重点">（3）总结（重点）</h3> <p>暂存区的概念和相关理解：</p> <ol> <li>所谓的暂存区<code>Stage</code>只是一个简单的索引文件而已。指的是是<code>.git/index</code>文件。</li> <li>暂存区这个索引文件里面包含的是文件的目录树，像一个虚拟的工作区，在这个虚拟工作区的目录树中，记录了文件名、文件的时间戳、文件长度、文件类型以及最重要的SHA-1值，文件的内容并没有存储在其中，所以说它像一个虚拟的工作区。<br /> 即：暂存区，也就是<code>.git/index</code>文件中存放的是文件内容的索引（快照），也可以是<code>tree</code>对象的索引。</li> <li>索引指向的是<code>.git/objects/</code>目录下的文件（Git对象）。</li> <li>Git通过暂存区的文件索引信息来创建<code>tree</code>对象的。</li> <li><code>tree</code>对象可以使文件内容和文件名进行关联。</li> <li>一个树对象可以包含一条或多条记录（<code>tree</code>对象和<code>blob</code>对象）。</li> <li>暂存区内容写到版本库中后，暂存区索引内容不清空。</li> <li>暂存区中的文件内容索引，是按对应文件覆盖的，也就是修改一个文件内容，添加到缓存区，只会把对应的文件覆盖，其他文件不会被覆盖，即：暂存区不是整体覆盖的。</li> </ol> <p><strong>暂存区的作用</strong>：除非是绕过暂存区直接提交，否则Git想把修改提交上去，就必须将修改存入暂存区最后才能commit。每次提交的是暂存区所对应的文件快照。</p> <blockquote> <p>提示：Git对象的hash键，我们截取前几位就行，练习时对象不那么对，就不用全部都写，能够表示唯一对象就行。</p> </blockquote> <h2 id="4问题">4、问题</h2> <p>现在有三个树对象（因为执行了三次<code>write-tree</code>命令），分别代表了我们想要跟踪项目的三次快照。然而问题依旧：若想重用这些快照，你必须记住这三个树对象的<code>SHA-1</code>哈希值。</p> <p>并且，你也完全不知道是谁保存了这些快照，在什么时刻保存的，以及为什么保存这些快照。</p> <p>而以上这些，提交对象<code>commit object</code>为你保存了这些基本信息。</p> <h2 id="5本文用到的命令总结">5、本文用到的命令总结</h2> <p>Git底层命令：</p> <ul> <li><code>git update-index --add</code>：把文件索引（快照）存入暂存区中。</li> <li><code>git write-tree</code>：将当前暂存区的索引内容同步到一个树对象中。</li> <li><code>git ls-files -s</code>：查看暂存区的文件信息。</li> <li><code>git read-tree --prefix=bak</code>：将一个已存在的树对象添加到暂存区。</li> <li><code>git cat-file -t 键</code>：查看Git对象的类型。</li> <li><code>git cat-file -p 键</code>：查看Git对象的内容。</li> </ul> <blockquote> <p>参考：</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/songyuequan/article/details/85862415"  target="_blank" rel="nofollow">https://blog.csdn.net/songyuequan/article/details/85862415</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/jasongrass/p/10582465.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/jasongrass/p/10582465.html</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/cposture/p/4178003.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/cposture/p/4178003.html</a></li> </ul> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-36469.htm">宠物店一包猫粮多少钱 宠物店一包猫粮多少钱啊</a></p>
+                                        <p>下一个：<a href="/news/article-36945.htm">自己帮宠物打疫苗怎么打（自己给宠物打疫苗有危险吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-today-hysteria-node.htm" title="11月9日 | Hysteria2每天更新22.7M/S免费节点订阅链接">11月9日 | Hysteria2每天更新22.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-free-node-subscribe-links.htm" title="12月20日 | Hysteria2每天更新22.6M/S免费节点订阅链接">12月20日 | Hysteria2每天更新22.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23286.htm" title="宠物医院乱收费怎么办（宠物医院乱收费怎么办理）">宠物医院乱收费怎么办（宠物医院乱收费怎么办理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-hysteria-node.htm" title="11月26日 | Hysteria2每天更新18.4M/S免费节点订阅链接">11月26日 | Hysteria2每天更新18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-latest-hysteria-node.htm" title="10月7日 | Hysteria2每天更新22.4M/S免费节点订阅链接">10月7日 | Hysteria2每天更新22.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-hysteria-node-share.htm" title="12月28日 | Hysteria2每天更新18.9M/S免费节点订阅链接">12月28日 | Hysteria2每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-high-speed-nodes.htm" title="12月18日 | Hysteria2每天更新18.6M/S免费节点订阅链接">12月18日 | Hysteria2每天更新18.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34079.htm" title="流浪猫狗领养平台（流浪狗领养网站）">流浪猫狗领养平台（流浪狗领养网站）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-hysteria-node.htm" title="11月17日 | Hysteria2每天更新18.2M/S免费节点订阅链接">11月17日 | Hysteria2每天更新18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19611.htm" title="动物疫苗价格表最新消息图片大全 动物疫苗价格表最新消息图片大全集">动物疫苗价格表最新消息图片大全 动物疫苗价格表最新消息图片大全集</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
