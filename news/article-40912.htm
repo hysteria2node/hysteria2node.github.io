@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-40912.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>vue的router-link的replace属性&amp;编程式路由导航&amp;缓存路由组件&amp;两个新的生命周期钩子&amp;路由守卫</title>
+        <meta name="description" content="1.router-link的replace属性 *给router-link添加replace属性后页签不能后退：  2.编程式路由导航 *作用：不借助router-link实现路由的跳转，让落跳转更加" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+                        <a class="navbar-brand" href="/">
+                Hysteria2 Node
+            </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>vue的router-link的replace属性&amp;编程式路由导航&amp;缓存路由组件&amp;两个新的生命周期钩子&amp;路由守卫</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>1.router-link的replace属性</h2> <p style="margin-left:0;text-align:justify;">*给router-link添加replace属性后页签不能后退：</p> <p><img fetchpriority="high" decoding="async" alt="" height="142" src="http://img.555519.xyz/uploads3/20220604/be02351f6c611d20622ad5cf5634efe5.jpg"></p> <h2>2.编程式路由导航</h2> <p style="margin-left:0;text-align:justify;">*作用：不借助router-link实现路由的跳转，让落跳转更加灵活：</p> <p><img decoding="async" alt="" height="661" src="http://img.555519.xyz/uploads3/20220604/9184a9c512d154177af7bd9c3160c1a6.jpg"></p> <p><img decoding="async" alt="" height="888" src="http://img.555519.xyz/uploads3/20220604/86577180f942359e9fb38f10331d027b.jpg"></p> <h2>&nbsp;3.缓存路由组件</h2> <p style="margin-left:0;text-align:justify;">*作用：让不展示的路由组件保持挂载，不被销毁</p> <p>&lt;keep-alive include='组件的名字'&gt;</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;router-view&gt;&lt;/router-view&gt;</p> <p>&lt;/keep-alive&gt;</p> <p><img loading="lazy" decoding="async" alt="" height="273" src="http://img.555519.xyz/uploads3/20220604/cd727724c1ff7bd7832c6599c26ecc42.jpg"></p> <h2 style="margin-left:0;text-align:justify;">4.两个新的生命周期钩子</h2> <p style="margin-left:0;text-align:justify;">*路由组件特有的两个生命周期钩子：activated、deactivated</p> <p style="margin-left:0;text-align:justify;">&nbsp;用于捕获路由组件的激活状态</p> <pre><code>&lt;template&gt;     &lt;ul&gt;         &lt;h2 :style="{opacity}"&gt;欢迎学习&lt;/h2&gt;         &lt;li&gt;news001&lt;input type="text"&gt;&lt;/li&gt;         &lt;li&gt;news002&lt;input type="text"&gt;&lt;/li&gt;         &lt;li&gt;news003&lt;input type="text"&gt;&lt;/li&gt;     &lt;/ul&gt; &lt;/template&gt;  &lt;script&gt; export default {     name:"News",     data() {         return {             opacity:1         }     },     activated(){         this.timer=setInterval(() =&gt; {             this.opacity-=0.01             if (this.opacity&lt;=0) {                 this.opacity=1             }         }, 16);     },     deactivated() {         clearInterval(this.timer)     }, } &lt;/script&gt;</code></pre> <h2>5.全局前置_路由守卫</h2> <p><img loading="lazy" decoding="async" alt="" height="456" src="http://img.555519.xyz/uploads3/20220604/35de4b9d7d5af3f15b69420ae1d830c3.jpg"></p> <p style="margin-left:0;text-align:justify;">*meta{}//表示路由元信息，是用户自定义的信息</p> <p style="margin-left:0;text-align:justify;">*简化上方代码：</p> <p style="margin-left:0;text-align:justify;">&nbsp;&nbsp; 在需要权限校验的路由里配置meta：</p> <p><img loading="lazy" decoding="async" alt="" height="653" src="http://img.555519.xyz/uploads3/20220604/c9c19c4407e754fa375f22b5b75d5bf1.jpg"></p> <h2>&nbsp;6.全局后置_路由守卫</h2> <p style="margin-left:0;text-align:justify;">*页面跳转后执行</p> <pre><code>//全局后置路由守卫 router.afterEach((to) =&gt; {     document.title=to.meta.title || "硅谷系统" })</code></pre> <h2>&nbsp;7.独享路由守卫</h2> <p style="margin-left:0;text-align:justify;">*独享路由守卫，只有前置没有后置，规则和全局前置路由守卫一样，配置在某个路由中</p> <p style="margin-left:0;text-align:justify;">beforeEnter: (to, from, next) =&gt; {<!-- --></p> <p style="margin-left:0;text-align:justify;">&nbsp;&nbsp; ···</p> <p style="margin-left:0;text-align:justify;">}</p> <h2 style="margin-left:0;text-align:justify;">8.组件内路由守卫</h2> <pre><code>&lt;template&gt;   &lt;div&gt;       &lt;h2&gt;我是About的内容&lt;/h2&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; export default {   //通过路由规则，进入该组件时被调用   beforeRouteEnter (to, from, next) {     next()   },   //通过路由规则，离开该组件时被调用   beforeRouteLeave (to, from, next) {     next()   } } &lt;/script&gt;</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-40911.htm">feign实现微服务之间的远程调用</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-40400.htm" title="动物接种疫苗,剂量越大越好吗,为什么 动物接种疫苗,剂量越大越好吗,为什么">动物接种疫苗,剂量越大越好吗,为什么 动物接种疫苗,剂量越大越好吗,为什么</a></li>
+                        <li class="py-2"><a href="/news/article-21899.htm" title="VsCode调试docker中的NodeJS程序">VsCode调试docker中的NodeJS程序</a></li>
+                        <li class="py-2"><a href="/news/article-25132.htm" title="动物接种疫苗的注意事项不包括（动物疫苗接种的注意事项包括有哪些内容）">动物接种疫苗的注意事项不包括（动物疫苗接种的注意事项包括有哪些内容）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-hysteria-node.htm" title="10月22日 | Hysteria2每天更新20.6M/S免费节点订阅链接">10月22日 | Hysteria2每天更新20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30267.htm" title="十大动物疫苗公司排名前十（动物疫苗上市公司排名）">十大动物疫苗公司排名前十（动物疫苗上市公司排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-hysteria-node-share.htm" title="12月28日 | Hysteria2每天更新18.9M/S免费节点订阅链接">12月28日 | Hysteria2每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-node-share.htm" title="11月12日 | Hysteria2每天更新21.7M/S免费节点订阅链接">11月12日 | Hysteria2每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34078.htm" title="动物疫苗生产企业排行榜前十 动物疫苗生产企业排行榜前十名">动物疫苗生产企业排行榜前十 动物疫苗生产企业排行榜前十名</a></li>
+                        <li class="py-2"><a href="/news/article-23738.htm" title="TENSORFLOW：TENSORS">TENSORFLOW：TENSORS</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-node-subscribe.htm" title="11月22日 | Hysteria2每天更新18.9M/S免费节点订阅链接">11月22日 | Hysteria2每天更新18.9M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
