@@ -90,6 +90,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <h2>1.router-link的replace属性</h2> <p style="margin-left:0;text-align:justify;">*给router-link添加replace属性后页签不能后退：</p> <p><img fetchpriority="high" decoding="async" alt="" height="142" src="http://img.555519.xyz/uploads3/20220604/be02351f6c611d20622ad5cf5634efe5.jpg"></p> <h2>2.编程式路由导航</h2> <p style="margin-left:0;text-align:justify;">*作用：不借助router-link实现路由的跳转，让落跳转更加灵活：</p> <p><img decoding="async" alt="" height="661" src="http://img.555519.xyz/uploads3/20220604/9184a9c512d154177af7bd9c3160c1a6.jpg"></p> <p><img decoding="async" alt="" height="888" src="http://img.555519.xyz/uploads3/20220604/86577180f942359e9fb38f10331d027b.jpg"></p> <h2>&nbsp;3.缓存路由组件</h2> <p style="margin-left:0;text-align:justify;">*作用：让不展示的路由组件保持挂载，不被销毁</p> <p>&lt;keep-alive include='组件的名字'&gt;</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;router-view&gt;&lt;/router-view&gt;</p> <p>&lt;/keep-alive&gt;</p> <p><img loading="lazy" decoding="async" alt="" height="273" src="http://img.555519.xyz/uploads3/20220604/cd727724c1ff7bd7832c6599c26ecc42.jpg"></p> <h2 style="margin-left:0;text-align:justify;">4.两个新的生命周期钩子</h2> <p style="margin-left:0;text-align:justify;">*路由组件特有的两个生命周期钩子：activated、deactivated</p> <p style="margin-left:0;text-align:justify;">&nbsp;用于捕获路由组件的激活状态</p> <pre><code>&lt;template&gt;     &lt;ul&gt;         &lt;h2 :style="{opacity}"&gt;欢迎学习&lt;/h2&gt;         &lt;li&gt;news001&lt;input type="text"&gt;&lt;/li&gt;         &lt;li&gt;news002&lt;input type="text"&gt;&lt;/li&gt;         &lt;li&gt;news003&lt;input type="text"&gt;&lt;/li&gt;     &lt;/ul&gt; &lt;/template&gt;  &lt;script&gt; export default {     name:"News",     data() {         return {             opacity:1         }     },     activated(){         this.timer=setInterval(() =&gt; {             this.opacity-=0.01             if (this.opacity&lt;=0) {                 this.opacity=1             }         }, 16);     },     deactivated() {         clearInterval(this.timer)     }, } &lt;/script&gt;</code></pre> <h2>5.全局前置_路由守卫</h2> <p><img loading="lazy" decoding="async" alt="" height="456" src="http://img.555519.xyz/uploads3/20220604/35de4b9d7d5af3f15b69420ae1d830c3.jpg"></p> <p style="margin-left:0;text-align:justify;">*meta{}//表示路由元信息，是用户自定义的信息</p> <p style="margin-left:0;text-align:justify;">*简化上方代码：</p> <p style="margin-left:0;text-align:justify;">&nbsp;&nbsp; 在需要权限校验的路由里配置meta：</p> <p><img loading="lazy" decoding="async" alt="" height="653" src="http://img.555519.xyz/uploads3/20220604/c9c19c4407e754fa375f22b5b75d5bf1.jpg"></p> <h2>&nbsp;6.全局后置_路由守卫</h2> <p style="margin-left:0;text-align:justify;">*页面跳转后执行</p> <pre><code>//全局后置路由守卫 router.afterEach((to) =&gt; {     document.title=to.meta.title || "硅谷系统" })</code></pre> <h2>&nbsp;7.独享路由守卫</h2> <p style="margin-left:0;text-align:justify;">*独享路由守卫，只有前置没有后置，规则和全局前置路由守卫一样，配置在某个路由中</p> <p style="margin-left:0;text-align:justify;">beforeEnter: (to, from, next) =&gt; {<!-- --></p> <p style="margin-left:0;text-align:justify;">&nbsp;&nbsp; ···</p> <p style="margin-left:0;text-align:justify;">}</p> <h2 style="margin-left:0;text-align:justify;">8.组件内路由守卫</h2> <pre><code>&lt;template&gt;   &lt;div&gt;       &lt;h2&gt;我是About的内容&lt;/h2&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; export default {   //通过路由规则，进入该组件时被调用   beforeRouteEnter (to, from, next) {     next()   },   //通过路由规则，离开该组件时被调用   beforeRouteLeave (to, from, next) {     next()   } } &lt;/script&gt;</code></pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-40911.htm">feign实现微服务之间的远程调用</a></p>
+                                        <p>下一个：<a href="/news/article-41389.htm">Python：多个tiff转csv，并按照像元合并成一个csv</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -99,16 +100,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-40400.htm" title="动物接种疫苗,剂量越大越好吗,为什么 动物接种疫苗,剂量越大越好吗,为什么">动物接种疫苗,剂量越大越好吗,为什么 动物接种疫苗,剂量越大越好吗,为什么</a></li>
-                        <li class="py-2"><a href="/news/article-21899.htm" title="VsCode调试docker中的NodeJS程序">VsCode调试docker中的NodeJS程序</a></li>
-                        <li class="py-2"><a href="/news/article-25132.htm" title="动物接种疫苗的注意事项不包括（动物疫苗接种的注意事项包括有哪些内容）">动物接种疫苗的注意事项不包括（动物疫苗接种的注意事项包括有哪些内容）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-hysteria-node.htm" title="10月22日 | Hysteria2每天更新20.6M/S免费节点订阅链接">10月22日 | Hysteria2每天更新20.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-30267.htm" title="十大动物疫苗公司排名前十（动物疫苗上市公司排名）">十大动物疫苗公司排名前十（动物疫苗上市公司排名）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-28-hysteria-node-share.htm" title="12月28日 | Hysteria2每天更新18.9M/S免费节点订阅链接">12月28日 | Hysteria2每天更新18.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-12-node-share.htm" title="11月12日 | Hysteria2每天更新21.7M/S免费节点订阅链接">11月12日 | Hysteria2每天更新21.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-34078.htm" title="动物疫苗生产企业排行榜前十 动物疫苗生产企业排行榜前十名">动物疫苗生产企业排行榜前十 动物疫苗生产企业排行榜前十名</a></li>
-                        <li class="py-2"><a href="/news/article-23738.htm" title="TENSORFLOW：TENSORS">TENSORFLOW：TENSORS</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-node-subscribe.htm" title="11月22日 | Hysteria2每天更新18.9M/S免费节点订阅链接">11月22日 | Hysteria2每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-hysteria-node.htm" title="12月24日 | Hysteria2每天更新18.6M/S免费节点订阅链接">12月24日 | Hysteria2每天更新18.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32186.htm" title="Mysql数据库基本操作（六）多表查询-内连接查询，外连接查询">Mysql数据库基本操作（六）多表查询-内连接查询，外连接查询</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-today-hysteria-node.htm" title="12月29日 | Hysteria2每天更新20.1M/S免费节点订阅链接">12月29日 | Hysteria2每天更新20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26982.htm" title="动物疫苗接种后多久产生抗体（动物疫苗多长时间内打）">动物疫苗接种后多久产生抗体（动物疫苗多长时间内打）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-today-hysteria-node.htm" title="10月16日 | Hysteria2每天更新18.3M/S免费节点订阅链接">10月16日 | Hysteria2每天更新18.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24204.htm" title="Nacos基本使用：注册中心、配置中心">Nacos基本使用：注册中心、配置中心</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-latest-hysteria-node.htm" title="12月5日 | Hysteria2每天更新18M/S免费节点订阅链接">12月5日 | Hysteria2每天更新18M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26519.htm" title="宠物寄养协议合同电子版有效吗怎么写（宠物店寄养协议文字pdf文件）">宠物寄养协议合同电子版有效吗怎么写（宠物店寄养协议文字pdf文件）</a></li>
+                        <li class="py-2"><a href="/news/article-32652.htm" title="动物经营类游戏推荐（动物经营类游戏推荐）">动物经营类游戏推荐（动物经营类游戏推荐）</a></li>
+                        <li class="py-2"><a href="/news/article-29786.htm" title="十大品牌狗粮的排行榜（十大品牌狗粮的排行榜有哪些）">十大品牌狗粮的排行榜（十大品牌狗粮的排行榜有哪些）</a></li>
                     </ul>
     </div>
 </div>
@@ -120,7 +121,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
