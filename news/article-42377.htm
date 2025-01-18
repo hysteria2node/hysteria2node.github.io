@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-42377.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级</title>
+        <meta name="description" content="此文系【大话云原生】系列第四篇，该系列文章期望用最通俗、简单的语言说明白云原生生态系统内的组成、架构以及应用关系。从这篇开始我们要开始针对Kubernetes进行介绍了，本文内容如下： 一、Kuber" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-42377.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/ff7c6de422a8eec52c5406f530e4798b.webp" />
+        <meta property="og:release_date" content="2025-01-18T07:14:22" />
+    <meta property="og:updated_time" content="2025-01-18T07:14:22" />
+        <meta property="og:description" content="此文系【大话云原生】系列第四篇，该系列文章期望用最通俗、简单的语言说明白云原生生态系统内的组成、架构以及应用关系。从这篇开始我们要开始针对Kubernetes进行介绍了，本文内容如下： 一、Kuber" />
+        
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+                        <a class="navbar-brand" href="/">
+                Hysteria2 Node
+            </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>此文系【大话云原生】系列第四篇，该系列文章<strong>期望用最通俗、简单的语言说明白云原生生态系统内的组成、架构以及应用关系</strong>。从这篇开始我们要开始针对Kubernetes进行介绍了，本文内容如下：</p> <h2 id="一kubernetes的pod概念解析">一、Kubernetes的Pod概念解析</h2> <p>前文说到老婆过生日了我们一起出去旅游，上了团体服务班车，小娜同学(老婆)闲聊到：“这服务还不错哈，2个跟车导游，1个司机”。三句不离老本行，我无聊的说到：“他们三个人就是一个Pod，提供一天的旅游服务内容，有主有次不可分割"。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cf8555450efeff8307362762c1a4ee5d.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"></p> <p>小娜同学又上套了：“什么是Pod啊？英文单词豌豆荚？”，让老婆增加对老公崇拜感的机会不可多得，那就开讲，反正坐车也是闲着。</p> <ul> <li><strong>一般来说一个Pod提供一种服务(微服务)，“哎？之前说容器的时候你也是这么说的”</strong>。是的，容器是提供服务的最小单元，那么Pod是什么概念？这是因为我们现在讨论的是k8s，<strong>Pod是k8s服务调度的最小单元</strong>。</li> <li><strong>“为什么引入Pod的概念？”</strong>，因为有的时候你会发现：一个服务通常包含辅助它的服务。比如这个车上，一个导游长得漂亮口才好作为主导游提供核心讲解服务，还有一个辅助她的导游负责发帽子、统计人数、统计消费等。同理回到架构技术角度，一个nginx提供web服务容器作为核心服务容器，负责收集nginx日志的服务容器作为辅助服务和它部署在一起，这样方便日志收集与连接。</li> <li><strong>一个Pod存在一个基础容器Infra</strong>，基础容器Infra提供了网络共享的能力，就像主导游和辅助导游必须在一辆车（基础容器Infra）上，或者基于这辆车组成了一个组合，否则他们之间无法对话及资源共享。</li> <li><strong>一个Pod下的容器共享网络及数据卷</strong>，所以将容器服务间具有相当强的捆绑关系的服务容器放到一个Pod里面，通常一个容器提供核心服务，其他的容器提供辅助服务，如：日志收集、监控告警等。</li> </ul> <h2 id="二pod标签与service服务">二、Pod标签与Service服务</h2> <p>聊着聊着很快车就到了旅游目的地，一下车发现X公司的团队还真不少。导游都统一都带上了<strong>深红色的帽子</strong>（游客带上蓝色遮阳帽），浩浩荡荡出发。<strong>深红色的帽子为导游打上了标签</strong>，他们面向游客（用户）提供了统一的一种服务叫做：“导游服务”。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/c9d85187b30bff908cbfc92d20eb5126.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"></p> <p>对于K8s中的服务架构也是一样的：</p> <ul> <li>一个Pod通常提供一种服务，如nginx web访问服务</li> <li>多个提供同样服务的Pod通常打上一样的标签</li> <li>创建Service：具备同一种标签的Pod组成一个Service，对外提供服务。</li> </ul> <h2 id="三自动化服务升级-灰度发布">三、自动化服务升级-灰度发布</h2> <p>我们今天的项目是爬山，提供了两种方式：一是直接爬(即步行)，二是坐缆车，当然如果你中途爬不动了也可以在缆车换乘站上缆车。</p> <ul> <li>步行到缆车可以理解为一次服务升级（1.0版本服务升级为2.0版本服务）。从技术角度，服务升级等同于新版本服务的部署被称为Deployment。K8s同样使用Deployment这个术语代表服务升级部署。</li> <li>ReplicaSet代表一个版本的Pod服务组合，1.0步行版本的Pod服务组合，2.0为缆车版本的Pod服务组合，这样理解是不是容易多了呢？</li> <li>在服务容器部署Deployment的过程中，不希望服务中断(即：不希望对步行1.0的用户的服务出现中断情况)，所以停掉一个1.0的Pod，再启动一个2.0的Pod2.0，这个过程被称为灰度发布。整个过程高度依赖Kubernetes提供的自动化运维能力。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/536ac930efee297353ac2b4944619526.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"></p> <p>上面的图每个RS只有2个Pod，还不能那么直观的理解灰度发布，看下面这张图</p> <ul> <li>圆形代表Pod，分为v1版本和v2版本，虚线标识的Pod表示即将下线的Pod</li> <li>v1版本的Pod减一，v2版本的pod加一</li> <li>逐渐ReplicaSet：v1的Pod全部销毁，ReplicaSet：v2的Pod逐渐被创建并启动提供服务</li> <li>整个的灰度发布过程，在k8s种通过一个Deployment进行定义。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/40882310dd51af43efce4b4012e9b817.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"><br /> 此专栏《大话云原生》的前三篇文章如下</p> <ul> <li>《【大话云原生】煮饺子与docker、kubernetes之间的关系》</li> <li>《【大话云原生】负载均衡篇-小饭馆的流量变大了》</li> <li>《【大话云原生】微服务篇-五星级酒店的服务方式》</li> </ul> <p><strong>如果您读完了觉得有收获，期待您能转发分享，您的支持是我不竭的创作动力！</strong></p> <p></p> <ul></ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-41885.htm">开宠物店赚钱的美容店（开宠物店赚钱的美容店叫什么）</a></p>
+                                        <p>下一个：<a href="/news/article-42378.htm">流浪猫养多久才能算家猫（流浪猫要养多久才知道健康的）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-23286.htm" title="宠物医院乱收费怎么办（宠物医院乱收费怎么办理）">宠物医院乱收费怎么办（宠物医院乱收费怎么办理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-hysteria-node.htm" title="11月24日 | Hysteria2每天更新21M/S免费节点订阅链接">11月24日 | Hysteria2每天更新21M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31178.htm" title="VUE多选按钮变色">VUE多选按钮变色</a></li>
+                        <li class="py-2"><a href="/news/article-23285.htm" title="宠物粮食店一年利润怎么样计算呢视频 宠物粮食店一年利润怎么样计算呢视频讲解">宠物粮食店一年利润怎么样计算呢视频 宠物粮食店一年利润怎么样计算呢视频讲解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-sing-hysteria-windows.htm" title="11月10日 | Hysteria2每天更新20.3M/S免费节点订阅链接">11月10日 | Hysteria2每天更新20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-free-subscribe-node.htm" title="1月10日 | Hysteria2每天更新22.8M/S免费节点订阅链接">1月10日 | Hysteria2每天更新22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-sing-hysteria-windows.htm" title="11月23日 | Hysteria2每天更新19.8M/S免费节点订阅链接">11月23日 | Hysteria2每天更新19.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40911.htm" title="feign实现微服务之间的远程调用">feign实现微服务之间的远程调用</a></li>
+                        <li class="py-2"><a href="/news/article-37934.htm" title="动物医院心得体会怎么写 动物医院心得体会怎么写范文">动物医院心得体会怎么写 动物医院心得体会怎么写范文</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-node-subscribe.htm" title="12月25日 | Hysteria2每天更新18.3M/S免费节点订阅链接">12月25日 | Hysteria2每天更新18.3M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
