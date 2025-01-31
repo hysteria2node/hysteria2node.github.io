@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-47823.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Parquet文件格式解析</title>
+        <meta name="description" content="Parquet是目前比较流行的大数据文件列存储格式，主流的大数据计算框架都对其有良好的支持，包括spark,hive,impala等。相对于传统的行存储模式，列存储主要有以下优点： 可以跳过不符合条件" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-47823.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="Parquet文件格式解析" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/3117224c622b87236faf9fd284b0b055.webp" />
+        <meta property="og:release_date" content="2025-01-29T10:26:44" />
+    <meta property="og:updated_time" content="2025-01-29T10:26:44" />
+        <meta property="og:description" content="Parquet是目前比较流行的大数据文件列存储格式，主流的大数据计算框架都对其有良好的支持，包括spark,hive,impala等。相对于传统的行存储模式，列存储主要有以下优点： 可以跳过不符合条件" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Parquet文件格式解析">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+                        <a class="navbar-brand" href="/">
+                Hysteria2 Node
+            </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>Parquet文件格式解析</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p> Parquet是目前比较流行的大数据文件列存储格式，主流的大数据计算框架都对其有良好的支持，包括spark,hive,impala等。相对于传统的行存储模式，列存储主要有以下优点：</p> <p>可以跳过不符合条件的数据，只读取需要的数据，降低IO数据量。<br /> 压缩编码可以降低磁盘存储空间。由于同一列的数据类型是一样的，可以使用更高效的压缩编码（例如Run Length Encoding和Delta Encoding）进一步节约存储空间。<br /> 只读取需要的列，支持向量运算，能够获取更好的扫描性能。<br /> 相对于其它的列式存储格式，例如ORC,Parquet主要优势在于支持更为广泛，且对嵌套数据的支持更好。详细的比较可以参考</p> <p>http://dongxicheng.org/mapreduce-nextgen/columnar-storage-parquet-and-orc/</p> </h1> <ul> <li>Parquet文件是以二进制方式存储的，不能直接读取和修改，文件中包括该文件的数据和schema（自解析，可以理解为类似JSON）</li> <li>行组(Row Group)：按照行将数据物理上划分为多个单元，每一个行组包含一定的行数，Row group是数据读写时候的缓存单元，Parquet读写的时候会将整个行组缓存在内存中；</li> <li>列块(Column Chunk)：列块负责存储一个行组中某一列的数据，行组中的所有列连续的存储在这个行组文件中。不同的列块可能使用不同的算法进行压缩。</li> <li>页(Page)：每一个列块又划分为多个页，Page是压缩和编码的最小单元，对数据模型来说是透明的，在同一个列块的不同页可能使用不同的编码方式。</li> </ul> </h1> <p> 如果采用HDFS文件系统，影响Parquet文件读写性能的参数主要有两个，dfs.blocksize和parquet.block.size</p> <ul> <li>dfs.blocksize: 控制HDFS file中每个block的大小，该参数主要影响计算任务的并行度，例如在spark中，一个map操作的默认分区数=（输入文件的大小/dfs.block.size）*输入的文件数（分区数等于该操作产生的任务数），如果dfs.block.size设置过大或过小，都会导致生成的Task数量不合理，因此应根据实际计算所涉及的输入文件大小以及executor数量决定何时的值。</li> <li>parquet.block.size 控制parquet的Row Group大小，一般情况下较大的值可以组织更大的连续存储的Column Chunk，有利于提升I/O性能，但上面也提到Row group是数据读写时候的缓存单元，每个需要读写的parquet文件都需要在内存中占据Row Group size设置的内存空间（读取的情况，由于可能跳过部分列，占据的内存会小于Row Group size），这样更大的Row Group size意味着更多的内存开销。同时设置该值时还需要考虑dfs.blocksize的值，尽量让Row Group size等同于HDFS一个block的大小，因为单个Row Group必须在一个计算任务中被处理，如果一个Row Group跨越了多个hdfs block可能会导致额外的远程数据读取。一般推荐的参数一个Row group大小1G，一个HDFS块大小1G，一个HDFS文件只含有一个块。</li> </ul> <p>在Spark中可以使用如下方式修改默认配置参数：</p> <pre><code>val ONE_GB = 1024 * 1024 * 1024  sc.hadoopConfiguration.setInt("dfs.blocksize", ONE_GB)  sc.hadoopConfiguration.setInt("parquet.block.size", ONE_GB)</code></pre> <p> 参考资料<br /> http://ingest.tips/2015/01/31/parquet-row-group-size</p> <p>http://www.infoq.com/cn/articles/in-depth-analysis-of-parquet-column-storage-format</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47327.htm">广州宠物领养网免费地址查询（广州宠物领养网免费地址查询官网）</a></p>
+                                        <p>下一个：<a href="/news/article-47824.htm">Java修饰符abstract与static及final的精华总结_java</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-node-subscribe-links.htm" title="12月27日 | Hysteria2每天更新19.7M/S免费节点订阅链接">12月27日 | Hysteria2每天更新19.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30267.htm" title="十大动物疫苗公司排名前十（动物疫苗上市公司排名）">十大动物疫苗公司排名前十（动物疫苗上市公司排名）</a></li>
+                        <li class="py-2"><a href="/news/article-44872.htm" title="厦门宠物免费领养网站 厦门宠物免费领养网站有哪些">厦门宠物免费领养网站 厦门宠物免费领养网站有哪些</a></li>
+                        <li class="py-2"><a href="/news/article-39912.htm" title="宠物买卖纠纷找哪个部门协调解决 宠物买卖纠纷找哪个部门协调解决呢">宠物买卖纠纷找哪个部门协调解决 宠物买卖纠纷找哪个部门协调解决呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-node-subscribe.htm" title="12月25日 | Hysteria2每天更新18.3M/S免费节点订阅链接">12月25日 | Hysteria2每天更新18.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21434.htm" title="宠物零食加工需要什么资质呢（宠物零食加工需要什么资质呢多少钱）">宠物零食加工需要什么资质呢（宠物零食加工需要什么资质呢多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-14-node-share.htm" title="10月14日 | Hysteria2每天更新20.2M/S免费节点订阅链接">10月14日 | Hysteria2每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30745.htm" title="mybatis &#8211; PerpetualCache 一级缓存">mybatis &#8211; PerpetualCache 一级缓存</a></li>
+                        <li class="py-2"><a href="/news/article-45872.htm" title="延吉宠颐生动物医院 延吉宠颐生动物医院电话">延吉宠颐生动物医院 延吉宠颐生动物医院电话</a></li>
+                        <li class="py-2"><a href="/news/article-26518.htm" title="JavaScript查找数组中的第一个冗余元素方法详解">JavaScript查找数组中的第一个冗余元素方法详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

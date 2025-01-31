@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-48269.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>FP-Growth挖掘频繁项，java实现</title>
+        <meta name="description" content="FP-Growth主要是用来进行挖掘频繁项，使用场景是发现事物之间的相关性，其中用支持度表示相关性的大小，可以通过设置支持度来筛选相关性小的事物的联系。相比较于Apriori算法需要扫描多次数据，严重" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-48269.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="FP-Growth挖掘频繁项，java实现" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/d4e1a513a8e4761b1de5f54bda6f7f7b.webp" />
+        <meta property="og:release_date" content="2025-01-30T06:44:50" />
+    <meta property="og:updated_time" content="2025-01-30T06:44:50" />
+        <meta property="og:description" content="FP-Growth主要是用来进行挖掘频繁项，使用场景是发现事物之间的相关性，其中用支持度表示相关性的大小，可以通过设置支持度来筛选相关性小的事物的联系。相比较于Apriori算法需要扫描多次数据，严重" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="FP-Growth挖掘频繁项，java实现">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+                        <a class="navbar-brand" href="/">
+                Hysteria2 Node
+            </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>FP-Growth挖掘频繁项，java实现</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>FP-Growth</strong>主要是用来进行挖掘频繁项，使用场景是发现事物之间的相关性，其中用支持度表示相关性的大小，可以通过设置支持度来筛选相关性小的事物的联系。相比较于Apriori算法需要扫描多次数据，严重受到IO的影响。FP-Growth只需要扫描两次数据集，可以提高算法运行效率。下图是论文中的图：</p> <p style="text-align:center;"><img fetchpriority="high" decoding="async" alt="论文中table1" height="300" src="http://img.555519.xyz/uploads3/20220722/10d1df410827dcab23b5dcfbd19ebb47.jpg"></p> <p>左边表示初始的数据集，表示原始的相关关系。然后<span style="color:#f33b45;">遍历</span>左边数据集，统计每个元素的出现次数，然后按照出现次数降序排列。得到中间的表格，设置minSupport = 3，然后删除出现次数小于minSupport的所有元素，然后<span style="color:#f33b45;">遍历</span>重构左侧原始元素之间的关系（删除出现次数小于minSupport的所有元素,同时以行为单位按照总出现次数降序重新排列）得到右边数据集（比如左第一行中f出现次数是2 &lt; 3，因此删除f得到新关系[d,a]）。（<span style="color:#f33b45;">遍历</span>两次，因此<span style="color:#f33b45;">扫描</span>了两次数据）。</p> <p>设置minSupport：</p> <pre><code class="language-java">    private int minStep = 1;     public int getMinStep() {         return minStep;     }      public void setMinStep(int minStep) {         this.minStep = minStep;     }</code></pre> <p>然后就是构建一棵FP树，因此需要构建一个节点的结构体，由于使用java实现因此创建了一个FPTreeNode类：</p> <pre><code class="language-java">    private class FPTreeNode {         int count = 0; //访问次数         int blockAddress = 0;//指的是元素，由于我主要是用来统计blockAddress之间的关系，因此这样取名字         FPTreeNode parent = null;//记录父节点         FPTreeNode nextSimilarNode = null; //记录指向下一个该元素的节点         List&lt;FPTreeNode&gt; childSet = new ArrayList&lt;&gt;();         public FPTreeNode(int blockAddress) {             this.blockAddress = blockAddress;             count = 1;         }     }</code></pre> <p>构成的图如下图所示（<span style="color:#3399ea;">蓝色线指的是：nextSimilarNode</span>，<span style="color:#f33b45;">红色线指的是：parent</span>）</p> <p style="text-align:center;"><img decoding="async" alt="" height="300" src="http://img.555519.xyz/uploads3/20220722/cac62148544ab7dfac50f0c06979b78f.jpg"></p> <p>构建上图FP树主要分三步：</p> <p>1.首先需要遍历数据集，统计元素出现总次数</p> <pre><code class="language-java">    //计算各基本blockAddress出现的频次。     public List&lt;List&lt;Integer&gt;&gt; init(File file) {         List&lt;List&lt;Integer&gt;&gt; lists = new ArrayList&lt;&gt;();         try {             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));             String string = "";             double start = -1.0;              List&lt;Integer&gt; list = new ArrayList&lt;&gt;();             List&lt;Integer&gt; listCount = new ArrayList&lt;&gt;();             double timePeroid = 60.0;             while((string = bufferedReader.readLine()) != null) {                 //time peroid, start block, access count                 String[] s = string.split(",");                 if (start == -1.0) {                     start = Double.valueOf(s[0]) + timePeroid;                 }                 if (start &gt; Double.valueOf(s[0])) {                     if (!list.contains(Integer.valueOf(s[1]))) {                         list.add(Integer.valueOf(s[1]));                         listCount.add(Integer.valueOf(s[2]));                     }                 } else {                     lists.add(new ArrayList&lt;&gt;(list));                     listsCount.add(new ArrayList&lt;&gt;(listCount));                     start = Double.valueOf(s[0]) + timePeroid;                     list.clear();                     listCount.clear();                     list.add(Integer.valueOf(s[1]));                     listCount.add(Integer.valueOf(s[2]));                 }             }             if (list.size() &gt; 0) {                 lists.add(new ArrayList&lt;&gt;(list));                 listsCount.add(new ArrayList&lt;&gt;(listCount));             }             bufferedReader.close();         } catch (FileNotFoundException e) {             e.printStackTrace();         } catch (IOException e) {             e.printStackTrace();         }         return lists;     }</code></pre> <p>2. 根据minSupport进行筛选生成项头表，同时按出现频次降序排列。</p> <pre><code class="language-java">public List&lt;FPTreeNode&gt; buildTable(List&lt;List&lt;Integer&gt;&gt; lists) {         List&lt;FPTreeNode&gt; trees = new ArrayList&lt;FPTreeNode&gt;(); //获得频繁项表头，删除了小于minSupport的。         if (lists.size() == 0) {             return null;         }         HashMap&lt;Integer, FPTreeNode&gt; hashMap = new HashMap&lt;&gt;();         for (int i = 0; i &lt; lists.size(); i++) {             List&lt;Integer&gt; tmp = lists.get(i);             for (int j = 0; j &lt; tmp.size(); j++) {                 int val = tmp.get(j);                 if (hashMap.containsKey(val)) {                     hashMap.get(val).count++;                 } else {                     hashMap.put(val, new FPTreeNode(val));                 }              }         }         Iterator&lt;Map.Entry&lt;Integer, FPTreeNode&gt;&gt; iterator = hashMap.entrySet().iterator();         while(iterator.hasNext()) {             Map.Entry&lt;Integer, FPTreeNode&gt; entry = iterator.next();             if (entry.getValue().count &gt;= minStep) {                 trees.add(entry.getValue());             }         }         //将频繁项进行降序排列         Collections.sort(trees, new Comparator&lt;FPTreeNode&gt;() {             @Override             public int compare(FPTreeNode o1, FPTreeNode o2) {                 if (o1.count &lt; o2.count) {                     return 1;                 } else {                     if (o1.count &gt; o2.count) {                         return -1;                     }                 }                 return 0;             }         });         return trees;     }</code></pre> <p>3.通过递归，构建FP树。自底向上。具体流程如下图：（<span style="color:#f33b45;">红色箭头表示处理流程</span>，<span style="color:#3399ea;">蓝色“阴影” FP树为创建的投影</span>。）</p> <p style="text-align:center;"><img decoding="async" alt="" height="300" src="http://img.555519.xyz/uploads3/20220722/f54f2b6aa855e6b76622cee8860618b5.jpg"></p> <pre><code class="language-java">/**      * 返回一个降序且满足频繁项的list      * @param list      * @return      */     public List&lt;Integer&gt; sortbyTrees(List&lt;Integer&gt; list, List&lt;FPTreeNode&gt; trees) {         List&lt;Integer&gt; tmp = new ArrayList&lt;&gt;();//返回一个降序且满足频繁项的list         for (int i = 0; i &lt; trees.size(); i++) {             int block = trees.get(i).blockAddress;             if (list.contains(block)) {                 tmp.add(block);             }         }         return tmp;     }     public FPTreeNode findChild(FPTreeNode root, int node) {         for (FPTreeNode treeNode : root.childSet) {             if (treeNode.blockAddress == node) {                 return treeNode;             }         }         return null;     }     public void addNode(FPTreeNode node, List&lt;Integer&gt; list, List&lt;FPTreeNode&gt; trees) {         if (list.size() &gt; 0) {             int val = list.remove(0);             FPTreeNode node1 = new FPTreeNode(val);             node1.parent = node;             node.childSet.add(node1);             for (FPTreeNode treeNode : trees) {                 if (treeNode.blockAddress == val) {                     while (treeNode.nextSimilarNode != null) {                         treeNode = treeNode.nextSimilarNode;                     }                     treeNode.nextSimilarNode = node1;                     break;                 }             }             addNode(node1, list, trees);         }     }     public FPTreeNode buildFPTree(List&lt;List&lt;Integer&gt;&gt; lists, List&lt;FPTreeNode&gt; trees) {         FPTreeNode root = new FPTreeNode(0);         for (int i = 0; i &lt; lists.size(); i++) {             List&lt;Integer&gt; tmp = sortbyTrees(lists.get(i), trees);//得到一个降序且满足频繁项的list             FPTreeNode subRoot = root;             FPTreeNode tmpRoot = root;             if (root.childSet.size() &gt; 0) {                 while (tmp.size() &gt; 0 &amp;&amp; (tmpRoot = findChild(subRoot, tmp.get(0))) != null) {                     tmpRoot.count++;                     subRoot = tmpRoot;                     tmp.remove(0);                 }             }             addNode(subRoot, tmp, trees);         }         return root;     }</code></pre> <p>4.按照FP-Growth算法挖掘频繁项，从底向上。</p> <pre><code class="language-java"> public void FPGrowth(List&lt;List&lt;Integer&gt;&gt; transRecords, List&lt;Integer&gt; postPattern) {         List&lt;FPTreeNode&gt; trees = buildTable(transRecords);// 构建项头表，同时也是频繁1项集         // 构建FP-Tree         FPTreeNode root1 = buildFPTree(transRecords, trees);         if (root1.childSet.size() == 0) {             return;         }         if (postPattern.size() &gt; 0) {             for (FPTreeNode node : trees) {                 System.out.print(node.count + ":" + node.blockAddress);                 for (int val: postPattern) {                     System.out.print(" " + val);                 }                 System.out.println();             }         }         for (int i = trees.size() - 1; i &gt;= 0; i--) {             FPTreeNode node = trees.get(i);             List&lt;Integer&gt; tmp = new ArrayList&lt;&gt;();             tmp.add(node.blockAddress);             if (postPattern.size() &gt; 0) {                 tmp.addAll(postPattern);             }             // 寻找header的条件模式基，放入records中             List&lt;List&lt;Integer&gt;&gt; records = new ArrayList&lt;&gt;();             FPTreeNode nextNode = node.nextSimilarNode;             while (nextNode != null) {                 int cnt = nextNode.count;                 List&lt;Integer&gt; prenodes = new ArrayList&lt;Integer&gt;();                 FPTreeNode parent = nextNode;                 while ((parent = parent.parent) != null &amp;&amp; parent.blockAddress != 0) {                     prenodes.add(parent.blockAddress);                 }                 while (cnt &gt; 0) {                     cnt--;                     records.add(prenodes);                 }                 nextNode = nextNode.nextSimilarNode;             }             FPGrowth(records, tmp);         }     }</code></pre> <p>亲测是正确的，数据集格式是：（主要是为了判断第二列之间的相关性，按照第一列表示秒，每180s所包含第二列元素表示为一个关系序列）</p> <pre><code>60,2104409088,1486 120,2104409088,667 120,2104410112,783 180,2104410112,1467 240,2104410112,1152 240,2104411136,301 300,2104411136,1447 360,2104411136,1429 420,2104411136,225 420,2104412160,1209 480,2104412160,1470 540,2104412160,722 540,2104413184,715 600,2104413184,1455</code></pre> <p>生成关系序列为：</p> <pre><code>[[2104409088, 2104410112], [2104410112, 2104411136], [2104411136, 2104412160, 2104413184], [2104413184]]</code></pre> <p>最后得到的频繁项为：（由于数据量小，频繁项表现不明显）</p> <pre><code>1:2104413184 2104412160 1:2104411136 2104412160 1:2104413184 2104411136 2104412160 1:2104410112 2104409088 1:2104411136 2104413184 1:2104410112 2104411136</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47824.htm">Java修饰符abstract与static及final的精华总结_java</a></p>
+                                        <p>下一个：<a href="/news/article-48270.htm">哪些牌子的猫粮是毒猫粮（什么牌子是毒猫粮）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-free-hysteria-node.htm" title="10月27日 | Hysteria2每天更新22.8M/S免费节点订阅链接">10月27日 | Hysteria2每天更新22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20526.htm" title="SpringAOP的源码解析">SpringAOP的源码解析</a></li>
+                        <li class="py-2"><a href="/news/article-37428.htm" title="北京动物观赏医院电话地址（北京动物观赏医院电话地址是多少）">北京动物观赏医院电话地址（北京动物观赏医院电话地址是多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-hysteria-github.htm" title="11月28日 | Hysteria2每天更新22.8M/S免费节点订阅链接">11月28日 | Hysteria2每天更新22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-high-speed-nodes.htm" title="11月30日 | Hysteria2每天更新23M/S免费节点订阅链接">11月30日 | Hysteria2每天更新23M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-latest-hysteria-node.htm" title="10月18日 | Hysteria2每天更新20.2M/S免费节点订阅链接">10月18日 | Hysteria2每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34561.htm" title="天津宠物狗领养（天津狗狗领养吧）">天津宠物狗领养（天津狗狗领养吧）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-node-share.htm" title="1月2日 | Hysteria2每天更新20.2M/S免费节点订阅链接">1月2日 | Hysteria2每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30267.htm" title="十大动物疫苗公司排名前十（动物疫苗上市公司排名）">十大动物疫苗公司排名前十（动物疫苗上市公司排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-node-subscribe-links.htm" title="10月20日 | Hysteria2每天更新21.7M/S免费节点订阅链接">10月20日 | Hysteria2每天更新21.7M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
