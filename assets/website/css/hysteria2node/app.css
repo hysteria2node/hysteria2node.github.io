@@ -6241,17 +6241,17 @@ header {
     bottom: 35%;
     top: 42%;
     color: #f8f9fa; }
-    header .carousel-inner .carousel-item .carousel-caption h3 span {
+    header .carousel-inner .carousel-item .carousel-caption h3 span, header .carousel-inner .carousel-item .carousel-caption h2 span {
       color: #f4fc53; }
   @media (min-width: 992px) {
     header .carousel-inner .carousel-item img {
       height: 100vh; }
-    header .carousel-inner .carousel-item .carousel-caption h3 {
+    header .carousel-inner .carousel-item .carousel-caption h3, header .carousel-inner .carousel-item .carousel-caption h2 {
       font-size: 65px; }
     header .carousel-inner .carousel-item .carousel-caption p {
       font-size: 20px; } }
   @media (max-width: 991px) {
-    header .carousel-inner .carousel-item .carousel-caption h3 {
+    header .carousel-inner .carousel-item .carousel-caption h3, header .carousel-inner .carousel-item .carousel-caption h2 {
       font-size: 45px; } }
   header .carousel-arrs span i {
     border: 2px solid rgba(100, 100, 100, 0.9);
