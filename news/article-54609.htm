@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-54609.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>javaScript深拷贝和浅拷贝简单梳理_在线工具</title>
+        <meta name="description" content="在了解深拷贝和浅拷贝之前，我们先梳理一下： JavaScript中，分为基本数据类型（原始值）和复杂类型（对象），同时它们各自的数据类型细分下又有好几种数据类型 基本数据类型  数字Number 字符" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-54609.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="javaScript深拷贝和浅拷贝简单梳理_在线工具" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/438bef0ac540dc91365222c20da82ac0.webp" />
+        <meta property="og:release_date" content="2025-02-11T05:42:21" />
+    <meta property="og:updated_time" content="2025-02-11T05:42:21" />
+        <meta property="og:description" content="在了解深拷贝和浅拷贝之前，我们先梳理一下： JavaScript中，分为基本数据类型（原始值）和复杂类型（对象），同时它们各自的数据类型细分下又有好几种数据类型 基本数据类型  数字Number 字符" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="javaScript深拷贝和浅拷贝简单梳理_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>javaScript深拷贝和浅拷贝简单梳理_在线工具</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>在了解深拷贝和浅拷贝之前，我们先梳理一下：</p> <p>JavaScript中，分为基本数据类型（原始值）和复杂类型（对象），同时它们各自的数据类型细分下又有好几种数据类型</p> <h3 id="基本数据类型">基本数据类型</h3> <blockquote> <p>数字Number 字符串String 布尔Boolean Null Undefined Symbols BigInt</p> </blockquote> <p>基本数据类型在内存当中，是存储在栈Stack</p> <h4 id="在数据结构当中"><strong>在数据结构当中</strong></h4> <ul> <li>栈在内存上的分配的空间生命周期很短，当变量使用完毕，方法执行完成就被释放掉，因此在js当中，变量使用完毕之后，基本就被回收了，</li> <li>有一个场景比较例外，闭包的情况下，变量是始终存在内存当中不被释放.</li> <li>栈存储具有先进后出，后进先出的特点: 1，2，3，4，5，6 =&gt; 6,5,4,3,2,1</li> </ul> <h3 id="引用数据类型">引用数据类型</h3> <blockquote> <p>日期Dete，对象Object，数组Array,方法Function, 正则regex,带键的集合：Maps, Sets, WeakMaps, WeakSets</p> </blockquote> <h5 id="引用数据类型与堆内存heap的一些关系"><strong>引用数据类型与堆内存heap的一些关系</strong></h5> <ul> <li>在JavaScript中，不允许直接访问堆内存中的位置，不能直接操作对象的堆内存空间。</li> <li>对象的引用地址是存在栈内存中，在我们的日常编码过程中，操作对象的时候，读取对象的存在栈内存的引用地址而不是在堆中的对象，引用类型的值都是通过引用访问。</li> </ul> <h4 id="javascript中堆内存和栈内存简易示意图例"><strong>JavaScript中堆内存和栈内存简易示意图例</strong></h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/a5da295d3605d999a379c95cea2c2db4.jpg" alt="javaScript深拷贝和浅拷贝简单梳理_在线工具"></p> <p>下面对于对象的操作，都可以参照上图进行思考</p> <h2 id="浅拷贝-深拷贝"><strong>浅拷贝-深拷贝</strong></h2> <h3 id="浅拷贝">浅拷贝</h3> <p>只是拷贝了某一层的属性，或者某一层，没有全部拷贝到另外的对象上</p> <pre><code>let userInfo = {   name: "zhangsan",   age: "29",   say: function () {     console.log("hello");   },   child: [     {       name: "zhangsan01",     },   ], }; </code></pre> <ol> <li>对象解构,只能拷贝第一层对象</li> </ol> <pre><code>// 对象解构... let info = { ...userInfo }; info.name = "lisi"; info.child.name = "lisi001"; info.say();  console.log("userInfo", userInfo); console.log("info", info);  userInfo和info中的child.name都改成了----&gt;"lisi001"  </code></pre> <ol start="2"> <li>Object.assign() 第一层是深拷贝，二级属性后就是浅拷贝</li> </ol> <pre><code>let info = {}; Object.assign(info, userInfo); info.name = "lisi"; info.child.name = "lisi001"; console.log("userInfo", userInfo); console.log("info", info);  </code></pre> <ol start="3"> <li>JSON.parse(JSON.stringify());<br /> 对象可以复制，但是当属性是function时，没有复制到新的对象上，因此在日常的开发过程中，涉及到数组对象，使用JSON.parse(JSON.stringify());还是没问题的</li> </ol> <pre><code>let info = JSON.parse(JSON.stringify(userInfo)); info.name = "lisi"; info.child.name = "lisi001"; console.log("userInfo", userInfo); console.log("info", info);  </code></pre> <ol start="4"> <li>for in，第一层可以拷贝，第二层在修改的时候，还是使用的引用地址，前后的对象都发生了更改</li> </ol> <pre><code>let info = {}; for (let key in userInfo) {   info[key] = userInfo[key]; } info.name = "lisi"; info.child.name = "lisi001"; console.log("userInfo", userInfo); console.log("info", info); </code></pre> <h4 id="浅拷贝小结"><strong>浅拷贝小结</strong></h4> <p>以上浅拷贝方法，有些拷贝只能拷贝第一层，有些可以拷贝多层，<br /> 但是当属性类型是方法时，还是浅拷贝，<br /> 因此我们在开发中，使用浅拷贝，需要注意，同时，出了拷贝function，类似正则，date等数据类型没有一一列举，感兴趣的同学可以自己写一些demo，去校验更为复杂和数据类型更丰富的数据。</p> <h3 id="深拷贝">深拷贝</h3> <p>所有的属性都拷贝到新的对象上</p> <ol> <li>使用递归遍历每一个属性，在递归遍历的时候，针对每一种数据类型处理和拷贝</li> <li>lodash深拷贝方法，感兴趣的同学，可以去阅读lodash深拷贝的实现源码</li> </ol> <p>文档地址：<strong>深拷贝cloneDeep</strong> <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.lodashjs.com/docs/lodash.cloneDeep"  target="_blank"  rel="nofollow">https://www.lodashjs.com/docs/lodash.cloneDeep</a></p> <ol start="3"> <li>更多方法，有待补充</li> </ol> <h3 id="结尾"><strong>结尾</strong></h3> <ul> <li> <p>当我们操作复杂数据类型的时候，都是在操作栈内存Stack的内存地址，指针指向对象在堆内存heap的数据。</p> </li> <li> <p>传入的对象是使用对象字面量{}创建的对象还是由构造函数生成的对象</p> </li> <li> <p>如果对象是由构造函数创建出来的，那么是否要拷贝原型链上的属性</p> </li> <li> <p>如果要拷贝原型链上的属性，那么如果原型链上存在多个同名的属性，保留哪个</p> </li> <li> <p>针对的数据类型，属性的数据类型，各自的缺陷，适用的业务场景，自己造轮子or使用原生方法，工具类</p> </li> </ul> <hr> <h4 id="源码地址">源码地址</h4> <ul> <li> <h5 id="码云-httpsgiteecomlewyonvue-note"> <strong>码云</strong> <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/lewyon/vue-note"  target="_blank"  rel="nofollow">https://gitee.com/lewyon/vue-note</a><br /> </h5> </li> <li> <h5 id="githup-httpsgithubcomakari16vue-note"> <strong>githup</strong> <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/akari16/vue-note"  target="_blank"  rel="nofollow">https://github.com/akari16/vue-note</a><br /> </h5> </li> </ul> <p>文章个人博客地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://lewyon.xyz/objectCopy.html"  target="_blank"  rel="nofollow">javaScript中深拷贝和浅拷贝梳理</a></p> <p>欢迎关注公众号：程序猿布欧，不定期更新一些前端入门文章</p> <p>创作不易，转载请注明出处和作者。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-54046.htm">新手开店适合开什么店门面好（新手开店适合开什么店门面好呢）</a></p>
+                                        <p>下一个：<a href="/news/article-54610.htm">猫粮品牌推荐（猫粮品牌推荐大全）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44366.htm" title="Java中的字符串常量池是什么？">Java中的字符串常量池是什么？</a></li>
+                        <li class="py-2"><a href="/news/article-50338.htm" title="ModelSerializer序列化器实战">ModelSerializer序列化器实战</a></li>
+                        <li class="py-2"><a href="/news/article-19153.htm" title="上海宠物领养中心免费领养狗狗的地方在哪（上海宠物领养中心免费领养狗狗的地方在哪儿）">上海宠物领养中心免费领养狗狗的地方在哪（上海宠物领养中心免费领养狗狗的地方在哪儿）</a></li>
+                        <li class="py-2"><a href="/news/article-33603.htm" title="动物医院管理制度文本怎么写范文（动物医院管理制度文本怎么写范文图片）">动物医院管理制度文本怎么写范文（动物医院管理制度文本怎么写范文图片）</a></li>
+                        <li class="py-2"><a href="/news/article-36945.htm" title="自己帮宠物打疫苗怎么打（自己给宠物打疫苗有危险吗）">自己帮宠物打疫苗怎么打（自己给宠物打疫苗有危险吗）</a></li>
+                        <li class="py-2"><a href="/news/article-52981.htm" title="宠物领养协议书范本大全图片模板 宠物领养协议书范本大全图片模板下载">宠物领养协议书范本大全图片模板 宠物领养协议书范本大全图片模板下载</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-node-subscribe.htm" title="12月3日 | Hysteria2每天更新18.1M/S免费节点订阅链接">12月3日 | Hysteria2每天更新18.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-latest-hysteria-node.htm" title="11月27日 | Hysteria2每天更新19M/S免费节点订阅链接">11月27日 | Hysteria2每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-high-speed-nodes.htm" title="12月31日 | Hysteria2每天更新22.7M/S免费节点订阅链接">12月31日 | Hysteria2每天更新22.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-38424.htm" title="猫三联一共几针,多少钱天津（猫三联到底是两针还是三针）">猫三联一共几针,多少钱天津（猫三联到底是两针还是三针）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
