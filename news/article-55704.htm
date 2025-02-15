@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-55704.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>vue实现自定义全局右键菜单_vue.js</title>
+        <meta name="description" content="前段时间公司在做一个webIDE项目，其中有对文件树的各种操作，主要通过右键菜单实现，今天就来记录一下怎么在vue项目中实现全局的自定义右键菜单。效果如图所示：  注意： 需要在项目中找到页面整体布局" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-55704.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="vue实现自定义全局右键菜单_vue.js" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/1d202185a0838903277cf58f84bc7fdf.webp" />
+        <meta property="og:release_date" content="2025-02-13T03:08:53" />
+    <meta property="og:updated_time" content="2025-02-13T03:08:53" />
+        <meta property="og:description" content="前段时间公司在做一个webIDE项目，其中有对文件树的各种操作，主要通过右键菜单实现，今天就来记录一下怎么在vue项目中实现全局的自定义右键菜单。效果如图所示：  注意： 需要在项目中找到页面整体布局" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue实现自定义全局右键菜单_vue.js">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>vue实现自定义全局右键菜单_vue.js</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>前段时间公司在做一个webIDE项目，其中有对文件树的各种操作，主要通过右键菜单实现，今天就来记录一下怎么在vue项目中实现全局的自定义右键菜单。效果如图所示：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220420/2a621ad2e70ec81e0e79c7faecdf5453.jpg"></p> <p><span style="color:#c0392b"><strong>注意：</strong></span></p> <p>需要在项目中找到页面整体布局的组件，比如项目使用Home.vue作为整个项目的公共布局，将根元素定位设置成relative，使右键菜单相对于其进行定位。</p> <p>本文的右键菜单主要使用vuex实现</p> <p><strong>一、vuex中定义全局状态用于管理右键菜单</strong></p> <div class="ay1code"> <pre class="brush:js;">export default {      /**       * menuContent格式：       * [       *      {       *          name: '新建文件',   // 操作名       *          method: 'createDirectory',  // 需要执行的对应组件中的方法       *             disabled: true        // 是否禁用，可以根据页面具体逻辑进行调整       *      }       * ]       *        *        * 整体右键菜单采用绝对定位，所以clientX、clientY代表是left和top定位       */      state: {          menuContent: [],    // 右键菜单内容          clientX: '',    // left          clientY: '',    // top          displayContextMenu: false   // 是否展示右键菜单      },      mutations: {          SET_CONTEXT_MENU: (state, payload) =&gt; {              state.menuContent = payload.menuContent;              state.clientX = payload.clientX;              state.clientY = payload.clientY;              state.displayContextMenu = payload.displayContextMenu;          },      }  }</pre> </div> <p><strong>二、定义公共组件ContextMenu.vue</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;      &lt;div class="context-menu" v-show="contextMenu.displayContextMenu"           :style="{'left': contextMenu.clientX + 'px', 'top': contextMenu.clientY + 'px'}"&gt;          &lt;ul&gt;              &lt;li v-for="(item, i) in contextMenu.menuContent" :key="i" :class="item.disabled ? 'disabled' : ''"                   @click="emitEvent(item.method)"&gt;                  {{item.name}}              &lt;/li&gt;          &lt;/ul&gt;      &lt;/div&gt;  &lt;/template&gt;    &lt;script&gt;  import { mapState } from 'vuex';  import bus from '@/views/common/bus';  export default {      name: 'ContextMenu',      data(){          return {          }      },      computed: {          ...mapState(['contextMenu'])      },      methods: {          emitEvent(type){              bus.$emit('operateDirectory', type)          }      }  }  &lt;/script&gt;    &lt;style lang="scss" scoped&gt;      .context-menu {          position: absolute;          background: #FFF;          color: #34495E;          min-width: 100px;          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);          border-radius: 2px;          cursor: pointer;          z-index: 1002;          &amp;&gt;ul {              text-align: left;              padding: 5px 10px;              &amp;&gt;li {                  padding: 3px 4px;                  font-size: 12px;                  list-style: none;                  height: 24px;                  line-height: 24px;                  &amp;:hover {                      background: #EDF6FF;                  }              }              .disabled {                  color: #888585;                  pointer-events: none;              }          }      }  &lt;/style&gt;</pre> </div> <p><strong>三、在组件中使用</strong></p> <div class="ay1code"> <pre class="brush:js;">import { mapState } from 'vuex';  // ...    computed: {      ...mapState(['contextMenu'])  },  created(){      bus.$on('operateDirectory', (param) =&gt; {      // 点击右键菜单时，应触发组件内的同名方法，首先应判断该方法是否在本组件内存在，存在则调用          if(this[param]){              this[param]();          }      });  },  // ...    methods: {      showContextMenu(event, data) {          event.preventDefault();        // 阻止浏览器的默认事件          const menuContent = {              menuContent: [              {                  icon: "el-icon-upload2",                  name: "运行",                  method: "run",              },              {                  icon: "el-icon-refresh",                  name: "编辑",                  method: "editConfig",              },              {                  icon: "el-icon-refresh",                  name: "添加",                  method: "addCommond",              },              {                  icon: "el-icon-refresh",                  name: "删除",                  method: "deleteConfig",              },              ],              clientX: event.clientX,              clientY: event.clientY,              displayContextMenu: true,          };          this.$store.commit("SET_CONTEXT_MENU", menuContent);          // 再次点击页面，右键菜单消失          document.onclick = (event) =&gt; {              this.$store.commit("SET_CONTEXT_MENU", {                  displayContextMenu: false,              });          };      },      run(){          // ...      },      editConfig(){          // ...      },      addCommond(){          // ...      },      deleteConfig(){          // ...      }  }</pre> </div> <p><strong>总结</strong></p> <p>这种可以实现全局右键菜单，并且支持自定义右键内容，但是vue3.0对event bus的取消会导致不可用。</p> <p>目前有一种优化方法：项目中对应会使用组件库，例如element ui，在定义contextMenu.vue的时候，使用dialog，将内容定义在Popover 弹出框中，当组件使用右键菜单时，使用子组件的方式使用ContextMenu.vue，点击右键菜单内容时就不需要使用emit触发了。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-55703.htm">VUE3.0使用ElementPlus开发登录界面</a></p>
+                                        <p>下一个：<a href="/news/article-56263.htm">动物打疫苗注意事项有哪些方面（动物打疫苗有什么作用）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-55151.htm" title="饲料厂加盟代理 饲料厂加盟代理多少钱">饲料厂加盟代理 饲料厂加盟代理多少钱</a></li>
+                        <li class="py-2"><a href="/news/article-37428.htm" title="北京动物观赏医院电话地址（北京动物观赏医院电话地址是多少）">北京动物观赏医院电话地址（北京动物观赏医院电话地址是多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-today-hysteria-node.htm" title="1月8日 | Hysteria2每天更新21.4M/S免费节点订阅链接">1月8日 | Hysteria2每天更新21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-37429.htm" title="猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）">猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-38923.htm" title="动物疫苗生产厂家排名前十名有哪些呢（动物疫苗有哪些大厂家）">动物疫苗生产厂家排名前十名有哪些呢（动物疫苗有哪些大厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-node-share-links.htm" title="11月16日 | Hysteria2每天更新18.3M/S免费节点订阅链接">11月16日 | Hysteria2每天更新18.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-free-node-subscribe-links.htm" title="1月9日 | Hysteria2每天更新20M/S免费节点订阅链接">1月9日 | Hysteria2每天更新20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28844.htm" title="动物注射疫苗前后注意事项有哪些呢视频（动物注射疫苗前后注意事项有哪些呢视频教学）">动物注射疫苗前后注意事项有哪些呢视频（动物注射疫苗前后注意事项有哪些呢视频教学）</a></li>
+                        <li class="py-2"><a href="/news/article-49833.htm" title="滕州宠物寄养（滕州市宠物店）">滕州宠物寄养（滕州市宠物店）</a></li>
+                        <li class="py-2"><a href="/news/article-29785.htm" title="Metalama简介3.自定义.NET项目中的代码分析">Metalama简介3.自定义.NET项目中的代码分析</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
