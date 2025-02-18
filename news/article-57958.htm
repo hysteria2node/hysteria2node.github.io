@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-57958.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>在Vue项目中使用mock假数据模拟后端接口</title>
+        <meta name="description" content="安装 npm install --save-dev mockjs  引入  为了让mock中的数据只在开发环境中有效，防止其与生产环境的数据出现混淆，可以： 在config/dev.env.js文件中" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-57958.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="在Vue项目中使用mock假数据模拟后端接口" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/8d334fb6c493cf30a882c3f02598708d.webp" />
+        <meta property="og:release_date" content="2025-02-17T09:56:18" />
+    <meta property="og:updated_time" content="2025-02-17T09:56:18" />
+        <meta property="og:description" content="安装 npm install --save-dev mockjs  引入  为了让mock中的数据只在开发环境中有效，防止其与生产环境的数据出现混淆，可以： 在config/dev.env.js文件中" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="在Vue项目中使用mock假数据模拟后端接口">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>在Vue项目中使用mock假数据模拟后端接口</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>安装</h2> <p>npm install --save-dev mockjs</p> <h2> <a id="_2" rel="nofollow"></a>引入</h2> <h4> <a id="mock_3" rel="nofollow"></a>为了让mock中的数据只在开发环境中有效，防止其与生产环境的数据出现混淆，可以：</h4> <p>在config/dev.env.js文件中加入 MOCK: ‘true’</p> <pre><code>module.exports = merge(prodEnv, {   NODE_ENV: '"development"',   MOCK: 'true', }) </code></pre> <p>在config/prod.env.js文件中加入 MOCK: ‘false’</p> <pre><code>module.exports = {   NODE_ENV: '"production"',   MOCK: 'false', } </code></pre> <p>在main,js中添加</p> <pre><code>process.env.MOCK &amp;&amp; require('@/mock') </code></pre> <h4> <a id="_24" rel="nofollow"></a>注意</h4> <p>此时想要项目运行不出错，需要先在src下新建一个mock目录，在mock目录下新建一个index.js文件<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/70ad9b488f03d9aab0199d345bbffb1f.jpg" alt="在Vue项目中使用mock假数据模拟后端接口"></p> <h2> <a id="mock_27" rel="nofollow"></a>mock数据</h2> <pre><code>import Mock from 'mockjs' Mock.mock('/local-server/login', function () {   return {     data: {       RETCODE: 'AAAAAAA',       RETMSG: '登录成功'     }   } }) </code></pre> <h2> <a id="_39" rel="nofollow"></a>发起请求</h2> <pre><code>let data = [] this.$axios     .post('/local-server/login', data)     .then(res =&gt; {     //...     } </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-57957.htm">如何加快循环操作和Numpy数组运算速度！</a></p>
+                                        <p>下一个：<a href="/news/article-58623.htm">宠物医院美团好评文案怎么写 宠物医院美团好评文案怎么写啊</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-free-high-speed-nodes.htm" title="2月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.9M/S免费节点订阅链接">2月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-free-hysteria-node.htm" title="1月30日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.1M/S免费节点订阅链接">1月30日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34079.htm" title="流浪猫狗领养平台（流浪狗领养网站）">流浪猫狗领养平台（流浪狗领养网站）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-hysteria-node.htm" title="11月11日 | Hysteria2每天更新21.2M/S免费节点订阅链接">11月11日 | Hysteria2每天更新21.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-44873.htm" title="哈尔滨农大动物医院电话号码是多少（哈尔滨农业动物医院）">哈尔滨农大动物医院电话号码是多少（哈尔滨农业动物医院）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-hysteria-node-share.htm" title="12月19日 | Hysteria2每天更新21.7M/S免费节点订阅链接">12月19日 | Hysteria2每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-free-subscribe-node.htm" title="2月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接">2月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-node-subscribe-links.htm" title="12月27日 | Hysteria2每天更新19.7M/S免费节点订阅链接">12月27日 | Hysteria2每天更新19.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-48836.htm" title="人和动物的狂犬疫苗是一样的吗（人和动物的狂犬疫苗是一样的吗图片）">人和动物的狂犬疫苗是一样的吗（人和动物的狂犬疫苗是一样的吗图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-3-today-hysteria-node.htm" title="1月3日 | Hysteria2每天更新22.9M/S免费节点订阅链接">1月3日 | Hysteria2每天更新22.9M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
