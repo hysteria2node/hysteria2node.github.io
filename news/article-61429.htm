@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-61429.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel</title>
+        <meta name="description" content="之前项目已经引入了Feign和Sentinel的依赖，所以接下里先开启Feign对Sentinel的支持 ，如下： 接着我们要为下单接口做容错降级，保证订单服务高可用，下单接口会涉及到商品服务，所以需" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-61429.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/190ee22d516d4f1811ad7ec39b2231fa.webp" />
+        <meta property="og:release_date" content="2025-02-23T09:45:16" />
+    <meta property="og:updated_time" content="2025-02-23T09:45:16" />
+        <meta property="og:description" content="之前项目已经引入了Feign和Sentinel的依赖，所以接下里先开启Feign对Sentinel的支持 ，如下： 接着我们要为下单接口做容错降级，保证订单服务高可用，下单接口会涉及到商品服务，所以需" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <p>之前项目已经引入了Feign和Sentinel的依赖，所以接下里先开启Feign对Sentinel的支持 ，如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221201/b4dc034a8a8fa3ea29c32e561df640d6.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> 接着我们要为下单接口做容错降级，保证订单服务高可用，下单接口会涉及到商品服务，所以需要对查询商品信息的远程接口做容错，先创建一个容错降级类ProductServiceFallback，它需要实现ProductService类，并重写方法，重写的方法可以理解成是原方法对应的降级方法，一旦下游服务出现问题，这些方法就是兜底方法，如下：</p> <pre><code class="prism language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>mallorder<span class="token punctuation">.</span>fallback<span class="token punctuation">;</span><span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>mallcommon<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Product<span class="token punctuation">;</span><span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>mallorder<span class="token punctuation">.</span>fegin<span class="token punctuation">.</span>ProductService<span class="token punctuation">;</span><span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span><span class="token annotation punctuation">@Component</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">ProductServiceFallback</span><span class="token keyword">implements</span><span class="token class-name">ProductService</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span> Product<span class="token function">findById</span><span class="token punctuation">(</span>Integer pid<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         Product product<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         product<span class="token punctuation">.</span><span class="token function">setPid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> product<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>然后在@FeignClient注解上加上fallback属性，该属性指定的类就是对应的容错降级类了，如下：<img decoding="async" src="http://img.555519.xyz/uploads/20221201/85660bde2a577e204c716b899a23d98e.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> 在修改下单接口，方便看到测试结果，如下：<img decoding="async" src="http://img.555519.xyz/uploads/20221201/2867eb6a241d75ecff961cd87d48a883.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> 这样一旦远程调用商品微服务,查询商品信息失败，就会返回下单失败的提示。</p> <p>接下来只启动mall-order服务，那么商品微服务没启动，远程调用是肯定是失败的，浏览器访问http://localhost:10020/order/prod/1，结果如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221201/9040b595ad3318735bb0cc32caf80f08.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> Feign整合Sentinel 实现降级的步骤和思路大致就是这样，至于如何更好的返回提示结果，根据项目自定义。</p> <p>不过还存在一个问题，如果想在容错类中拿到具体的错误 ，方便之后的问题排查，应该怎么做？</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60847.htm">宠物贩卖需要什么手续（卖宠物合法吗）</a></p>
+                                        <p>下一个：<a href="/news/article-61430.htm">Docker拉取镜像失败报错Error response from daemon: Get https://registry-1.docker.io解决办法</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-25590.htm" title="泰迪犬出售需要的联系,便宜出（泰迪买卖吧百度贴吧）">泰迪犬出售需要的联系,便宜出（泰迪买卖吧百度贴吧）</a></li>
+                        <li class="py-2"><a href="/news/article-30745.htm" title="mybatis &#8211; PerpetualCache 一级缓存">mybatis &#8211; PerpetualCache 一级缓存</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-13-free-subscribe-node.htm" title="2月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接">2月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-48836.htm" title="人和动物的狂犬疫苗是一样的吗（人和动物的狂犬疫苗是一样的吗图片）">人和动物的狂犬疫苗是一样的吗（人和动物的狂犬疫苗是一样的吗图片）</a></li>
+                        <li class="py-2"><a href="/news/article-29785.htm" title="Metalama简介3.自定义.NET项目中的代码分析">Metalama简介3.自定义.NET项目中的代码分析</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-latest-hysteria-node.htm" title="11月14日 | Hysteria2每天更新22.4M/S免费节点订阅链接">11月14日 | Hysteria2每天更新22.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-62022.htm" title="瑞鹏宠物医院收费价目表最新版查询（瑞鹏宠物医院收费价目表最新版查询结果）">瑞鹏宠物医院收费价目表最新版查询（瑞鹏宠物医院收费价目表最新版查询结果）</a></li>
+                        <li class="py-2"><a href="/news/article-43379.htm" title="安安宠医上班时间（安安宠物医院招聘网）">安安宠医上班时间（安安宠物医院招聘网）</a></li>
+                        <li class="py-2"><a href="/news/article-41884.htm" title="CesiumJS 2022^ 原理[2] 渲染架构之 Primitive &#8211; 创建并执行指令">CesiumJS 2022^ 原理[2] 渲染架构之 Primitive &#8211; 创建并执行指令</a></li>
+                        <li class="py-2"><a href="/news/article-54046.htm" title="新手开店适合开什么店门面好（新手开店适合开什么店门面好呢）">新手开店适合开什么店门面好（新手开店适合开什么店门面好呢）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-60846.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>vue-cli4.5.13按需引入vant，解决vant样式失效问题</title>
+        <meta name="description" content="1.使用vue-cli4.5.13新建vue项目 ①先全局安装最新版本的vue-cli,如果安装了旧版本的，最好先卸载 npm install-g @vue/cli #OR yarn global a" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-60846.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="vue-cli4.5.13按需引入vant，解决vant样式失效问题" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/2184102296bc92088af9fedce7b2b8bf.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:10:29" />
+    <meta property="og:updated_time" content="2025-02-22T07:10:29" />
+        <meta property="og:description" content="1.使用vue-cli4.5.13新建vue项目 ①先全局安装最新版本的vue-cli,如果安装了旧版本的，最好先卸载 npm install-g @vue/cli #OR yarn global a" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue-cli4.5.13按需引入vant，解决vant样式失效问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>vue-cli4.5.13按需引入vant，解决vant样式失效问题</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>1.使用vue-cli4.5.13新建vue项目<br /> ①先全局安装最新版本的vue-cli,如果安装了旧版本的，最好先卸载</p> <pre><code class="prism language-javascript">npm install<span class="token operator">-</span>g @vue<span class="token operator">/</span>cli #<span class="token constant">OR</span> yarn global add @vue<span class="token operator">/</span>cli</code></pre> <p>@创建项目</p> <pre><code class="prism language-javascript">vue create 自己项目的名称</code></pre> <p>2，下载vant</p> <pre><code class="prism language-javascript">npm i vant<span class="token operator">-</span><span class="token constant">S</span></code></pre> <p>3.下载babel-plugin-import并在babel.config.js中修改配置如下（babel-plugin-import文档上有详细说明如何配置）</p> <pre><code class="prism language-javascript">module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>   presets<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'@vue/cli-plugin-babel/preset'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>   plugins<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'import'</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>       libraryName<span class="token punctuation">:</span><span class="token string">'vant'</span><span class="token punctuation">,</span>       libraryDirectory<span class="token punctuation">:</span><span class="token string">'es'</span><span class="token punctuation">,</span>       style<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">'vant'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">}</span></code></pre> <p>4;使用</p> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> Button<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vant'</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Button<span class="token punctuation">)</span></code></pre> <p>注：可在当前页面引入，也可新建一个文件，把需要的组件引入后再在main.js中引入即可</p> <p><strong>问题：按需引入后，vant样式不生效，改为全局引入也不生效</strong><br /><strong>发现问题如下：</strong></p> <pre><code class="prism language-javascript">发现vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>js中的css配置如下   css<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>     extract<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment">// 是否使用css分离插件 ExtractTextPlugin</span>     sourceMap<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">// 开启 CSS source maps?</span>     loaderOptions<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>       less<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>         lessOptions<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>           javascriptEnabled<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>           modifyVars<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token comment">/* less 变量覆盖，用于自定义主题 */</span><span class="token string">'primary-color'</span><span class="token punctuation">:</span><span class="token string">'#1890FF'</span><span class="token punctuation">,</span><span class="token string">'link-color'</span><span class="token punctuation">:</span><span class="token string">'#1890FF'</span><span class="token punctuation">,</span><span class="token string">'border-radius-base'</span><span class="token punctuation">:</span><span class="token string">'4px'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>     requireModuleExtension<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token operator">**</span><span class="token comment">//这一项被设置成了false，导致组件库样式不生效，改为true         	就好了**</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre> <p><strong>最终配置改为：</strong></p> <pre><code class="Bash"><xmp>css: { extract: true, // 是否使用css分离插件 ExtractTextPlugin sourceMap: false, // 开启 CSS source maps? loaderOptions: { less: { lessOptions: { javascriptEnabled: true, modifyVars: { /* less 变量覆盖，用于自定义主题 */ ‘primary-color’: ‘#1890FF’, ‘link-color’: ‘#1890FF’, ‘border-radius-base’: ‘4px’ } } } }, requireModuleExtension: true }</xmp></code></pre> <p> 重新编译启动项目后，发现样式生效了，特意记录一下！</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60253.htm">动物疫苗接种时间查询app（动物疫苗批号查询）</a></p>
+                                        <p>下一个：<a href="/news/article-60847.htm">宠物贩卖需要什么手续（卖宠物合法吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-36945.htm" title="自己帮宠物打疫苗怎么打（自己给宠物打疫苗有危险吗）">自己帮宠物打疫苗怎么打（自己给宠物打疫苗有危险吗）</a></li>
+                        <li class="py-2"><a href="/news/article-48837.htm" title="安安宠物医院电话号码（安安宠物医院招聘网）">安安宠物医院电话号码（安安宠物医院招聘网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-high-speed-nodes.htm" title="11月18日 | Hysteria2每天更新18.2M/S免费节点订阅链接">11月18日 | Hysteria2每天更新18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-hysteria-node.htm" title="11月11日 | Hysteria2每天更新21.2M/S免费节点订阅链接">11月11日 | Hysteria2每天更新21.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47327.htm" title="广州宠物领养网免费地址查询（广州宠物领养网免费地址查询官网）">广州宠物领养网免费地址查询（广州宠物领养网免费地址查询官网）</a></li>
+                        <li class="py-2"><a href="/news/article-36468.htm" title="宠物粮食代工一吨2万一贵吗知乎 宠物粮食代工一吨2万一贵吗知乎">宠物粮食代工一吨2万一贵吗知乎 宠物粮食代工一吨2万一贵吗知乎</a></li>
+                        <li class="py-2"><a href="/news/article-26036.htm" title="和田市宠物市场地址（和田市宠物店在哪里）">和田市宠物市场地址（和田市宠物店在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-51914.htm" title="狗狗寄养中心（狗狗寄养中心装修）">狗狗寄养中心（狗狗寄养中心装修）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-hysteria-node-share.htm" title="1月22日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.5M/S免费节点订阅链接">1月22日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-sing-hysteria-windows.htm" title="1月31日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.5M/S免费节点订阅链接">1月31日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.5M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
