@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-65685.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>vue妙用ref父组件访问子组件中的值和调用子组件的方法</title>
+        <meta name="description" content="按钮控制弹框显示的两种写法 1, 法一 &lt;child-dialog :visible="visible"&gt;&lt;/child-dialog&gt; // 在data里面定义visible" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-65685.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="vue妙用ref父组件访问子组件中的值和调用子组件的方法" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/4347439740f0ed22054e5e37e60319c1.webp" />
+        <meta property="og:release_date" content="2025-03-02T09:36:30" />
+    <meta property="og:updated_time" content="2025-03-02T09:36:30" />
+        <meta property="og:description" content="按钮控制弹框显示的两种写法 1, 法一 &lt;child-dialog :visible="visible"&gt;&lt;/child-dialog&gt; // 在data里面定义visible" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue妙用ref父组件访问子组件中的值和调用子组件的方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>vue妙用ref父组件访问子组件中的值和调用子组件的方法</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <h2>按钮控制弹框显示的两种写法</h2> <p><strong>1, 法一</strong></p> <pre><code class="language-html">&lt;child-dialog :visible="visible"&gt;&lt;/child-dialog&gt; // 在data里面定义visible &lt;div @click="visible = true"&gt;按钮&lt;/div&gt;</code></pre> <p><strong>2, 法二</strong></p> <pre><code class="language-html">&lt;child-dialog ref="childDia" @childConfirm="childConfirm"&gt;&lt;/child-dialog&gt; &lt;div @click="$refs.childDia.showAlert()"&gt;按钮&lt;/div&gt; // childConfirm,子组件传值 // showAlert(),子组件里的方法</code></pre> <p><strong>注解: ref 有三种用法：</strong>&nbsp;  </p> <ul> <li> <p>1、ref 加在普通的 DOM 元素上使用,引用this.ref.name 指向的就是 DOM 元素  </p> </li> <li> <p>2、ref 加在子组件上,用this.ref.name 获取到的是组件实例,可以使用组件的所有方法   </p> </li> <li> <p>3、当 v-for 用于元素或组件的时候,引用信息将是包含 DOM 节点或组件实例的数组</p> </li> <li> <p>4、ref 需要在dom渲染完成后才会有,在使用的时候确保dom已经渲染完成,。比如在生命周期 mounted(){} 钩子中调用,或者在 this.$nextTick(()=&gt;{}) 中调用</p> </li> <li> <p>5、如果ref 是循环出来的,有多个重名,那么ref的值会是一个数组,此时要拿到单个的ref 只需要循环就可以了</p> <p> <img fetchpriority="high" decoding="async" alt="" height="440" src="http://img.555519.xyz/uploads/20221231/303afcdfe3fcff566545da579fc58690.jpg"></p> <p><img decoding="async" alt="" height="765" src="http://img.555519.xyz/uploads/20221231/8019549fc02c5dff830190d7efd14a66.jpg"></p> </li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65057.htm">React Ant Design Pro + .Net5 WebApi：后端环境搭建-IdentityServer4（二）授权模式</a></p>
+                                        <p>下一个：<a href="/news/article-65686.htm">开宠物用品店挣钱吗知乎推荐（开宠物用品店货源）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-hysteria-node-github.htm" title="1月27日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.7M/S免费节点订阅链接">1月27日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-53509.htm" title="宠物寄养协议范本大全（宠物店寄养协议文字pdf文件）">宠物寄养协议范本大全（宠物店寄养协议文字pdf文件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-node-share.htm" title="2月17日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.6M/S免费节点订阅链接">2月17日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26981.htm" title="家养比熊出售（比熊能卖多少钱）">家养比熊出售（比熊能卖多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-hysteria-node.htm" title="1月25日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接">1月25日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-today-hysteria-node.htm" title="1月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接">1月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-39912.htm" title="宠物买卖纠纷找哪个部门协调解决 宠物买卖纠纷找哪个部门协调解决呢">宠物买卖纠纷找哪个部门协调解决 宠物买卖纠纷找哪个部门协调解决呢</a></li>
+                        <li class="py-2"><a href="/news/article-29786.htm" title="十大品牌狗粮的排行榜（十大品牌狗粮的排行榜有哪些）">十大品牌狗粮的排行榜（十大品牌狗粮的排行榜有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-free-node-subscribe.htm" title="2月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 22M/S免费节点订阅链接">2月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 22M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-hysteria-node.htm" title="12月16日 | Hysteria2每天更新19.2M/S免费节点订阅链接">12月16日 | Hysteria2每天更新19.2M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
