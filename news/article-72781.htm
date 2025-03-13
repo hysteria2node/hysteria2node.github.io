@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-72781.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>【Golang实战】反射设置结构体字段值</title>
+        <meta name="description" content="这个测试用例，是在上一篇通过反射自定义排序字段的基础上做的补充，因为在业务代码中涉及到slice排序完之后，给最小元素的字段赋值场景。 type Str struct { 	A string 	V i" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-72781.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="【Golang实战】反射设置结构体字段值" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/aa25461ca80c79fa0640c4f8b8b6dde3.webp" />
+        <meta property="og:release_date" content="2025-03-13T09:21:06" />
+    <meta property="og:updated_time" content="2025-03-13T09:21:06" />
+        <meta property="og:description" content="这个测试用例，是在上一篇通过反射自定义排序字段的基础上做的补充，因为在业务代码中涉及到slice排序完之后，给最小元素的字段赋值场景。 type Str struct { 	A string 	V i" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【Golang实战】反射设置结构体字段值">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>【Golang实战】反射设置结构体字段值</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> <p>这个测试用例，是在上一篇通过反射自定义排序字段的基础上做的补充，因为在业务代码中涉及到slice排序完之后，给最小元素的字段赋值场景。</p> <pre><code class="prism language-golang">type Str struct { 	A string 	V int } func TestReflectMapSet(t *testing.T) { 	var ddd = map[int]*Str{ 		2:  {A: "test A", V: 2}, 		1:  {A: "test b", V: 1}, 		-1: {A: "test c", V: -1}, 	} 	tmpData := ddd[1]     // tmpData 一定是指针类型的 	reflect.ValueOf(tmpData).Elem().FieldByName("V").SetInt(22) 	ddd[1] = tmpData 	for _, d := range ddd { 		t.Log(d) 	} } </code></pre> <p>输出：</p> <pre><code class="prism language-sh">=== RUN   TestReflectMapSet     TestReflectMapSet: http_test.go:183: &amp;{test A 2}     TestReflectMapSet: http_test.go:183: &amp;{test b 22}     TestReflectMapSet: http_test.go:183: &amp;{test c -1} --- PASS: TestReflectMapSet (0.00s) PASS </code></pre> <p>以下是结合了通过反射自定义字段排序，以及给指定字段赋值的业务代码</p> <pre><code class="prism language-golang">type DividedDecInfo struct { 	SkuId        uint64 	CouponAmount int }  func TestReflectSort(t *testing.T) { 	var data = map[uint64]*DividedDecInfo{ 		12: {SkuId: 12, CouponAmount: 3}, 		13: {SkuId: 13, CouponAmount: 4}, 		34: {SkuId: 34, CouponAmount: 5}, 	} 	sortByType2(data, 13, "CouponAmount") 	for _, d := range data { 		t.Log(d) 	} }  func sortByType2(data map[uint64]*DividedDecInfo, amount int, amountObj string) { 	var ( 		tmpDdi         []*DividedDecInfo 		num, tmpAmount int 	) 	for _, ddi := range data { 		tmpDdi = append(tmpDdi, ddi) 	} 	num = len(tmpDdi) 	if num &gt;= 2 { 		// 反射排序 		sort.Slice(tmpDdi, func(i, j int) bool { 			tmp := reflect.ValueOf(tmpDdi) 			return tmp.Index(i).Elem().FieldByName(amountObj).Int() &gt; tmp.Index(j).Elem().FieldByName(amountObj).Int() 		}) 		refTmp := reflect.ValueOf(tmpDdi) 		for i := 0; i &lt;= num-2; i++ { 			log.Println(tmpDdi[i]) 			// 反射取值 			tmpAmount += int(refTmp.Index(i).Elem().FieldByName(amountObj).Int()) 		} 		// 反射赋值 		tmpData := data[tmpDdi[num-1].SkuId] 		reflect.ValueOf(tmpData).Elem().FieldByName(amountObj).SetInt(int64(amount - tmpAmount)) 	} } </code></pre> <p>输出：</p> <pre><code class="prism language-sh">=== RUN   TestReflectSort 2021/02/14 22:38:30 &amp;{34 5} 2021/02/14 22:38:30 &amp;{13 4}     TestReflectSort: http_test.go:215: &amp;{12 4}     TestReflectSort: http_test.go:215: &amp;{13 4}     TestReflectSort: http_test.go:215: &amp;{34 5} --- PASS: TestReflectSort (0.02s) PASS </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-72113.htm">宠物粮食品牌名字4个字大全及图片高清 宠物粮食品牌名字4个字大全及图片高清版</a></p>
+                                        <p>下一个：<a href="/news/article-72782.htm">广州领养狗狗的平台（广州领养狗狗的平台叫什么）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-40912.htm" title="vue的router-link的replace属性&amp;编程式路由导航&amp;缓存路由组件&amp;两个新的生命周期钩子&amp;路由守卫">vue的router-link的replace属性&amp;编程式路由导航&amp;缓存路由组件&amp;两个新的生命周期钩子&amp;路由守卫</a></li>
+                        <li class="py-2"><a href="/news/article-61430.htm" title="Docker拉取镜像失败报错Error response from daemon: Get https://registry-1.docker.io解决办法">Docker拉取镜像失败报错Error response from daemon: Get https://registry-1.docker.io解决办法</a></li>
+                        <li class="py-2"><a href="/news/article-69492.htm" title="动物疫苗接种时间要求是什么样的呢（动物 疫苗）">动物疫苗接种时间要求是什么样的呢（动物 疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-node-subscribe-links.htm" title="2月22日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接">2月22日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-63214.htm" title="女生就业前景最好的十大热门专业2021（女生就业前景最好的十大热门专业大专）">女生就业前景最好的十大热门专业2021（女生就业前景最好的十大热门专业大专）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-hysteria-node-github.htm" title="1月27日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.7M/S免费节点订阅链接">1月27日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-56263.htm" title="动物打疫苗注意事项有哪些方面（动物打疫苗有什么作用）">动物打疫苗注意事项有哪些方面（动物打疫苗有什么作用）</a></li>
+                        <li class="py-2"><a href="/news/article-46354.htm" title="防火门10大品牌有哪些(防火门品牌排行榜前十名)">防火门10大品牌有哪些(防火门品牌排行榜前十名)</a></li>
+                        <li class="py-2"><a href="/news/article-53508.htm" title="国内十大宠物粮食品牌排名榜最新图片（宠物粮销量排名）">国内十大宠物粮食品牌排名榜最新图片（宠物粮销量排名）</a></li>
+                        <li class="py-2"><a href="/news/article-46855.htm" title="动物疫苗哪个好 动物疫苗品牌">动物疫苗哪个好 动物疫苗品牌</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
