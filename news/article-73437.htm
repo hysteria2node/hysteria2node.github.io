@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-73437.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>二叉树与堆</title>
+        <meta name="description" content="树的定义  树是一种数据结构，树结构只有一个根节点，除根节点外，其余节点被分成M(M&gt;0) 个互不相交的集合T1,T2,T3,......,Tm. 其中每一个集合Ti(1 &lt; i &lt;" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-73437.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="二叉树与堆" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/438bef0ac540dc91365222c20da82ac0.webp" />
+        <meta property="og:release_date" content="2025-03-14T07:05:03" />
+    <meta property="og:updated_time" content="2025-03-14T07:05:03" />
+        <meta property="og:description" content="树的定义  树是一种数据结构，树结构只有一个根节点，除根节点外，其余节点被分成M(M&gt;0) 个互不相交的集合T1,T2,T3,......,Tm. 其中每一个集合Ti(1 &lt; i &lt;" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="二叉树与堆">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>二叉树与堆</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div class="toc"> <div class="toc-container-header"><span style="font-size: 1.17em;">树的定义</span></div> </div> <p>树是一种数据结构，树结构只有一个根节点，除根节点外，其余节点被分成M(M&gt;0) 个互不相交的集合T1,T2,T3,......,Tm. 其中每一个集合Ti(1 &lt; i &lt; m)又是一颗与树结构类似的子树。每个子树的根节点有且只有一个前驱，可以有0个或多个后继。因此，树是递归定义的。<br /> 如图是一颗树结构：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/62eb76942c3421977d0f43cde763da16.jpg" alt="二叉树与堆"><br /> 由于树结构只有一个前驱，所以树结构不能出现交叉，如下不是一棵树结构<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a3adcac8db3783ffef9e5a467addf3ec.jpg" alt="二叉树与堆"><br /> 这种结构称为树结构是因为它像生活中倒着的树：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/f5172114949431740ad5d5ac5e02148f.jpg" alt="二叉树与堆"></p> <h3 id="树的相关概念">树的相关概念</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/1b0646be1ebe7b5baab0138fd457ea7e.jpg" alt="二叉树与堆"><br /><strong>节点的度：</strong>一个节点含有子树的个数成为节点的度；(上图，B节点的度为3)<br /><strong>叶节点或终端节点：</strong>度为0的节点称为叶节点或终端节点；(一般称叶节点，上图H节点是叶节点)<br /><strong>非终端节点或分支节点：</strong>度不为零的节点；（上图的非叶节点都是)<br /><strong>双亲结点或父节点：</strong>若一个节点含有一个子节点，则这个节点称为其子节点的父节点；(树中父节点只有一个，子节点可以有很多个;上图A节点是B节点的父节点)<br /><strong>孩子节点或子节点：</strong>一个节点的子树的根节点称为该点的子节点；(上图K节点是F节点的子节点)<br /><strong>兄弟节点：</strong>具有相同父节点的子节点互称兄弟节点；(上图H,I,J互称兄弟节点)<br /><strong>树的度：</strong>一棵树中度最大的节点的度称为树的度；(上图树的度为6)<br /><strong>节点的层次：</strong>从根节点开始，根节点为第一层，其子树一层为第二层，以此类推；(有些地方根节点从第0层开始计数)<br /><strong>树的高度或深度：</strong>树中节点的最大层数；(根节点从1开始计数，上图树的高度为4)<br /><strong>堂兄弟节点：</strong>双亲在同一层的节点互称堂兄弟；(上图J和K互称堂兄弟)<br /><strong>节点的祖先：</strong>从根到该节点所经分支上的所有节点；(父节点也是祖先节点)<br /><strong>子孙节点：</strong>以某节点为根的子树中任一节点都称该节点的子孙节点；<br /><strong>森林：</strong>由m(m &gt; 0)棵互不相交的树的集合称为森林；(一棵树也可以构成森林)</p> <blockquote> <p>树的节点个数 m(m ≥ 0)，当节点数=0时，树为空树</p> </blockquote> <h3 id="树的表示">树的表示</h3> <p>树的表示由很多种方法，如双亲表示法，孩子表示法，双亲孩子表示法和孩子兄弟表示法等，这里介绍比较优秀的<strong>孩子兄弟表示法</strong>。</p> <pre><code class="language-c">typedef int DateType; struct Node {     struct Node* first_child;//指向第一个孩子节点     struct Node* next_brother;//指向下一个兄弟节点     DateType date; }</code></pre> <p>孩子兄弟表示法是一种简洁的表示法，表示方法为：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/f4009bbf57248f4a749206c1e0af35a9.jpg" alt="二叉树与堆"><br /> 如左边那棵树，它的孩子兄弟表示法如右边表示。</p> <h3 id="树的应用">树的应用</h3> <p>树在实际中的应用有作为计算机系统的文件系统的目录：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/ee12c10d2016ea3a54b6fcefd2a90b00.jpg" alt="二叉树与堆"><br /> 如上图为Linux系统的文件目录，它也是树结构。</p> <h2 id="二叉树">二叉树</h2> <h3 id="二叉树的定义">二叉树的定义</h3> <p>二叉树也是一种树，它的每个节点的度m(0≤m≤2)，二叉树的度不能超过2。二叉树可以为空。</p> <h3 id="二叉树特点">二叉树特点</h3> <p>二叉树有左右之分，不能颠倒，因此二叉树是有序树。<br /><strong>满二叉树：</strong>一个二叉树每一层节点都到达最大值，那么这棵树就是满二叉树。(若一颗二叉树高度为h，节点数为 2<sup>h</sup> - 1 则这棵二叉树是满二叉树)<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/fba5c885c59473aafde1651251959705.jpg" alt="二叉树与堆"><br /><strong>完全二叉树:</strong>若二叉树有n个节点，给每个节点按行从根节点依次连续编号，完全二叉树编号与满二叉树1到n个节点编号完全对应，则称此树为完全二叉树。(满二叉树是特殊的完全二叉树)<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/bf50176438d7e49fc9d5198deebbfbec.jpg" alt="二叉树与堆"></p> <h3 id="二叉树性质">二叉树性质</h3> <blockquote> <p>1.若规定根节点层数为1，则一颗非空二叉树第h层最多有2<sup>(h-1)</sup>个节点。<br /> 2.若规定根节点层数为1，则深度为h的二叉树的最大节点数是2<sup>h</sup> - 1。<br /> 3.对任何一颗二叉树，如果度为0的节点个数为n<sub>0</sub>,度为2的节点个数为n<sub>2</sub>,则有n<sub>0</sub> = n<sub>2</sub> + 1.<br /> 4.若规定根节点的层数为1，具有n个节点的满二叉树的深度，h = log₂(n + 1)。<br /> 5.对于具有n个节点的完全二叉树，如果按照从上至下从左至右的数组顺序对所有节点从0开始编号，则对于序号为i的节点有：</p> <blockquote> <p>1.若i &gt; 0,i位置节点的双亲序号：(i - 1) / 2; i = 0,i为根节点编号，无双亲节点<br /> 2.若2i+1&lt;n,2i+1为编号i节点的左孩子序号；2i+1≥n,则i节点无左孩子<br /> 3.若2i+2&lt;n,2i+2为编号i节点的右孩子序号；2i+2≥n,则i节点无右孩子</p> </blockquote> </blockquote> <h3 id="二叉树的存储结构">二叉树的存储结构</h3> <p>二叉树一般有两种存储结构，一种顺序结构，一种链式结构</p> <blockquote> <ol> <li> <p>顺序存储<br /> 顺序结构存储就是使用数组存储，一般使用数组只适合表示完全二叉树，因为不是完全二叉树会有空间浪费。一般只有堆用数组来存储。二叉树顺序存储在物理上是一个数组，在逻辑上是一棵二叉树。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/2dd325c5237b872cc1acbae59753737b.jpg" alt="二叉树与堆"></p> </li> <li> <p>链式存储<br /> 二叉树的链式存储结构是指用链表来表示一棵二叉树，用链来指示元素的逻辑关系。通常方法是链表中每个节点由三个域组成，数据域和左右指针域，左右指针用来给出该节点左孩子和右孩子所在的链节点的存储地址。链式结构分为二叉链和三叉链。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/324cbd0a94c019d4091a3b4d92ca6462.jpg" alt="二叉树与堆"></p> <pre><code class="language-c">typedef int BTDataType; //二叉链 struct BinaryTreeNode {     struct BinaryTreeNode *lChild;     struct BinaryTreeNode *rChild;     BTDataType Data; }  //三叉链 struct BinaryTreeNode {     struct BinaryTreeNode *parent;     struct BinaryTreeNode *lChild;     struct BinaryTreeNode *rChild;     BTDataType Data; }</code></pre> </li> </ol> </blockquote> <h2 id="堆">堆</h2> <p>这里所说的堆是一种数据结构，它不同于堆栈区所谓的堆，上面说了，堆是一种二叉树形式，它存储形式是顺序存储，逻辑上又是二叉树形式。堆有大堆和小堆。大堆就是任何节点它的父节点数据都大于孩子节点。小堆反之。<br /> 堆在存储结构上看与数组没有区别，但它在逻辑上是一棵所有节点的数据都大于(大堆)或小于(小堆)孩子节点的特殊二叉树。将一个堆从零建起来需要用到之前提到的一些二叉树的父节点与孩子节点之间的关系，建起一个小堆，每向堆尾插入数据，都需要向上调整一次；若父节点数据大于孩子节点，则需要交换父节点与子节点的数据，若不大于则停止调整，这个过程就是向上调整。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/43c82f9ac0284e0971e8c530990ff891.jpg" alt="二叉树与堆"><br /> 将上面的数组建为一个小堆，如：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/18db6e00d392076a6b47916d7e1738b5.jpg" alt="二叉树与堆"><br /> 将数据一个一个插入堆中，向上调整，最终建好的堆为：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9ca1dbb15fa522d1aeda67c68cb48ffa.jpg" alt="二叉树与堆"></p> <p>建堆需要实现的函数有：</p> <pre><code class="language-c">//Heap.h: typedef int DataType; typedef struct Heap { 	size_t size; 	DataType* a; 	size_t capacity; }heap;  void HeapInit(heap* hp);//初始化堆 void HeapPush(heap* hp, DataType x);//入堆 void AdjustUp(heap* hp, size_t child);//向上调整 void BuySpace(heap* hp);//申请空间 void Swap(DataType* x, DataType* y);//交换值 void HeapPrint(heap* hp);//打印堆 void AdjustDown(heap* hp, size_t parent);//向上调整 void HeapInsert(heap* hp, DataType x, size_t pos);//向堆任意位置插入值</code></pre> <p>上述函数有些不是必须，如<strong>AdjustDown()</strong>，若只是建堆，没有其他作用则此函数用处不大，该函数主要用在堆排序中。<br /> 建堆的主要函数实现：</p> <pre><code class="language-c">void AdjustUp(heap* hp,size_t child) { 	assert(hp); 	size_t parent = (child - 1) / 2; 	while (child != 0) 	{ 		if (hp-&gt;a[child] &lt; hp-&gt;a[parent]) 			Swap(hp-&gt;a + child, hp-&gt;a + parent); 		child = parent; 		parent = (child - 1) / 2; 	} }</code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-73436.htm">anyMatch和allMatch以及noneMatch的区别</a></p>
+                                        <p>下一个：<a href="/news/article-74102.htm">宠物领养协议书模板下载电子版 宠物领养协议书模板下载电子版图片</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-58624.htm" title="动物注射疫苗注射哪里最安全 动物注射疫苗注射哪里最安全呢">动物注射疫苗注射哪里最安全 动物注射疫苗注射哪里最安全呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-subscribe-node.htm" title="3月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接">3月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-37429.htm" title="猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）">猫咪疫苗三针多少钱（猫咪的三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-12-node-share.htm" title="3月12日更新 | V2ray/Trojan/SSR/Hysteria2 | 20M/S免费节点订阅链接">3月12日更新 | V2ray/Trojan/SSR/Hysteria2 | 20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47326.htm" title="初识Java以及一些常见的数据类型">初识Java以及一些常见的数据类型</a></li>
+                        <li class="py-2"><a href="/news/article-41884.htm" title="CesiumJS 2022^ 原理[2] 渲染架构之 Primitive &#8211; 创建并执行指令">CesiumJS 2022^ 原理[2] 渲染架构之 Primitive &#8211; 创建并执行指令</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-hysteria-node-github.htm" title="1月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 20M/S免费节点订阅链接">1月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-72782.htm" title="广州领养狗狗的平台（广州领养狗狗的平台叫什么）">广州领养狗狗的平台（广州领养狗狗的平台叫什么）</a></li>
+                        <li class="py-2"><a href="/news/article-38924.htm" title="领养狗狗一般多少钱（领养狗狗花钱吗）">领养狗狗一般多少钱（领养狗狗花钱吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-high-speed-nodes.htm" title="3月9日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.6M/S免费节点订阅链接">3月9日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.6M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

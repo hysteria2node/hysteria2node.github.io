@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-73436.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>anyMatch和allMatch以及noneMatch的区别</title>
+        <meta name="description" content="一.方法的介绍: boolean anyMatch(Predicate&lt;? super T&gt; predicate) 只要有一个条件满足即返回true boolean allMatch(Pr" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-73436.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="anyMatch和allMatch以及noneMatch的区别" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/190ee22d516d4f1811ad7ec39b2231fa.webp" />
+        <meta property="og:release_date" content="2025-03-14T07:05:03" />
+    <meta property="og:updated_time" content="2025-03-14T07:05:03" />
+        <meta property="og:description" content="一.方法的介绍: boolean anyMatch(Predicate&lt;? super T&gt; predicate) 只要有一个条件满足即返回true boolean allMatch(Pr" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="anyMatch和allMatch以及noneMatch的区别">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>anyMatch和allMatch以及noneMatch的区别</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>一.方法的介绍:</strong></p> <p><code>boolean anyMatch(Predicate&lt;? super T&gt; predicate)</code><br /> 只要有一个条件满足即返回true</p> <p><code>boolean allMatch(Predicate&lt;? super T&gt; predicate)</code><br /> 必须全部都满足才会返回true</p> <p><code>boolean noneMatch(Predicate&lt;? super T&gt; predicate)</code><br /> 全都不满足才会返回true</p> <p><strong>二.demo演示:</strong></p> <p>目的: 过滤集合中的元素,过滤条件是一个集合中的多个元素</p> <p>1.创建一个实体类:</p> <pre><code> public class User {      private String name;     private String phone;     public User(String name, String phone) {         this.name = name;         this.phone = phone;     }     public User() {     }     public String getName() {         return name;     }     public void setName(String name) {         this.name = name;     }       public String getPhone() {         return phone;     }     public void setPhone(String phone) {         this.phone = phone;     }     @Override     public String toString() {         return "User{" +                 "name='" + name + '\'' +                 ", phone='" + phone + '\'' +                 '}';     } }</code></pre> <p>2.数据的填充和测试:</p> <pre><code>public class TestStream {     public static void main(String[] args) {              User user = new User("李","1223123123");         User user1 = new User("哈哈","412412412");         User user2 = new User("haha","231231");         User user3 = new User("李","4241241241"); 	   /** 	    * 需要过滤的源数据 	    */         List&lt;User&gt; list =  new ArrayList&lt;User&gt;();         list.add(user);         list.add(user1);         list.add(user2);         list.add(user3);         System.out.println(list.size());         /**         * 过滤条件         * 只要名字是haha或者李的对象集合         */         List&lt;User&gt; userList = new ArrayList();         userList.add(new User("haha","2131231"));         userList.add(new User("李","231231"));         System.out.println(userList.size());                  List&lt;User&gt; result = list.stream().filter(users -&gt; userList.stream().anyMatch(user5 -&gt; user5.getName().equals(users.getName()))).collect(Collectors.toList());         System.out.println(result.size());         result.forEach( aa -&gt;{             System.out.println("姓名: "+aa.getName()+"，手机号: "+aa.getPhone());         });     } }</code></pre> <p>3.测试结果:</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/5cc06841026673c6fb8de449f20dfdd6.jpg" alt="anyMatch和allMatch以及noneMatch的区别"><br /> 4.补充:<br /> 获取集合中名字是"李"的所有对象</p> <pre><code>List a = list.stream().filter(user4 -&gt; user4.getName().equals("李")).collect(Collectors.toList()); //遍历list集合 a.forEach(System.out::println);</code></pre> <p>心得:<br /> &nbsp;&nbsp;&nbsp;&nbsp;最近通过研究java8的流式集合,发现非常的实用和节约代码的编写时间,建议搭建有时间多学习多用。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-72782.htm">广州领养狗狗的平台（广州领养狗狗的平台叫什么）</a></p>
+                                        <p>下一个：<a href="/news/article-73437.htm">二叉树与堆</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-38424.htm" title="猫三联一共几针,多少钱天津（猫三联到底是两针还是三针）">猫三联一共几针,多少钱天津（猫三联到底是两针还是三针）</a></li>
+                        <li class="py-2"><a href="/news/article-41885.htm" title="开宠物店赚钱的美容店（开宠物店赚钱的美容店叫什么）">开宠物店赚钱的美容店（开宠物店赚钱的美容店叫什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-1-free-hysteria-node.htm" title="3月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.1M/S免费节点订阅链接">3月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-43380.htm" title="宠物领养系统数据库设计（实现宠物领养功能）">宠物领养系统数据库设计（实现宠物领养功能）</a></li>
+                        <li class="py-2"><a href="/news/article-36042.htm" title="宠物粮概念股 宠物粮概念股票有哪些">宠物粮概念股 宠物粮概念股票有哪些</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-today-hysteria-node.htm" title="1月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接">1月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-57396.htm" title="动物医院公示栏图片高清（动物医院宣传海报）">动物医院公示栏图片高清（动物医院宣传海报）</a></li>
+                        <li class="py-2"><a href="/news/article-48837.htm" title="安安宠物医院电话号码（安安宠物医院招聘网）">安安宠物医院电话号码（安安宠物医院招聘网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-hysteria-node-share.htm" title="1月23日更新 | V2ray/Trojan/SSR/Hysteria2 | 20M/S免费节点订阅链接">1月23日更新 | V2ray/Trojan/SSR/Hysteria2 | 20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-54610.htm" title="猫粮品牌推荐（猫粮品牌推荐大全）">猫粮品牌推荐（猫粮品牌推荐大全）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-74773.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PHP通过引用返回</title>
+        <meta name="description" content="介绍 在PHP中，也可以使函数返回引用。这对于查找引用应绑定到哪个变量很有用。要定义一个返回引用的函数，请在其名称前加上＆符号。 示例 在以下示例中，myfunction()定义为通过引用返回。它包含" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-74773.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="PHP通过引用返回" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/8d334fb6c493cf30a882c3f02598708d.webp" />
+        <meta property="og:release_date" content="2025-03-16T10:27:28" />
+    <meta property="og:updated_time" content="2025-03-16T10:27:28" />
+        <meta property="og:description" content="介绍 在PHP中，也可以使函数返回引用。这对于查找引用应绑定到哪个变量很有用。要定义一个返回引用的函数，请在其名称前加上＆符号。 示例 在以下示例中，myfunction()定义为通过引用返回。它包含" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PHP通过引用返回">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>PHP通过引用返回</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<h2>介绍</h2> <p>在PHP中<strong>，</strong>也可以使函数返回引用。这对于查找引用应绑定到哪个变量很有用。要定义一个返回引用的函数，请在其名称前加上<strong>＆</strong>符号。</p> <h2>示例</h2> <p>在以下示例中，myfunction()定义为通过引用返回。它包含一个静态变量，其引用被返回并分配给全局变量。局部静态变量的值也会改变，其参考值被分配了不同的值。</p> <h2>示例</h2> <pre>&lt;?php function&nbsp;&amp;myfunction(){ &nbsp;&nbsp;&nbsp;static&nbsp;$x=10; &nbsp;&nbsp;&nbsp;echo&nbsp;"x&nbsp;Inside&nbsp;function:&nbsp;",$x,"\n"; &nbsp;&nbsp;&nbsp;return&nbsp;$x; } $a=&amp;myfunction();&nbsp;//contains&nbsp;reference&nbsp;to&nbsp;4x&nbsp;in&nbsp;function echo&nbsp;"returned&nbsp;by&nbsp;reference:&nbsp;",&nbsp;$a,&nbsp;"\n"; $a=$a+10;&nbsp;//increments&nbsp;variable&nbsp;inside&nbsp;function&nbsp;too $a=&amp;myfunction(); ?&gt;</pre> <p>输出结果</p> <p>本示例给出以下输出</p> <pre>x&nbsp;Inside&nbsp;function:&nbsp;10 returned&nbsp;by&nbsp;reference:&nbsp;10 x&nbsp;Inside&nbsp;function:&nbsp;20</pre> <h2>方法返回参考</h2> <p>一个类也可以有一个能够返回引用的方法。这样可以从类外部确定私有实例变量的值</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;private&nbsp;$val; &nbsp;&nbsp;&nbsp;function&nbsp;__construct($x){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;val=$x; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;function&nbsp;&amp;getbyref(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$this-&gt;val; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;function&nbsp;getbyval(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$this-&gt;val; &nbsp;&nbsp;&nbsp;} } $a=new&nbsp;myclass(10); $b=&amp;$a-&gt;getbyref(); $b=100; echo&nbsp;"Value&nbsp;of&nbsp;private&nbsp;property:&nbsp;",&nbsp;$a-&gt;getbyval(); ?&gt;</pre> <p>输出结果</p> <p>以上脚本的结果如下</p> <pre>Value&nbsp;of&nbsp;private&nbsp;property:&nbsp;100</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-74103.htm">动物防疫站打疫苗吗 动物防疫站打疫苗吗要钱吗</a></p>
+                                        <p>下一个：<a href="/news/article-74774.htm">宠物医院需要几个医生（宠物医院需要几个医生的资质）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-59104.htm" title="动物疫苗的名词解释有哪些（动物疫苗的名词解释有哪些种类）">动物疫苗的名词解释有哪些（动物疫苗的名词解释有哪些种类）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-today-hysteria-node.htm" title="1月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接">1月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-51380.htm" title="宠物粮食品牌排名前十有哪些品种（宠物粮厂家）">宠物粮食品牌排名前十有哪些品种（宠物粮厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-49313.htm" title="动物防疫站疫苗免费接种吗 动物防疫站疫苗免费接种吗现在">动物防疫站疫苗免费接种吗 动物防疫站疫苗免费接种吗现在</a></li>
+                        <li class="py-2"><a href="/news/article-45872.htm" title="延吉宠颐生动物医院 延吉宠颐生动物医院电话">延吉宠颐生动物医院 延吉宠颐生动物医院电话</a></li>
+                        <li class="py-2"><a href="/news/article-52981.htm" title="宠物领养协议书范本大全图片模板 宠物领养协议书范本大全图片模板下载">宠物领养协议书范本大全图片模板 宠物领养协议书范本大全图片模板下载</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-today-hysteria-node.htm" title="1月26日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.2M/S免费节点订阅链接">1月26日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-high-speed-nodes.htm" title="3月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.8M/S免费节点订阅链接">3月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-node-share.htm" title="2月17日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.6M/S免费节点订阅链接">2月17日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-44872.htm" title="厦门宠物免费领养网站 厦门宠物免费领养网站有哪些">厦门宠物免费领养网站 厦门宠物免费领养网站有哪些</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
