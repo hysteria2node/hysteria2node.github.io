@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-77500.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>选择排序详解（Java实现）</title>
+        <meta name="description" content="一、基本思想 &nbsp; &nbsp; 简单选择排序是最简单直观的一种算法，每一趟从待排序的数据元素中选择最小（或最大）的一个元素作为首元素，直到所有元素排完为止，简单选择排序是不稳定排序。 &nb" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-77500.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="选择排序详解（Java实现）" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/3117224c622b87236faf9fd284b0b055.webp" />
+        <meta property="og:release_date" content="2025-03-20T10:00:17" />
+    <meta property="og:updated_time" content="2025-03-20T10:00:17" />
+        <meta property="og:description" content="一、基本思想 &nbsp; &nbsp; 简单选择排序是最简单直观的一种算法，每一趟从待排序的数据元素中选择最小（或最大）的一个元素作为首元素，直到所有元素排完为止，简单选择排序是不稳定排序。 &nb" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="选择排序详解（Java实现）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>选择排序详解（Java实现）</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>一、基本思想</p> <p>&nbsp; &nbsp; 简单选择排序是最简单直观的一种算法，每一趟从待排序的数据元素中选择最小（或最大）的一个元素作为首元素，直到所有元素排完为止，简单选择排序是不稳定排序。</p> <p>&nbsp; &nbsp; 在算法实现时，每一轮确定最小元素的时候会通过不断地比较交换来使得首位置为当前最小，交换是个比较耗时的操作。其实我们很容易发现，在还未完全确定当前最小元素之前，这些交换都是无意义的。</p> <p>&nbsp; &nbsp; 因此可以通过设置一个变量min，每一次比较出存储较小元素，并且记录当前元素的数组下标，当本轮循环结束之后，那这个变量min存储的就是当前最小元素的下标，此时再执行交换操作,以此确定本轮遍历的最小元素放到了数组前部。</p> <p>二、算法分析</p> <p>&nbsp; &nbsp; 简单选择排序通过上面优化之后，无论数组原始排列如何，比较次数是不变的；对于交换操作，在最好情况下也就是数组完全有序的时候，无需任何交换移动，在最差情况下，也就是数组倒序的时候，交换次数为n-1次。综合下来，时间复杂度为O(n2)</p> <p>三、编码实现</p> <pre class="has"><code class="language-java">package sort;  public class SelectSort { 	public static void main(String[] args) { 		//模拟数据 		int[] array = {52,63,14,59,68,35,8,67,45,99}; 		System.out.println("原数组："); 		for (int i : array) { 			System.out.print(i+" "); 		} 		System.out.println(); 		selectSort(array); 		System.out.println("排序后："); 		for (int i : array) { 			System.out.print(i+" "); 		} 	} 	 	public static void selectSort(int[] arr){ 		for(int i = 0; i &lt; arr.length-1; i++){ 			int min = i; 			for(int j = i+1; j &lt;arr.length ;j++){ 				if(arr[j]&lt;arr[min]){ 					min = j; 				} 			} 			if(min!=i){ 				swap(arr, i, min); 			} 		} 	} 	//完成数组两元素间交换 	public static void swap(int[] arr,int a,int b){ 		int temp = arr[a]; 		arr[a] = arr[b]; 		arr[b] = temp; 	} }</code></pre> <p>四、结果值查看</p> <pre class="has"><code>原数组： 52 63 14 59 68 35 8 67 45 99  排序后： 8 14 35 45 52 59 63 67 68 99</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-76807.htm">宠物医院投诉电话号码（宠物医院投诉电话号码是多少）</a></p>
+                                        <p>下一个：<a href="/news/article-77502.htm">记将一个大型客户端应用项目迁移到 dotnet 6 的经验和决策_在线工具</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-78874.htm" title="宠物粮食品牌取名字大全集图片（宠物粮食品牌起名大全）">宠物粮食品牌取名字大全集图片（宠物粮食品牌起名大全）</a></li>
+                        <li class="py-2"><a href="/news/article-43897.htm" title="开个宠物粮加工厂需要多少钱一个月 开个宠物粮加工厂需要多少钱一个月呢">开个宠物粮加工厂需要多少钱一个月 开个宠物粮加工厂需要多少钱一个月呢</a></li>
+                        <li class="py-2"><a href="/news/article-51380.htm" title="宠物粮食品牌排名前十有哪些品种（宠物粮厂家）">宠物粮食品牌排名前十有哪些品种（宠物粮厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share-links.htm" title="3月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接">3月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-today-hysteria-node.htm" title="1月8日 | Hysteria2每天更新21.4M/S免费节点订阅链接">1月8日 | Hysteria2每天更新21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-74102.htm" title="宠物领养协议书模板下载电子版 宠物领养协议书模板下载电子版图片">宠物领养协议书模板下载电子版 宠物领养协议书模板下载电子版图片</a></li>
+                        <li class="py-2"><a href="/news/article-42378.htm" title="流浪猫养多久才能算家猫（流浪猫要养多久才知道健康的）">流浪猫养多久才能算家猫（流浪猫要养多久才知道健康的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-node-subscribe.htm" title="2月7日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.9M/S免费节点订阅链接">2月7日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-72781.htm" title="【Golang实战】反射设置结构体字段值">【Golang实战】反射设置结构体字段值</a></li>
+                        <li class="py-2"><a href="/news/article-57958.htm" title="在Vue项目中使用mock假数据模拟后端接口">在Vue项目中使用mock假数据模拟后端接口</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
