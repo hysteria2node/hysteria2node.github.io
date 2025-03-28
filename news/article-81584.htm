@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-81584.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SpringAop实现原理及代理模式</title>
+        <meta name="description" content="Spring的AOP就是通过动态代理实现的。当为某个Bean或者某些Bean配置切面时，Spring会为其创建代理对象，当调用该对象的某个方法时，实际是调用生成的代理类的对象方法。Spring的Aop" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-81584.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="SpringAop实现原理及代理模式" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/3117224c622b87236faf9fd284b0b055.webp" />
+        <meta property="og:release_date" content="2025-03-26T08:54:52" />
+    <meta property="og:updated_time" content="2025-03-26T08:54:52" />
+        <meta property="og:description" content="Spring的AOP就是通过动态代理实现的。当为某个Bean或者某些Bean配置切面时，Spring会为其创建代理对象，当调用该对象的某个方法时，实际是调用生成的代理类的对象方法。Spring的Aop" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringAop实现原理及代理模式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>SpringAop实现原理及代理模式</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				</h1> <pre><code>Spring的AOP就是通过动态代理实现的。当为某个Bean或者某些Bean配置切面时，Spring会为其创建代理对象，当调用该对象的某个方法时，实际是调用生成的代理类的对象方法。Spring的Aop主要是使用了两个动态代理，分别是JDK的动态代理和CGLIB动态代理。</code></pre> <h2 id="1-jdk动态代理">1. JDK动态代理</h2> <pre><code> 如果代理类实现了接口，Spring默认会使用JDK动态代理。JDK的动态代理是基于反射实现。JDK通过反射，生成一个代理类，这个代理类实现了原来那个类的全部接口，并对接口中定义的所有方法进行了代理。当我们通过代理对象执行原来那个类的方法时，代理类底层会通过反射机制，调用我们实现的InvocationHandler接口的invoke方法。</code></pre> <details> <summary>点击查看代码</summary> <pre><code>/*  *  接口类  */ public interface Person {      void say(); }  /*  *  接口实现类  */ public class Man implements Person {      private String word;      public Man(String word){          this.word = word;     }      public Man(){      }      public void say(){          System.out.println("Man Can Say " + word);     } }  public class ManJDKProxy implements InvocationHandler {      /**      * 需要的代理对象      */     private Object o;      public Object bind(Object o){          this.o = o;         return Proxy.newProxyInstance(o.getClass().getClassLoader(), o.getClass().getInterfaces(), this);     }      @Override     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {          System.out.println("JDK Proxy Design");         return method.invoke(o, args);     } }  /**  * JDK动态代理  */ public class ProxyDesign_2 {      public static void main(String[] args) {          Man man = new Man("Hello");          Person p = (Person)new ManJDKProxy().bind(man);          p.say();     } }</code></pre> </details> <h3 id="-jdk动态代理的优缺点">* JDK动态代理的优缺点</h3> <pre><code>优点：     1. JDK动态代理是JDK原生的，不需要任何依赖即可使用     2. 通过反射机制生成代理类的速度要比CGLib操作字节码生成代理类的速度更快 缺点：     1. 如果要使用JDK动态代理，被代理的类必须实现了接口，否则无法代理(InvocationHandler)     2. JDK动态代理无法为没有在接口中定义的方法实现代理     3. JDK动态代理执行代理方法时，需要通过反射机制进行回调，此时方法执行的效率比较低</code></pre> <h2 id="2-cglib动态代理">2. CGLIB动态代理</h2> <pre><code> 若需要代理的类没有实现接口，JDK的动态代理就无法使用，Spring会使用CGLiB动态代理来生成代理对象。CGLiB直接操作字节码，生成类的子类，重写类的方法完成代理。</code></pre> <details> <summary>点击查看代码</summary> <pre><code>/*  *  接口类  */ public interface Person {      void say(); }  /*  *  接口实现类  */ public class Man implements Person {      private String word;      public Man(String word){          this.word = word;     }      public Man(){      }      public void say(){          System.out.println("Man Can Say " + word);     } }  public class ManCGLIBProxy {      public Object bind(Object target){          Enhancer enhancer = new Enhancer();         enhancer.setSuperclass(target.getClass());          enhancer.setCallback(new MethodInterceptor() {             @Override             public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {                  System.out.println("CGLIB Proxy Design");                 return method.invoke(target, objects);             }         });          return enhancer.create();     } }  /**  * CGLIB动态代理  */ public class ProxyDesign_3 {      public static void main(String[] args) {          Man man = new Man("Hello");          Person p = (Person)new ManCGLIBProxy().bind(man);          p.say();     } }</code></pre> </details> <h3 id="-cglib动态代理的优缺点">* CGLiB动态代理的优缺点</h3> <pre><code>优点：     1. 使用CGLIB代理的类，不需要实现接口，因为CGLIB生成的代理类是直接继承自需要被代理的类     2. CGLIB是通过修改字节码生成的代理类，所以CGLIB执行代理方法的效率要高于JDK的动态代理 缺点：     1. 因为CGLIB实现方式是重写父类的方法，所以对final方法，或者private方法是没有办法代理的     2. 因为CGLIB生成代理类的方式是通过操作字节码(asm工具包)，这种生成的代理类的方式比JDK通过反射生成代理类的方式的效率低</code></pre> <h2 id="3-spring项目中如何强制使用cglib代理方式">3. Spring项目中如何强制使用CGLIB代理方式</h2> <h3 id="-xml方式">* xml方式</h3> <pre><code>&lt;!-- aop:config用来在xml中配置切面，指定proxy-target-class="true" --&gt; &lt;aop:config proxy-target-class="true"&gt; 	&lt;!-- AOP相关配置 --&gt; &lt;/aop:config&gt;</code></pre> <h3 id="-aspect注解方式">* @Aspect注解方式</h3> <pre><code>&lt;!-- 将proxy-target-class配置设置为true --&gt; &lt;aop:aspectj-autoproxy proxy-target-class="true"/&gt;</code></pre> <h3 id="-配置类注解方式">* 配置类注解方式</h3> <pre><code>添加@EnableAspectJAutoProxy(proxyTargetClass = true)</code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80950.htm">宠物领养协议书范本大全图片（宠物领养协议书范本大全图片高清）</a></p>
+                                        <p>下一个：<a href="/news/article-81585.htm">Git和SVN的区别详解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-65685.htm" title="vue妙用ref父组件访问子组件中的值和调用子组件的方法">vue妙用ref父组件访问子组件中的值和调用子组件的方法</a></li>
+                        <li class="py-2"><a href="/news/article-71451.htm" title="开宠物店会亏本吗现在（开宠物店会不会赔本）">开宠物店会亏本吗现在（开宠物店会不会赔本）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-free-hysteria-node.htm" title="3月28日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接">3月28日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-72113.htm" title="宠物粮食品牌名字4个字大全及图片高清 宠物粮食品牌名字4个字大全及图片高清版">宠物粮食品牌名字4个字大全及图片高清 宠物粮食品牌名字4个字大全及图片高清版</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-hysteria-github.htm" title="3月23日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.1M/S免费节点订阅链接">3月23日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-9-hysteria-node.htm" title="2月9日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.5M/S免费节点订阅链接">2月9日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-38423.htm" title="动物疫苗生产厂家有哪些（生产动物疫苗的上市公司有哪些）">动物疫苗生产厂家有哪些（生产动物疫苗的上市公司有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-47326.htm" title="初识Java以及一些常见的数据类型">初识Java以及一些常见的数据类型</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-14-hysteria-node.htm" title="1月14日 | Hysteria2每天更新20.2M/S免费节点订阅链接">1月14日 | Hysteria2每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-50858.htm" title="动物医院主要工作 动物医院主要工作、遇到的问题及如何解决的">动物医院主要工作 动物医院主要工作、遇到的问题及如何解决的</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
