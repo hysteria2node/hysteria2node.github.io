@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-86605.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript从数组中计数/ par元素以下方法详解</title>
+        <meta name="description" content="我们需要编写一个函数来计算给定数字以下/上方的数组中有多少个元素。 以下是我们的数字数组- const&nbsp;array&nbsp;=&nbsp;[54,54,65,73,43,78,54,54," />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-86605.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="JavaScript从数组中计数/ par元素以下方法详解" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/438bef0ac540dc91365222c20da82ac0.webp" />
+        <meta property="og:release_date" content="2025-04-02T07:43:41" />
+    <meta property="og:updated_time" content="2025-04-02T07:43:41" />
+        <meta property="og:description" content="我们需要编写一个函数来计算给定数字以下/上方的数组中有多少个元素。 以下是我们的数字数组- const&nbsp;array&nbsp;=&nbsp;[54,54,65,73,43,78,54,54," />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JavaScript从数组中计数/ par元素以下方法详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>JavaScript从数组中计数/ par元素以下方法详解</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>我们需要编写一个函数来计算给定数字以下/上方的数组中有多少个元素。</p> <p>以下是我们的数字数组-</p> <pre>const&nbsp;array&nbsp;=&nbsp;[54,54,65,73,43,78,54,54,76,3,23,78];</pre> <p>例如，如果数字为60，则答案应在数字下方五个元素-</p> <pre>54,54,43,3,23</pre> <p>和五个元素相加-</p> <pre>65,73,78,76,78</pre> <h2>示例</h2> <p>以下是代码-</p> <pre>const&nbsp;array&nbsp;=&nbsp;[54,54,65,73,43,78,54,54,76,3,23,78]; const&nbsp;belowParNumbers&nbsp;=&nbsp;(arr,&nbsp;num)&nbsp;=&gt;&nbsp;{ &nbsp;&nbsp;&nbsp;return&nbsp;arr.reduce((acc,&nbsp;val)&nbsp;=&gt;&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;legend&nbsp;=&nbsp;['par',&nbsp;'below']; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;isBelow&nbsp;=&nbsp;val&nbsp;&lt;&nbsp;num; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acc[legend[+isBelow]]++; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;acc; &nbsp;&nbsp;&nbsp;},&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;below:&nbsp;0, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;par:&nbsp;0 &nbsp;&nbsp;&nbsp;}); }; console.log(belowParNumbers(array,&nbsp;50)); console.log(belowParNumbers(array,&nbsp;60)); console.log(belowParNumbers(array,&nbsp;70));</pre> <p>输出结果</p> <p>这将在控制台中产生以下输出-</p> <pre>{&nbsp;below:&nbsp;3,&nbsp;par:&nbsp;9&nbsp;} {&nbsp;below:&nbsp;7,&nbsp;par:&nbsp;5&nbsp;} {&nbsp;below:&nbsp;8,&nbsp;par:&nbsp;4&nbsp;}</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-85899.htm">动物疫苗上市公司排名榜前十名 动物疫苗上市公司排名榜前十名有哪些</a></p>
+                                        <p>下一个：<a href="/news/article-86606.htm">Nacos配置管理基础应用</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-high-speed-nodes.htm" title="3月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接">3月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-subscribe-node.htm" title="3月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接">3月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-84467.htm" title="vue中的共享数据管理vuex">vue中的共享数据管理vuex</a></li>
+                        <li class="py-2"><a href="/news/article-83040.htm" title="狗粮厂家批发市场有哪些（狗粮厂家批发市场有哪些地方）">狗粮厂家批发市场有哪些（狗粮厂家批发市场有哪些地方）</a></li>
+                        <li class="py-2"><a href="/news/article-72782.htm" title="广州领养狗狗的平台（广州领养狗狗的平台叫什么）">广州领养狗狗的平台（广州领养狗狗的平台叫什么）</a></li>
+                        <li class="py-2"><a href="/news/article-65685.htm" title="vue妙用ref父组件访问子组件中的值和调用子组件的方法">vue妙用ref父组件访问子组件中的值和调用子组件的方法</a></li>
+                        <li class="py-2"><a href="/news/article-81585.htm" title="Git和SVN的区别详解">Git和SVN的区别详解</a></li>
+                        <li class="py-2"><a href="/news/article-80949.htm" title="学宠物美容好不好就业（学宠物美容有用吗）">学宠物美容好不好就业（学宠物美容有用吗）</a></li>
+                        <li class="py-2"><a href="/news/article-78874.htm" title="宠物粮食品牌取名字大全集图片（宠物粮食品牌起名大全）">宠物粮食品牌取名字大全集图片（宠物粮食品牌起名大全）</a></li>
+                        <li class="py-2"><a href="/news/article-74102.htm" title="宠物领养协议书模板下载电子版 宠物领养协议书模板下载电子版图片">宠物领养协议书模板下载电子版 宠物领养协议书模板下载电子版图片</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
