@@ -1,4 +1,4 @@
-# 4月4日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.7M/S免费节点订阅链接  更新时间 2025-04-04 09:24:09
+# 4月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.2M/S免费节点订阅链接  更新时间 2025-04-11 09:15:22
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://hysteria2node.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://hysteria2node.github.io/uploads/2025/04/0-20250404.yaml
-- https://hysteria2node.github.io/uploads/2025/04/1-20250404.yaml
-- https://hysteria2node.github.io/uploads/2025/04/2-20250404.yaml
-- https://hysteria2node.github.io/uploads/2025/04/3-20250404.yaml
-- https://hysteria2node.github.io/uploads/2025/04/4-20250404.yaml
+- https://hysteria2node.github.io/uploads/2025/04/0-20250411.yaml
+- https://hysteria2node.github.io/uploads/2025/04/1-20250411.yaml
+- https://hysteria2node.github.io/uploads/2025/04/2-20250411.yaml
+- https://hysteria2node.github.io/uploads/2025/04/3-20250411.yaml
+- https://hysteria2node.github.io/uploads/2025/04/4-20250411.yaml
 
 ### V2ray订阅链接
 
-- https://hysteria2node.github.io/uploads/2025/04/0-20250404.txt
-- https://hysteria2node.github.io/uploads/2025/04/1-20250404.txt
-- https://hysteria2node.github.io/uploads/2025/04/2-20250404.txt
-- https://hysteria2node.github.io/uploads/2025/04/3-20250404.txt
-- https://hysteria2node.github.io/uploads/2025/04/4-20250404.txt
+- https://hysteria2node.github.io/uploads/2025/04/0-20250411.txt
+- https://hysteria2node.github.io/uploads/2025/04/1-20250411.txt
+- https://hysteria2node.github.io/uploads/2025/04/2-20250411.txt
+- https://hysteria2node.github.io/uploads/2025/04/3-20250411.txt
+- https://hysteria2node.github.io/uploads/2025/04/4-20250411.txt
 
 ### Sing-box订阅链接
 
-- https://hysteria2node.github.io/uploads/2025/04/20250404.json
+- https://hysteria2node.github.io/uploads/2025/04/20250411.json
 
 ## 更多clash节点订阅 ：
 

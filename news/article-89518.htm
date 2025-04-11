@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-89518.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>vue中同时监听多个参数的实现_vue.js</title>
+        <meta name="description" content="目录  如何同时监听多个参数  data中定义一个对象 完整代码  vue事件监听,条件判断  事件监听 v-on 条件判断     如何同时监听多个参数 vue使用watch同时监听多个参数，其中有" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-89518.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="vue中同时监听多个参数的实现_vue.js" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/438bef0ac540dc91365222c20da82ac0.webp" />
+        <meta property="og:release_date" content="2025-04-06T10:06:16" />
+    <meta property="og:updated_time" content="2025-04-06T10:06:16" />
+        <meta property="og:description" content="目录  如何同时监听多个参数  data中定义一个对象 完整代码  vue事件监听,条件判断  事件监听 v-on 条件判断     如何同时监听多个参数 vue使用watch同时监听多个参数，其中有" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue中同时监听多个参数的实现_vue.js">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>vue中同时监听多个参数的实现_vue.js</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">如何同时监听多个参数</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">data中定义一个对象</a></li> <li><a href="#_lab2_0_1" rel="nofollow">完整代码</a></li> </ul> <li><a href="#_label1" rel="nofollow">vue事件监听,条件判断</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_2" rel="nofollow">事件监听 v-on</a></li> <li><a href="#_lab2_1_3" rel="nofollow">条件判断</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>如何同时监听多个参数</h2> <p>vue使用watch同时监听多个参数，其中有任意一个参数发生改变时，都会被监听到需要使用到计算属性computed与监听watch</p> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>data中定义一个对象</h3> <div class="ay1code"> <pre class="brush:js;">data(){      return{          obj:{              name:'xpf',              gender:'male',              age:24      }      }  }</pre> </div> <ul> <li> <code>computed</code>中：将需要监听的参数放入一个新变量中</li> </ul> <div class="ay1code"> <pre class="brush:js;">computed:{      'newParams':function(){          const {name,age} = this.obj          return {name,age}      }      },</pre> </div> <ul> <li> <code>watch</code>中：监听新的变量</li> </ul> <div class="ay1code"> <pre class="brush:js;">watch:{      newParams:function(){          alert(1)      }  },</pre> </div> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>完整代码</h3> <div class="ay1code"> <pre class="brush:xhtml;">&lt;!DOCTYPE html&gt;  &lt;html lang="en"&gt;  &lt;head&gt;      &lt;meta charset="UTF-8"&gt;      &lt;title&gt;watch同时监听多个属性&lt;/title&gt;      &lt;script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"&gt;&lt;/script&gt;  &lt;/head&gt;  &lt;body&gt;      &lt;div id="app"&gt;          &lt;div @click="changeObj"&gt;点我&lt;/div&gt;      &lt;/div&gt;          &lt;script&gt;          new Vue({              el:'#app',              data(){                  return{                      obj:{                          name:'xpf',                          gender:'male',                          age:24                      }                  }              },              computed:{                  'newParams':function(){                      const {name,age} = this.obj                      return {name,age}                  }                  },              watch:{                  newParams:function(){                      alert(1)                  }              },              methods:{                  changeObj(){                      // this.obj.name = 'xx'                      this.obj.age = 21                  }              }          })      &lt;/script&gt;  &lt;/body&gt;  &lt;/html&gt;</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>vue事件监听,条件判断</h2> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>事件监听 v-on</h3> <p>语法糖@</p> <p><strong>1. 基本的使用法法</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">    &lt;div id="add"&gt;          点击次数{{counter}}           &lt;button @click = "add"&gt;+&lt;/button&gt; &lt;!--v-on:click = "" 语法糖  --&gt;          &lt;button @click = "dec"&gt;-&lt;/button&gt;      &lt;/div&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">    &lt;script src="../js/vue.js"&gt;&lt;/script&gt;      &lt;script&gt;          const add = new Vue({              el:'#add',              data:{                  counter:0              },              methods:{                  add:function(){                      console.log('添加了');                      this.counter++                  },                  dec:function(){                      console.log('减少了');                      this.counter--                  }              }          })        &lt;/script&gt;</pre> </div> <p><strong>2. 事件监听带参数的使用方法</strong></p> <p>不带参数，写函数时，小括号可写可不写</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click = "one"&gt;按钮1&lt;/button&gt;  &lt;button @click = "one()"&gt;按钮2&lt;/button&gt;</pre> </div> <p>带有参数时，写函数时，小括号要写，传进的参数也要写</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click = "two"&gt;按钮2&lt;/button&gt; &lt;!-- 默认输出 浏览器生产的event事件对象 --&gt;  &lt;button @click = "two()"&gt;按钮3&lt;/button&gt; &lt;!-- 输出 undefind --&gt;  &lt;button @click = "two(123)"&gt;按钮4&lt;/button&gt;  &lt;!-- 输出 123  --&gt;</pre> </div> <p>即带参数有带event</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click = "three(123,$event) "&gt;按钮5&lt;/button&gt;</pre> </div> <p>在小括号里添加$event可即添加参数又添加event事假</p> <p><strong>3.事件对象的修饰符</strong></p> <ul> <li> <code>.stop</code>相当于事件对象的stopPropagaton，阻止冒泡事件</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;"> &lt;div @click = "one"&gt;父亲        &lt;button @click.stop = "two"&gt;儿子&lt;/button&gt;      &lt;/div&gt;</pre> </div> <ul> <li> <code>.prevent</code>阻止默认事件 preventDefault</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;a href="https://www.baidu.com/"   @click.prevent = "two"&gt;百度一下&lt;/a&gt;</pre> </div> <ul> <li> <code>keyup</code>监听某个键盘键帽</li> <li> <code>.enter</code>只监听回车键</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;input type="text" @keyup= "two"&gt;  &lt;input type="text" @keyup.enter = "two"&gt;</pre> </div> <ul> <li> <code>.once</code>只监听一次</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click.once = "two"&gt;按钮&lt;/button&gt;</pre> </div> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>条件判断</h3> <p><strong>1.v-if的基本使用</strong></p> <div class="ay1code"> <pre class="brush:xhtml;"> &lt;div id="add"&gt;      &lt;div v-if = "true"&gt;{{message}}&lt;/div&gt;      &lt;div v-if = "false"&gt;{{name}}&lt;/div&gt;         &lt;div v-if = "isShow"&gt;        &lt;h2&gt;ccc&lt;/h2&gt;        &lt;h2&gt;ccc&lt;/h2&gt;        &lt;h2&gt;ccc&lt;/h2&gt;        &lt;h2&gt;ccc&lt;/h2&gt;      &lt;/div&gt;</pre> </div> <p>为true显示，为false隐藏，可设置一个变量isShow来控制</p> <p><strong>2.v-if和v-else使用</strong></p> <div class="ay1code"> <pre class="brush:xhtml;"> &lt;div id="add"&gt;      &lt;h2 v-if = "isShow"&gt;我是你爸爸&lt;/h2&gt;      &lt;h2 v-else&gt;不，我才是你爸爸&lt;/h2&gt;    &lt;/div&gt;</pre> </div> <p>两者只能显示一个当变量isShow为true时，else隐藏，同理相反</p> <p><strong>3.v-if和v-else-if和v-lese使用</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;h2 v-if = "message &gt;=90"&gt; 优秀 &lt;/h2&gt;   &lt;h2 v-else-if = "message &gt;=80"&gt; 良好 &lt;/h2&gt;   &lt;h2 v-else-if = "message &gt;=70"&gt; 及格 &lt;/h2&gt;   &lt;h2 v-else&gt; 不及格 &lt;/h2&gt;</pre> </div> <p>3个结合可读性差，不建议</p> <p>可在computed里封装一个函数</p> <div class="ay1code"> <pre class="brush:js;"> computed: {          result(){            let num = " "            if (this.message &gt;=90) {              num = '优秀'            }else if(this.message &gt;= 80){              num = '良好'            }else{              num = "不及格"            }            return num          }        }</pre> </div> <p>在调用，可读性较好 </p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89517.htm">02-SpringMVC @RequestMapping注解</a></p>
+                                        <p>下一个：<a href="/news/article-90254.htm">宠物猫抓破皮了要紧吗（宠物猫抓破皮了要紧吗要打针吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-70144.htm" title="动物疫苗的保管注意事项不包括（动物疫苗需要冷藏吗）">动物疫苗的保管注意事项不包括（动物疫苗需要冷藏吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-free-hysteria-node.htm" title="4月7日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接">4月7日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-79554.htm" title="丽江有哪些亲子酒店不容错过的地方(丽江有哪些亲子酒店不容错过的酒店)">丽江有哪些亲子酒店不容错过的地方(丽江有哪些亲子酒店不容错过的酒店)</a></li>
+                        <li class="py-2"><a href="/news/article-78169.htm" title="宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）">宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）</a></li>
+                        <li class="py-2"><a href="/news/article-84466.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/news/article-85172.htm" title="上海宠物领养平台南平地址电话（上海宠物领养平台南平地址电话）">上海宠物领养平台南平地址电话（上海宠物领养平台南平地址电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-subscribe-node.htm" title="3月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接">3月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-91484.htm" title="领养狗狗的注意事项（领养狗狗的注意事项有哪些）">领养狗狗的注意事项（领养狗狗的注意事项有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-free-hysteria-node.htm" title="4月4日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.5M/S免费节点订阅链接">4月4日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-80216.htm" title="一段解决kafka消息处理异常的经典对话">一段解决kafka消息处理异常的经典对话</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
