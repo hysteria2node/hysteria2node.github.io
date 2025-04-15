@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-93890.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>在Centos7上安装Redis6_在线工具</title>
+        <meta name="description" content="Redis是一个非常流行的NOSQL数据库，拥有的数据类型非常丰富，此处我们简单记录一下在Centos7上是如何安装Redis6的。Redis的安装是推荐使用源码进行安装的。  1、安装gcc依赖  " />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-93890.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="在Centos7上安装Redis6_在线工具" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/cb3e6747a3e62623bf7c4e214c37833a.webp" />
+        <meta property="og:release_date" content="2025-04-12T08:52:59" />
+    <meta property="og:updated_time" content="2025-04-12T08:52:59" />
+        <meta property="og:description" content="Redis是一个非常流行的NOSQL数据库，拥有的数据类型非常丰富，此处我们简单记录一下在Centos7上是如何安装Redis6的。Redis的安装是推荐使用源码进行安装的。  1、安装gcc依赖  " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="在Centos7上安装Redis6_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>在Centos7上安装Redis6_在线工具</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				</h1> <p><code>Redis</code>是一个非常流行的NOSQL数据库，拥有的数据类型非常丰富，此处我们简单记录一下在<code>Centos7</code>上是如何安装<code>Redis6</code>的。Redis的安装是推荐使用源码进行安装的。</p> </h1> <h2 id="1安装gcc依赖">1、安装gcc依赖</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/d43fa77edbc5ee762502994063d5f1e9.jpg" alt="在Centos7上安装Redis6_在线工具"></p> <h2 id="2下载redis6">2、下载redis6</h2> <pre><code class="language-bash">wget https://download.redis.io/releases/redis-6.2.6.tar.gz </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/b14ba5e99db7cd1bb57c7b08b7f48911.jpg" alt="在Centos7上安装Redis6_在线工具"></p> <h2 id="3解压编译">3、解压编译</h2> <pre><code class="language-bash"># 解压 tar -zxvf redis-6.2.6.tar.gz # 进入解压后的目录 cd redis-6.2.6 # 执行编译，如果make出错，可以看下方 可能出现的错误 的这个标题 make </code></pre> <h2 id="4安装">4、安装</h2> <h3 id="1安装到默认的位置">1、安装到默认的位置</h3> <pre><code class="language-bash">make install </code></pre> <h3 id="2安装redis到指定的位置">2、安装redis到指定的位置</h3> <pre><code class="language-bash">make PREFIX=具体的路径 install </code></pre> <p><strong>此处我们安装到默认的路径下。</strong></p> <h2 id="5启动redis">5、启动redis</h2> <h2 id="1前台启动">1、前台启动</h2> <pre><code class="language-bash">redis-server </code></pre> <h2 id="2后台启动">2、后台启动</h2> <p><code>vim redis.conf</code>，这个文件默认在<code>redis-6.2.6/redis.conf</code><br /> 修改</p> <pre><code class="language-bash">daemonize yes </code></pre> <p>启动</p> <pre><code class="language-bash">redis-server redis.conf </code></pre> <h2 id="6防火墙放行6379端口">6、防火墙放行6379端口</h2> <pre><code class="language-bash">[root@centos01 redis-6.2.6]# firewall-cmd --zone=public --add-port=6379/tcp --permanent success [root@centos01 redis-6.2.6]# firewall-cmd --reload success </code></pre> <h2 id="7连接到redis">7、连接到redis</h2> <pre><code class="language-bash">[appuser@centos01 ~]$ redis-cli -h 127.0.0.1 -p 6379 127.0.0.1:6379&gt; </code></pre> </h1> <table> <thead> <tr> <th>配置项</th> <th>值</th> <th>解释</th> </tr> </thead> <tbody> <tr> <td>port</td> <td>6379</td> <td>客户端通讯端口,redis服务器启动的端口</td> </tr> <tr> <td>daemonize</td> <td>yes</td> <td>以后台的方式运行</td> </tr> <tr> <td>bind</td> <td>192.168.56.101</td> <td>redis服务启动时绑定的ip地址,是本地网卡的地址</td> </tr> <tr> <td>pidfile</td> <td>/var/run/redis_6379.pid</td> <td>当是以后台方式运行时，会产生一个pid文件</td> </tr> <tr> <td>logfile</td> <td>/var/log/redis_6379.log</td> <td>指定日志文件的路径</td> </tr> <tr> <td>dir</td> <td>./</td> <td>数据库的持久化文件保存的路径，必须是目录</td> </tr> <tr> <td>appendonly</td> <td>yes</td> <td>打开aof持久化</td> </tr> <tr> <td>appendfsync</td> <td>everysec</td> <td>aof每秒写入一次</td> </tr> <tr> <td>appendfilename</td> <td>appendonly.aof</td> <td>aof文件名</td> </tr> <tr> <td>requirepass</td> <td>123456</td> <td>设置一个redis的密码，可以设置的复杂一些</td> </tr> <tr> <td>maxclients</td> <td>10000</td> <td>设置最大可以有多少个连接连接到redis server</td> </tr> <tr> <td>maxmemory</td> <td>2GB</td> <td>设置redis最多可用的内存</td> </tr> </tbody> </table> </h1> <h2 id="1zmalloch5031-致命错误jemallocjemalloch没有那个文件或目录">1、zmalloc.h:50:31: 致命错误：jemalloc/jemalloc.h：没有那个文件或目录</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/8fd4f9fb1d18e7863a35e6800cf21962.jpg" alt="在Centos7上安装Redis6_在线工具"><br /> 经过百度，可知通过<code>make MALLOC=libc</code>命令解决。</p> <h2 id="2如果出现了connection-refused">2、如果出现了Connection refused</h2> <p>1、检查redis端口是否放行<br /> 2、检查redis.conf 中bind的值，默认只能通过127.0.0.1来访问。<br /> 学习测试可以配置成 <code>bind 0.0.0.0</code>，生产环境不可以。</p> <h2 id="3如果rdb保存失败时">3、如果rdb保存失败时</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/f730df0ff3921752da6748f1b5af3618.jpg" alt="在Centos7上安装Redis6_在线工具"><br /> 如果出现了如上日志，那么我们可以修改<code>vm.overcommit_memory=1</code>来解决。</p> </h1> <p>1、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://redis.io/topics/quickstart"  target="_blank"  rel="nofollow">Redis Quick Start</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-93230.htm">动物打疫苗有什么作用和功效（动物接种疫苗的好处）</a></p>
+                                        <p>下一个：<a href="/news/article-93891.htm">宠物粮食生产厂家一年能盈利多少亿 宠物粮食生产厂家一年能盈利多少亿元</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-76144.htm" title="合肥宠物领养中心电话号码多少（合肥市宠物领养中心）">合肥宠物领养中心电话号码多少（合肥市宠物领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-65685.htm" title="vue妙用ref父组件访问子组件中的值和调用子组件的方法">vue妙用ref父组件访问子组件中的值和调用子组件的方法</a></li>
+                        <li class="py-2"><a href="/news/article-93230.htm" title="动物打疫苗有什么作用和功效（动物接种疫苗的好处）">动物打疫苗有什么作用和功效（动物接种疫苗的好处）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-node-share-links.htm" title="3月10日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.8M/S免费节点订阅链接">3月10日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-92474.htm" title="福州宠物用品批发（福州宠物用品批发市场在哪里）">福州宠物用品批发（福州宠物用品批发市场在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-90257.htm" title="动物医院工作怎么样啊（动物医院职位）">动物医院工作怎么样啊（动物医院职位）</a></li>
+                        <li class="py-2"><a href="/news/article-95514.htm" title="同安哪里办狗证（同安狗证怎么办）">同安哪里办狗证（同安狗证怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-70143.htm" title="动物接种疫苗后产生的免疫称为什么 动物接种疫苗后产生的免疫称为什么">动物接种疫苗后产生的免疫称为什么 动物接种疫苗后产生的免疫称为什么</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-node-share.htm" title="4月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接">4月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-72113.htm" title="宠物粮食品牌名字4个字大全及图片高清 宠物粮食品牌名字4个字大全及图片高清版">宠物粮食品牌名字4个字大全及图片高清 宠物粮食品牌名字4个字大全及图片高清版</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
