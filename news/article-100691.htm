@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-100691.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>关于encodeURI和encodeURIComponent的使用场景</title>
+        <meta name="description" content="encodeURI：适用于url跳转时。 encodeURIComponent：适用于url作为参数传递时。 tips：当url作为参数传递时如果没有用encodeURIComponent进行编码，会" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-100691.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="关于encodeURI和encodeURIComponent的使用场景" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/a18b9e90b5748b960d2f91a7bb1cb09c.webp" />
+        <meta property="og:release_date" content="2025-04-21T06:50:19" />
+    <meta property="og:updated_time" content="2025-04-21T06:50:19" />
+        <meta property="og:description" content="encodeURI：适用于url跳转时。 encodeURIComponent：适用于url作为参数传递时。 tips：当url作为参数传递时如果没有用encodeURIComponent进行编码，会" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="关于encodeURI和encodeURIComponent的使用场景">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>关于encodeURI和encodeURIComponent的使用场景</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <ol> <li>encodeURI：适用于url跳转时。</li> <li>encodeURIComponent：适用于url作为参数传递时。</li> <li>tips：当url作为参数传递时如果没有用encodeURIComponent进行编码，会造成传递时url中的特殊字符丢失。</li> </ol> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100690.htm">常用注解使用总结系列: @Order 注解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-hysteria-node-github.htm" title="3月31日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.6M/S免费节点订阅链接">3月31日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-70144.htm" title="动物疫苗的保管注意事项不包括（动物疫苗需要冷藏吗）">动物疫苗的保管注意事项不包括（动物疫苗需要冷藏吗）</a></li>
+                        <li class="py-2"><a href="/news/article-86605.htm" title="JavaScript从数组中计数/ par元素以下方法详解">JavaScript从数组中计数/ par元素以下方法详解</a></li>
+                        <li class="py-2"><a href="/news/article-66933.htm" title="兽用疫苗可以放家用冰箱里吗安全吗视频（兽用疫苗常温下能放多久）">兽用疫苗可以放家用冰箱里吗安全吗视频（兽用疫苗常温下能放多久）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-13-today-hysteria-node.htm" title="4月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.2M/S免费节点订阅链接">4月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-85171.htm" title="中国农业大学动物医院价目表体检（中国农业大学动物医院收费标准）">中国农业大学动物医院价目表体检（中国农业大学动物医院收费标准）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-subscribe-node.htm" title="3月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接">3月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-86606.htm" title="Nacos配置管理基础应用">Nacos配置管理基础应用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-hysteria-node-share.htm" title="3月15日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.6M/S免费节点订阅链接">3月15日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-99963.htm" title="狗粮制作机器设备价格 狗粮制作机器设备价格多少">狗粮制作机器设备价格 狗粮制作机器设备价格多少</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
