@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-102884.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SpringBoot中使用RestTemplate发送文件流，以及读取zip压缩包中文件的方法</title>
+        <meta name="description" content="接收方与发送方代码 @RestController @RequestMapping("/optimistic") public class OptimisticController {     @Re" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-102884.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="SpringBoot中使用RestTemplate发送文件流，以及读取zip压缩包中文件的方法" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/a18b9e90b5748b960d2f91a7bb1cb09c.webp" />
+        <meta property="og:release_date" content="2025-04-24T09:16:25" />
+    <meta property="og:updated_time" content="2025-04-24T09:16:25" />
+        <meta property="og:description" content="接收方与发送方代码 @RestController @RequestMapping("/optimistic") public class OptimisticController {     @Re" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot中使用RestTemplate发送文件流，以及读取zip压缩包中文件的方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>SpringBoot中使用RestTemplate发送文件流，以及读取zip压缩包中文件的方法</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>接收方与发送方代码</p> <pre><code class="language-java">@RestController @RequestMapping("/optimistic") public class OptimisticController {     @Resource     private RestTemplate restTemplate;      //接收方     @PostMapping("receive")     public String receive(@RequestParam(value = "file",required = false) MultipartFile uploadFile) {         String originalFilename = uploadFile.getOriginalFilename();           return originalFilename;     }     //发送方     @PostMapping("send")     public String send(@RequestParam(value = "file",required = false) MultipartFile uploadFile) throws IOException {        //设置content-type为 multipart/form-data         HttpHeaders headers = new HttpHeaders();         headers.setContentType(MediaType.MULTIPART_FORM_DATA);         //获取流文件         InputStream inputStream = uploadFile.getInputStream();         InputStreamResource fileResource = new InputStreamResource(inputStream) {             //重写设置文件大小与名称             @Override             public long contentLength() {                 return uploadFile.getSize();             }              @Override             public String getFilename() {                 return uploadFile.getOriginalFilename();             }         };         MultiValueMap&lt;String, Object&gt; param = new LinkedMultiValueMap&lt;&gt;();         param.add("file",fileResource);         HttpEntity&lt;MultiValueMap&lt;String, Object&gt;&gt; requestEntity = new HttpEntity&lt;&gt;(param, headers);         String body = restTemplate.exchange("http://127.0.0.1:8088/optimistic/receive", HttpMethod.POST, requestEntity, String.class).getBody();         return body;     } }  </code></pre> <p>请求发送方接口成功返回</p> <p><img fetchpriority="high" decoding="async" alt="" height="857" src="http://img.555519.xyz/uploads/20230109/6b191bc0dc16271bd62434295ffbcf55.jpg"></p> <p>&nbsp;读取zip压缩包中的文件方法</p> <p>创建main函数测试</p> <pre><code class="language-java">    public static void main(String[] args) throws IOException {         BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream("D://jobhandler/zip/test.zip"));         ZipInputStream zis  = new ZipInputStream(bufferedInputStream);         ZipEntry zipEntry;         BufferedReader br = new BufferedReader(                 new InputStreamReader(zis));         while ((zipEntry = zis.getNextEntry()) != null) {             // 解压压缩文件的其中具体的一个zipEntry对象             String name = zipEntry.getName();             try {                 StringBuffer sb = new StringBuffer();                 String line;                 while ((line = br.readLine()) != null) {                     sb.append(line);                     sb.append("\r\n");                 }                  System.out.println(sb);              } catch (Exception e) {                 e.printStackTrace();             }             zis.closeEntry();         }         zis.close();         br.close();      }</code></pre> <p>成功读取zip中的json文件</p> <p><img decoding="async" alt="" height="181" src="http://img.555519.xyz/uploads/20230109/6422f1b4a1713e2c4cd4359b1d26dbcd.jpg"></p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102093.htm">动物疫苗生产许可审批流程（动物疫苗生产许可审批流程视频）</a></p>
+                                        <p>下一个：<a href="/news/article-102887.htm">学美容美发的正规学校推荐上海（上海学美容美发到哪个学校好）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-83728.htm" title="宠物粮食品牌前十名有哪些牌子的好（宠物粮食品牌前十名有哪些牌子的好呢）">宠物粮食品牌前十名有哪些牌子的好（宠物粮食品牌前十名有哪些牌子的好呢）</a></li>
+                        <li class="py-2"><a href="/news/article-70804.htm" title="idea社区版中使用tomcat部署Maven搭建的web项目">idea社区版中使用tomcat部署Maven搭建的web项目</a></li>
+                        <li class="py-2"><a href="/news/article-94751.htm" title="动物使用疫苗时应注意哪些事项 动物使用疫苗时应注意哪些事项呢">动物使用疫苗时应注意哪些事项 动物使用疫苗时应注意哪些事项呢</a></li>
+                        <li class="py-2"><a href="/news/article-86605.htm" title="JavaScript从数组中计数/ par元素以下方法详解">JavaScript从数组中计数/ par元素以下方法详解</a></li>
+                        <li class="py-2"><a href="/news/article-70144.htm" title="动物疫苗的保管注意事项不包括（动物疫苗需要冷藏吗）">动物疫苗的保管注意事项不包括（动物疫苗需要冷藏吗）</a></li>
+                        <li class="py-2"><a href="/news/article-81584.htm" title="SpringAop实现原理及代理模式">SpringAop实现原理及代理模式</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="3月20日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接">3月20日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-66294.htm" title="2021年猫粮（2021年猫粮推荐与测评）">2021年猫粮（2021年猫粮推荐与测评）</a></li>
+                        <li class="py-2"><a href="/news/article-79554.htm" title="丽江有哪些亲子酒店不容错过的地方(丽江有哪些亲子酒店不容错过的酒店)">丽江有哪些亲子酒店不容错过的地方(丽江有哪些亲子酒店不容错过的酒店)</a></li>
+                        <li class="py-2"><a href="/news/article-72782.htm" title="广州领养狗狗的平台（广州领养狗狗的平台叫什么）">广州领养狗狗的平台（广州领养狗狗的平台叫什么）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

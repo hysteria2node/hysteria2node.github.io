@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-102092.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>C ++程序进行Fermat原始性测试</title>
+        <meta name="description" content="Fermat Primality测试执行以检查给定数字是否为质数。这是此算法的C ++代码。 算法 Begin &nbsp;&nbsp;&nbsp;modulo(base,&nbsp;e,&nbsp;" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-102092.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="C ++程序进行Fermat原始性测试" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/cb3e6747a3e62623bf7c4e214c37833a.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:42:22" />
+    <meta property="og:updated_time" content="2025-04-23T08:42:22" />
+        <meta property="og:description" content="Fermat Primality测试执行以检查给定数字是否为质数。这是此算法的C ++代码。 算法 Begin &nbsp;&nbsp;&nbsp;modulo(base,&nbsp;e,&nbsp;" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C ++程序进行Fermat原始性测试">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>C ++程序进行Fermat原始性测试</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<p>Fermat Primality测试执行以检查给定数字是否为质数。这是此算法的C ++代码。</p> <h2>算法</h2> <pre>Begin &nbsp;&nbsp;&nbsp;modulo(base,&nbsp;e,&nbsp;mod) &nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;1 &nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;base &nbsp;&nbsp;&nbsp;while&nbsp;(e&nbsp;&gt;&nbsp;0) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(e&nbsp;mod&nbsp;2&nbsp;==&nbsp;1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;(a&nbsp;*&nbsp;b)&nbsp;%&nbsp;mod &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;(b&nbsp;*&nbsp;b)&nbsp;%&nbsp;mod &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;=&nbsp;e&nbsp;/&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a&nbsp;%&nbsp;mod End  Begin &nbsp;&nbsp;&nbsp;Fermat(ll&nbsp;m,&nbsp;int&nbsp;iterations) &nbsp;&nbsp;&nbsp;if&nbsp;(m&nbsp;==&nbsp;1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false &nbsp;&nbsp;&nbsp;done &nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;iterations;&nbsp;i++) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ll&nbsp;x&nbsp;=&nbsp;rand()&nbsp;mod&nbsp;(m&nbsp;-&nbsp;1)&nbsp;+&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(modulo(x,&nbsp;m&nbsp;-&nbsp;1,&nbsp;m)&nbsp;!=&nbsp;1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done &nbsp;&nbsp;&nbsp;return&nbsp;true End</pre> <h2>范例程式码</h2> <pre>#include&nbsp;&lt;cstring&gt; #include&nbsp;&lt;iostream&gt; #include&nbsp;&lt;cstdlib&gt; #define&nbsp;ll&nbsp;long&nbsp;long using&nbsp;namespace&nbsp;std; ll&nbsp;modulo(ll&nbsp;base,&nbsp;ll&nbsp;e,&nbsp;ll&nbsp;mod)&nbsp;{ &nbsp;&nbsp;&nbsp;ll&nbsp;a&nbsp;=&nbsp;1; &nbsp;&nbsp;&nbsp;ll&nbsp;b&nbsp;=&nbsp;base; &nbsp;&nbsp;&nbsp;while&nbsp;(e&nbsp;&gt;&nbsp;0)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(e&nbsp;%&nbsp;2&nbsp;==&nbsp;1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;(a&nbsp;*&nbsp;b)&nbsp;%&nbsp;mod; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;(b&nbsp;*&nbsp;b)&nbsp;%&nbsp;mod; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;=&nbsp;e&nbsp;/&nbsp;2; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;return&nbsp;a&nbsp;%&nbsp;mod; } bool&nbsp;Fermat(ll&nbsp;m,&nbsp;int&nbsp;iterations)&nbsp;{ &nbsp;&nbsp;&nbsp;if&nbsp;(m&nbsp;==&nbsp;1)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;iterations;&nbsp;i++)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ll&nbsp;x&nbsp;=&nbsp;rand()&nbsp;%&nbsp;(m&nbsp;-&nbsp;1)&nbsp;+&nbsp;1; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(modulo(x,&nbsp;m&nbsp;-&nbsp;1,&nbsp;m)&nbsp;!=&nbsp;1)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;return&nbsp;true; } int&nbsp;main()&nbsp;{ &nbsp;&nbsp;&nbsp;int&nbsp;iteration&nbsp;=&nbsp;70; &nbsp;&nbsp;&nbsp;ll&nbsp;num; &nbsp;&nbsp;&nbsp;cout&lt;&lt;"Enter&nbsp;integer&nbsp;to&nbsp;test&nbsp;primality:&nbsp;"; &nbsp;&nbsp;&nbsp;cin&gt;&gt;num; &nbsp;&nbsp;&nbsp;if&nbsp;(Fermat(num,&nbsp;iteration)) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;num&lt;&lt;"&nbsp;is&nbsp;prime"&lt;&lt;endl; &nbsp;&nbsp;&nbsp;else &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;num&lt;&lt;"&nbsp;is&nbsp;not&nbsp;prime"&lt;&lt;endl; &nbsp;&nbsp;&nbsp;return&nbsp;0; }</pre> <p>输出结果</p> <pre>Enter&nbsp;integer&nbsp;to&nbsp;test&nbsp;primality:&nbsp;13&nbsp;is&nbsp;prime</pre> <div></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-101325.htm">动物医院上班怎么样啊工资多少啊（动物医院工作怎么样）</a></p>
+                                        <p>下一个：<a href="/news/article-102093.htm">动物疫苗生产许可审批流程（动物疫苗生产许可审批流程视频）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-85172.htm" title="上海宠物领养平台南平地址电话（上海宠物领养平台南平地址电话）">上海宠物领养平台南平地址电话（上海宠物领养平台南平地址电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share-links.htm" title="3月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接">3月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-67573.htm" title="宠物寄养协议合同范本大全下载（宠物寄养协议合同范本大全下载）">宠物寄养协议合同范本大全下载（宠物寄养协议合同范本大全下载）</a></li>
+                        <li class="py-2"><a href="/news/article-100691.htm" title="关于encodeURI和encodeURIComponent的使用场景">关于encodeURI和encodeURIComponent的使用场景</a></li>
+                        <li class="py-2"><a href="/news/article-97710.htm" title="动物防疫计划怎么制定（2020年动物防疫工作计划）">动物防疫计划怎么制定（2020年动物防疫工作计划）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="3月20日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接">3月20日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-latest-hysteria-node.htm" title="4月15日更新 | V2ray/Trojan/SSR/Hysteria2 | 18M/S免费节点订阅链接">4月15日更新 | V2ray/Trojan/SSR/Hysteria2 | 18M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-88059.htm" title="Python 一网打尽＜排序算法＞之从希尔排序算法的分治哲学开始">Python 一网打尽＜排序算法＞之从希尔排序算法的分治哲学开始</a></li>
+                        <li class="py-2"><a href="/news/article-78875.htm" title="宠物领养协议书范本最新图片高清大图（宠物领养协议简单版本）">宠物领养协议书范本最新图片高清大图（宠物领养协议简单版本）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-hysteria-node-github.htm" title="4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接">4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
