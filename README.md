@@ -1,4 +1,4 @@
-# 4月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.1M/S免费节点订阅链接  更新时间 2025-04-29 08:28:36
+# 4月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.1M/S免费节点订阅链接  更新时间 2025-04-29 16:15:07
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://hysteria2node.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
