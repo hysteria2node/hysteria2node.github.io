@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://hysteria2node.github.io/news/article-111195.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>如果我们将日期成分和时间成分作为TIMEDIFF()函数的参数，MySQL将返回什么？</title>
+        <meta name="description" content="在转换提供TIMEDIFF()作为参数的日期和时间值之间的差异后，MySQL将返回时间值的输出。 例 mysql&gt;&nbsp;Select&nbsp;TIMEDIFF('2017-10-22&n" />
+        <link rel="icon" href="/assets/website/img/hysteria2node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Hysteria2 Node免费节点分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hysteria2node.github.io/news/article-111195.htm" />
+    <meta property="og:site_name" content="Hysteria2 Node免费节点分享站" />
+    <meta property="og:title" content="如果我们将日期成分和时间成分作为TIMEDIFF()函数的参数，MySQL将返回什么？" />
+    <meta property="og:image" content="https://hysteria2node.github.io/uploads/20240731-1/4347439740f0ed22054e5e37e60319c1.webp" />
+        <meta property="og:release_date" content="2025-05-04T09:27:27" />
+    <meta property="og:updated_time" content="2025-05-04T09:27:27" />
+        <meta property="og:description" content="在转换提供TIMEDIFF()作为参数的日期和时间值之间的差异后，MySQL将返回时间值的输出。 例 mysql&gt;&nbsp;Select&nbsp;TIMEDIFF('2017-10-22&n" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="如果我们将日期成分和时间成分作为TIMEDIFF()函数的参数，MySQL将返回什么？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/hysteria2node/app.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.min.js"></script>
+    <script> $(window).on('load', function(){ $(".loader").fadeOut(2000); }); </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GWW1PHQLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9GWW1PHQLZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="loader"></div>
+    <!-- NAVIGATION 
+            =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                        <span>Hysteria2 Node</span>
+                        </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER 
+            =================-->
+    <header id="conent" class="header-cat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>如果我们将日期成分和时间成分作为TIMEDIFF()函数的参数，MySQL将返回什么？</h1>
+                    <p>
+                      <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- HOW TO WORK 
+            =================-->
+    <section id="how-work" class="how-work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<p>在转换提供<code>TIMEDIFF()</code>作为参数的日期和时间值之间的差异后，MySQL将返回时间值的输出。</p> <h2>例<strong></strong></h2> <pre>mysql&gt;&nbsp;Select&nbsp;TIMEDIFF('2017-10-22&nbsp;04:05:45',&nbsp;'2017-10-21&nbsp;03:04:44')AS&nbsp;'Difference&nbsp;in&nbsp;Time'; +--------------------+ |&nbsp;Difference&nbsp;in&nbsp;Time&nbsp;| +--------------------+ |&nbsp;25:01:01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| +--------------------+ 1&nbsp;row&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>我们可以看到MySQL将日期和时间值的差异转换为时间值，并返回时间值的输出。</p> <div></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-110378.htm">宠物粮食加工厂设备哪的好点呢视频 宠物粮食加工厂设备哪的好点呢视频讲解</a></p>
+                                        <p>下一个：<a href="/news/article-111198.htm">成都市宠物托运公司哪家比较好点（成都宠物物流）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-19-free-node-subscribe-links.htm" title="4月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.2M/S免费节点订阅链接">4月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-94749.htm" title="Java 线程安全与锁">Java 线程安全与锁</a></li>
+                        <li class="py-2"><a href="/news/article-91752.htm" title="mac系统升级导致VirtualBox报Kernel driver not installed (rc=-1908)_在线工具">mac系统升级导致VirtualBox报Kernel driver not installed (rc=-1908)_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-111198.htm" title="成都市宠物托运公司哪家比较好点（成都宠物物流）">成都市宠物托运公司哪家比较好点（成都宠物物流）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-node-subscribe-links.htm" title="4月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接">4月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-today-hysteria-node.htm" title="4月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.5M/S免费节点订阅链接">4月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-89517.htm" title="02-SpringMVC @RequestMapping注解">02-SpringMVC @RequestMapping注解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-hysteria-node-github.htm" title="4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接">4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-29-free-node-subscribe.htm" title="4月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.3M/S免费节点订阅链接">4月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-97709.htm" title="动物医院好评模板范文图片大全 动物医院好评模板范文图片大全集">动物医院好评模板范文图片大全 动物医院好评模板范文图片大全集</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- FOOTER 
+            =================-->
+    <footer>
+        <div class="container-fluid footer-b text-center">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/hysteria2node/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
