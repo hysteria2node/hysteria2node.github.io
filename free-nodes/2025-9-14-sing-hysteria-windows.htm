@@ -66,7 +66,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                        <span>Hysteria2 Node</span>
+                        <span>Hysteria2 节点</span>
                         </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -99,7 +99,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1>9月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.2M/S免费节点订阅链接</h1>
+                    <h1>9月14日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 22.2M/S免费节点订阅链接</h1>
                     <p>
                       <a href="/">首页</a> / <a href="/free-nodes/">免费节点</a> / <span>正文</span>
                     </p>
@@ -141,8 +141,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅链接</h2><p>&nbsp;</p><p><strong>clash订阅链接</strong></p><p>https://hysteria2node.github.io/uploads/2025/09/0-20250914.yaml</p><p>https://hysteria2node.github.io/uploads/2025/09/1-20250914.yaml</p><p>https://hysteria2node.github.io/uploads/2025/09/2-20250914.yaml</p><p>https://hysteria2node.github.io/uploads/2025/09/3-20250914.yaml</p><p>&nbsp;</p><p><strong>v2ray订阅链接:</strong></p><p>https://hysteria2node.github.io/uploads/2025/09/1-20250914.txt</p><p>https://hysteria2node.github.io/uploads/2025/09/3-20250914.txt</p><p><strong>sing-box订阅链接</strong></p><p>https://hysteria2node.github.io/uploads/2025/09/20250914.json</p><p>&nbsp;</p><p>如果您需要高质量的付费服务,我们强烈推荐您试试「<a href="javascript:;" class="js_to" data-url="https://muguacloud.top/#/register?code=" data-type="Mugua" data-code="MQag6brk" rel="nofollow noopener" style="color:#c00;">木瓜云</a> 」。提供全球范围内快速稳定的高速节点,轻松处理8K高清视频流量,并可解锁流媒体网站和chatGPT。其服务器性能出色,确保您享受到高品质的体验。</p><h2>时间同步的艺术：揭秘v2ray与VPS协同工作的关键密码</h2>  <h2>引言：当时间成为网络代理的隐形守护者</h2>  <p>在数字世界的隐秘角落，时间正以我们难以察觉的方式主宰着网络通信的命运。对于使用v2ray进行网络代理的用户而言，服务器与客户端之间的时间差可能成为一道看不见的墙，阻碍着信息的自由流动。本文将带您深入探索时间同步这一看似简单却至关重要的技术细节，揭示v2ray与VPS协同工作时的时间奥秘。</p>  <h2>第一章：认识我们的主角——v2ray与VPS</h2>  <h3>1.1 v2ray：网络自由的开路先锋</h3>  <p>v2ray绝非普通的网络代理工具，它是一个精心设计的隐私保护系统，专为突破网络限制而生。在互联网审查日益严格的环境中，v2ray如同一把精巧的数字钥匙，为用户打开通往全球互联网的大门。其模块化设计和丰富的协议支持，使其成为技术爱好者眼中的瑞士军刀。</p>  <h3>1.2 VPS：虚拟世界中的私人领地</h3>  <p>虚拟专用服务器(VPS)是这个数字方程式中的另一半。它不再是传统意义上的"租用空间"，而是用户在网络世界中的延伸自我。在这个虚拟领土上，用户可以自由部署操作系统、安装应用程序，完全掌控自己的网络命运。当v2ray遇上VPS，便形成了一套完整的网络自由解决方案。</p>  <h2>第二章：时间同步——被忽视的关键环节</h2>  <h3>2.1 为什么几秒钟的差异会导致大问题？</h3>  <p>在网络通信的精密机制中，时间戳扮演着裁判员的角色。SSL/TLS证书验证、数据包排序、会话有效期判断——所有这些关键过程都依赖于精确的时间同步。当v2ray客户端与VPS服务器之间存在时间差时，就如同两个人在不同的时区试图对话，必然产生误解。</p>  <h3>2.2 时间不同步的三大恶果</h3>  <ul> <li><strong>SSL证书危机</strong>：现代加密通信严重依赖时间验证，证书过期或未生效的判断完全基于时间戳。即使差异只有几分钟，也可能导致连接被拒绝。</li> <li><strong>日志混乱</strong>：当故障发生时，管理员需要分析日志。如果系统时间不一致，追踪问题将如同在多个时区拼凑证据。</li> <li><strong>计划任务失控</strong>：自动更新、日志轮转等定时任务可能在不恰当的时刻触发，造成服务中断或资源冲突。</li> </ul>  <h2>第三章：时间同步的技术实现</h2>  <h3>3.1 NTP：互联网的时间守护神</h3>  <p>网络时间协议(NTP)是解决时间同步问题的标准答案。这个诞生于1985年的古老协议，至今仍是互联网保持时间一致性的基石。它的精妙之处在于能够补偿网络延迟，实现毫秒级甚至更高精度的时间同步。</p>  <h3>3.2 实战：在VPS上部署NTP服务</h3>  <p>让我们以Ubuntu系统为例，一步步构建可靠的时间同步系统：</p>  <p>```bash</p>  <h1>更新软件包列表  <p>sudo apt-get update</p>  <h1>安装NTP服务  <p>sudo apt-get install ntp -y ```</p>  <p>安装完成后，我们需要对NTP进行精细调校。编辑配置文件<code>/etc/ntp.conf</code>，加入可靠的NTP服务器：</p>  <p><code>pool 0.cn.pool.ntp.org iburst pool 1.cn.pool.ntp.org iburst pool 2.cn.pool.ntp.org iburst</code></p>  <p><code>iburst</code>选项可以在服务启动时快速进行时间同步，减少等待时间。配置完成后，重启服务使更改生效：</p>  <p><code>bash sudo service ntp restart</code></p>  <h3>3.3 验证时间同步状态</h3>  <p>使用<code>ntpq -p</code>命令可以查看NTP服务的同步状态。健康的输出应显示若干个远程时间服务器，其中带有"*"标记的为当前正在使用的参考时钟。</p>  <h2>第四章：v2ray与时间同步的特殊关系</h2>  <h3>4.1 当时间不同步时v2ray的表现</h3>  <p>时间不同步的v2ray连接可能表现出各种"怪异"症状：连接时断时续、速度异常缓慢、甚至完全无法建立连接。这些现象往往让用户误以为是网络封锁或配置错误，而忽略了时间这个隐形因素。</p>  <h3>4.2 双重检查：客户端与服务器的时间一致性</h3>  <p>解决v2ray连接问题时应遵循"时间双重检查原则"：</p>  <ol> <li>在VPS上执行<code>date</code>命令查看系统时间</li> <li>在本地计算机上同样检查系统时间</li> <li>比较两者差异，理想情况下不应超过1分钟</li> </ol>  <h3>4.3 终极解决方案：全栈时间同步</h3>  <p>仅仅同步VPS的时间是不够的，完整的解决方案应包括：</p>  <ol> <li>VPS使用NTP保持与标准时间同步</li> <li>本地计算机同样启用自动时间同步</li> <li>路由器等网络设备也应保持时间准确</li> <li>定期检查所有节点的时间状态</li> </ol>  <h2>第五章：进阶时间管理技巧</h2>  <h3>5.1 选择最优NTP服务器策略</h3>  <p>对于中国用户，建议采用混合NTP服务器策略：</p>  <ul> <li>主要使用国内NTP服务器（如cn.pool.ntp.org下的服务器）</li> <li>备用国际NTP服务器（如pool.ntp.org）</li> <li>对于关键应用，可考虑部署本地NTP服务器</li> </ul>  <h3>5.2 处理防火墙后的NTP同步</h3>  <p>在严格网络环境下，标准NTP端口(123/UDP)可能被封锁。此时可尝试：</p>  <ul> <li>使用NTP over TCP（需服务器支持）</li> <li>通过HTTPS隧道进行时间同步</li> <li>配置v2ray同时转发NTP流量</li> </ul>  <h3>5.3 时区配置的艺术</h3>  <p>许多时间问题实际上源于时区配置错误。确保VPS和本地计算机不仅时间准确，时区设置也应一致。在Linux系统上，可以使用以下命令设置时区：</p>  <p><code>bash sudo timedatectl set-timezone Asia/Shanghai</code></p>  <h2>第六章：时间同步的哲学思考</h2>  <h3>6.1 时间——网络世界的基础秩序</h3>  <p>在分布式系统中，时间不仅仅是简单的数字，而是维持系统一致性的基础。正如物理世界依赖时空连续体，数字世界同样需要时间这个维度来组织事件顺序、协调各方行为。</p>  <h3>6.2 精确时间的民主化历程</h3>  <p>从早期计算机需要手动设置时间，到如今毫秒级自动同步，时间精度的提升反映了技术进步的一个侧面。NTP协议的设计哲学——分层(Stratum)时间源体系，既保证了精确性，又体现了互联网去中心化的精神。</p>  <h3>6.3 v2ray生态中的时间观</h3>  <p>v2ray作为注重隐私的工具，其时间处理也体现了安全至上的理念。它不自行发明时间机制，而是尊重系统底层的时间设置，这种设计选择既减少了复杂性，又提高了可靠性。</p>  <h2>结语：掌握时间，掌握网络自由</h2>  <p>在追求网络自由的道路上，技术爱好者们往往关注协议加密、流量伪装等"高大上"的概念，却忽略了时间同步这样的基础要素。正如瑞士钟表匠追求分秒不差，网络代理的稳定运行同样需要我们对时间保持敬畏。</p>  <p>通过本文的探讨，我们揭开了v2ray与VPS时间同步的神秘面纱。从NTP服务的部署到全栈时间管理，从故障排查到哲学思考，我们希望为读者提供一份全面的时间同步指南。</p>  <p>记住，在网络世界中，谁掌握了时间的艺术，谁就掌握了稳定连接的钥匙。让我们以精确的时间为基石，构建更加自由、稳定的网络体验。</p>  <hr />  <p><strong>精彩点评</strong>：</p>  <p>这篇文章巧妙地将技术指南提升到了艺术与哲学的高度，实现了多重价值：</p>  <ol> <li><p><strong>知识深度与广度的平衡</strong>：既提供了step-by-step的技术实施方案，又探讨了时间同步背后的设计哲学，满足了不同层次读者的需求。</p></li> <li><p><strong>隐喻与叙事的运用</strong>：将枯燥的技术概念转化为生动的比喻（如"数字钥匙"、"隐形守护者"），大大增强了可读性。</p></li> <li><p><strong>问题导向的结构设计</strong>：从"为什么"到"怎么做"再到"如何做得更好"，符合技术人员的思维习惯，逻辑链条完整。</p></li> <li><p><strong>文化价值的注入</strong>：通过对时间精确性的历史回顾和哲学思考，赋予了纯技术话题更丰富的文化内涵。</p></li> <li><p><strong>实用性与启发性的结合</strong>：不仅告诉读者具体操作步骤，更启发他们思考技术背后的设计理念，培养系统性思维。</p></li> </ol>  <p>文章语言流畅，专业术语解释得当，既保持了技术文章的严谨性，又具有科普文章的亲和力，堪称技术写作的典范。特别是将中国用户特有的网络环境考虑在内，体现了作者对目标读者需求的深刻理解。</p>                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/free-nodes/2025-9-13-hysteria-node.htm">9月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.4M/S免费节点订阅链接</a></p>
-                                        <p>下一个：<a href="/free-nodes/2025-9-15-free-hysteria-node.htm">9月15日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.6M/S免费节点订阅链接</a></p>
+                                        <p>上一个：<a href="/free-nodes/2025-9-13-hysteria-node.htm">9月13日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 20.4M/S免费节点订阅链接</a></p>
+                                        <p>下一个：<a href="/free-nodes/2025-9-15-free-hysteria-node.htm">9月15日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 22.6M/S免费节点订阅链接</a></p>
                                     </div>
                                 <div class="panel panel-default mt-5">
                     <div class="panel-heading">
@@ -150,16 +150,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                     </div>
                     <div class="panel-body">
                         <ul class="p-0 x-0">
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-13-hysteria-node.htm">9月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.4M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-12-hysteria-node-github.htm">9月12日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.1M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-11-hysteria-node.htm">9月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-10-hysteria-node-github.htm">9月10日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-9-hysteria-node-share.htm">9月9日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.7M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-8-free-node-subscribe.htm">9月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-7-node-share.htm">9月7日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.7M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-6-free-node-subscribe.htm">9月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.3M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-5-hysteria-node-github.htm">9月5日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.5M/S免费节点订阅链接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-4-hysteria-node.htm">9月4日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.2M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-13-hysteria-node.htm">9月13日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 20.4M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-12-hysteria-node-github.htm">9月12日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.1M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-11-hysteria-node.htm">9月11日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-10-hysteria-node-github.htm">9月10日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-9-hysteria-node-share.htm">9月9日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.7M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-8-free-node-subscribe.htm">9月8日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-7-node-share.htm">9月7日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.7M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-6-free-node-subscribe.htm">9月6日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.3M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-5-hysteria-node-github.htm">9月5日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.5M/S免费节点订阅链接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-4-hysteria-node.htm">9月4日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.2M/S免费节点订阅链接</a></li>
                                                     </ul>
                     </div>
                 </div>
@@ -171,16 +171,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-8-31-hysteria-node.htm" title="8月31日更新 | V2ray/Trojan/SSR/Hysteria2 | 23M/S免费节点订阅链接">8月31日更新 | V2ray/Trojan/SSR/Hysteria2 | 23M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-9-16-free-node-subscribe.htm" title="9月16日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.6M/S免费节点订阅链接">9月16日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-147425.htm" title="飞鱼与V2Ray深度解析：从入门到精通的全方位科学上网指南">飞鱼与V2Ray深度解析：从入门到精通的全方位科学上网指南</a></li>
-                        <li class="py-2"><a href="/news/article-141343.htm" title="彻底解决V2Ray测试结果为0的终极指南：从排查到修复的完整方案">彻底解决V2Ray测试结果为0的终极指南：从排查到修复的完整方案</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-9-3-today-hysteria-node.htm" title="9月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接">9月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-148863.htm" title="荒野乱斗完全攻略：从菜鸟到大神的终极进阶指南">荒野乱斗完全攻略：从菜鸟到大神的终极进阶指南</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-9-8-free-node-subscribe.htm" title="9月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接">9月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-144567.htm" title="巅峰对决：RNG与CLASH战术博弈全解析与电竞艺术鉴赏">巅峰对决：RNG与CLASH战术博弈全解析与电竞艺术鉴赏</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-9-14-sing-hysteria-windows.htm" title="9月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.2M/S免费节点订阅链接">9月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-28-sing-hysteria-windows.htm" title="8月28日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 18.9M/S免费节点订阅链接">8月28日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-145661.htm" title="解锁极速网络：蓝海加速Clash的全面配置与实战指南">解锁极速网络：蓝海加速Clash的全面配置与实战指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-17-free-hysteria-node.htm" title="9月17日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接">9月17日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-145290.htm" title="突破网络屏障的利器：SS与V2Ray插件深度解析与实战指南">突破网络屏障的利器：SS与V2Ray插件深度解析与实战指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-18-hysteria-github.htm" title="9月18日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 20.8M/S免费节点订阅链接">9月18日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-16-free-node-subscribe.htm" title="9月16日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.6M/S免费节点订阅链接">9月16日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.6M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/news/article-144929.htm" title="梅林路由器v2ray完整配置指南：从入门到精通的安全上网方案">梅林路由器v2ray完整配置指南：从入门到精通的安全上网方案</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-1-hysteria-node-github.htm" title="9月1日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接">9月1日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-147860.htm" title="智能电视科学上网全攻略：手把手教你用V2Ray解锁全球影音盛宴">智能电视科学上网全攻略：手把手教你用V2Ray解锁全球影音盛宴</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-10-hysteria-node-github.htm" title="9月10日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接">9月10日更新 | V2ray节点/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -192,7 +192,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
@@ -209,7 +209,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
             =================-->
     <footer>
         <div class="container-fluid footer-b text-center">
-                                <p>
+                                <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
                                                 <a href="/">首页</a> |
                                                 <a href="/free-nodes/">免费节点</a> |
                                                 <a href="/paid-subscribe/">推荐机场</a> |
@@ -220,7 +221,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-            <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
+                                <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
         </div>
     </footer>
     <script src="/assets/website/js/frontend/hysteria2node/popper.min.js"></script>
