@@ -295,29 +295,14 @@ DOMAIN-SUFFIX,googlevideo.com,YouTube
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在封锁严格地区的作用？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
     <div class="panel-body">
-        AEAD 加密防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何通过策略组提升科学上网体验？</h5></div>
-    <div class="panel-body">
-        PassWall2 结合策略组和延迟检测功能，可自动选择最优节点处理网页、视频和游戏流量。无需手动切换，保证访问速度、稳定性和整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
-    <div class="panel-body">
-        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
+        可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 在新版 iOS 上无法连接怎么办？</h5></div>
     <div class="panel-body">
         苹果系统更新后，Potatso Lite 可能需要重新授权 VPN 权限。请删除旧的 VPN 配置，重新安装并导入节点。若仍无法使用，可尝试更换网络模式或等待开发者更新兼容版本。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的节点测速结果会自动更新吗？</h5></div>
-    <div class="panel-body">
-        PassWall2 可设置定期自动测速节点，更新延迟和可用性。结合策略组自动选择最优节点，可确保用户使用网络时始终连接到速度最快、最稳定的节点。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的协议和混淆组合如何选择最适合的？</h5></div>
@@ -330,9 +315,24 @@ DOMAIN-SUFFIX,googlevideo.com,YouTube
         Mellow 采用基于透明代理的架构，适合路由或系统级流量重定向，而 Clash 更偏向规则式应用代理。Mellow 的灵活性更高，但配置复杂；Clash 则兼顾易用性与功能扩展性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的节点测速结果会自动更新吗？</h5></div>
     <div class="panel-body">
-        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。<hr />    </div>
+        PassWall2 可设置定期自动测速节点，更新延迟和可用性。结合策略组自动选择最优节点，可确保用户使用网络时始终连接到速度最快、最稳定的节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何通过策略组提升科学上网体验？</h5></div>
+    <div class="panel-body">
+        PassWall2 结合策略组和延迟检测功能，可自动选择最优节点处理网页、视频和游戏流量。无需手动切换，保证访问速度、稳定性和整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密在封锁严格地区的作用？</h5></div>
+    <div class="panel-body">
+        AEAD 加密防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
+    <div class="panel-body">
+        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 的延迟测试如何影响策略组选择？</h5></div>
@@ -340,9 +340,9 @@ DOMAIN-SUFFIX,googlevideo.com,YouTube
         PassWall2 会根据节点延迟结果更新策略组的优先节点，自动选择延迟最低的节点处理流量。这样可以优化访问速度，提高网页浏览、视频和游戏体验的稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
+    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
     <div class="panel-body">
-        可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。    </div>
+        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -371,16 +371,16 @@ DOMAIN-SUFFIX,googlevideo.com,YouTube
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-5-free-node-subscribe.htm" title="5月5日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.6M/S免费节点订阅链接">5月5日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-19-hysteria-github.htm" title="4月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接">4月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-18-free-subscribe-node.htm" title="4月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接">4月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-20-today-hysteria-node.htm" title="4月20日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.9M/S免费节点订阅链接">4月20日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-hysteria-node.htm" title="4月28日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接">4月28日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-29-node-share.htm" title="4月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接">4月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-3-hysteria-node.htm" title="5月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.9M/S免费节点订阅链接">5月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-15-hysteria-node-github.htm" title="4月15日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接">4月15日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-14-sing-hysteria-windows.htm" title="4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接">4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-21-free-subscribe-node.htm" title="4月21日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接">4月21日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-24-free-hysteria-node.htm" title="4月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.2M/S免费节点订阅链接">4月24日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-25-node-share.htm" title="4月25日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接">4月25日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-1-node-share-links.htm" title="5月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.1M/S免费节点订阅链接">5月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-26-free-subscribe-node.htm" title="4月26日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.6M/S免费节点订阅链接">4月26日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-node-share.htm" title="5月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接">5月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-16-free-hysteria-node.htm" title="4月16日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.1M/S免费节点订阅链接">4月16日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-18-free-subscribe-node.htm" title="4月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接">4月18日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-14-sing-hysteria-windows.htm" title="4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接">4月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-hysteria-node.htm" title="4月28日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接">4月28日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -392,10 +392,10 @@ DOMAIN-SUFFIX,googlevideo.com,YouTube
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
