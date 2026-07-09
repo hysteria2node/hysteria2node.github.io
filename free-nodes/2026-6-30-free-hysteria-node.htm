@@ -155,14 +155,19 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 能否使用订阅链接？</h5></div>
+    <div class="panel-heading"><h5>Mellow 有哪些优势？</h5></div>
     <div class="panel-body">
-        Nekobox 支持通过订阅 URL 导入节点。用户在应用中选择“添加订阅”，输入链接后系统会自动更新节点数据，并支持定期刷新，确保始终使用最新线路。<hr />    </div>
+        Mellow 是一个轻量化的跨平台代理客户端，采用透明代理和规则路由技术。它支持 V2Ray、Trojan 等协议，适用于 macOS、Windows 等操作系统。Mellow 运行稳定、资源占用低，非常适合后台长期使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏连接？</h5></div>
+    <div class="panel-heading"><h5>VMess 使用 AEAD 加密的优势是什么？</h5></div>
     <div class="panel-body">
-        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度和网络体验。<hr />    </div>
+        AEAD 加密提供更强的安全性和抗重放攻击能力，同时隐藏流量特征，降低被 DPI 检测风险。在高封锁环境下使用，可提升连接稳定性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2RayN 订阅更新后节点重复如何清理？</h5></div>
+    <div class="panel-body">
+        V2RayN 在导入订阅时有时会产生重复节点，可以点击右键菜单选择“删除重复项”。若仍存在旧节点缓存，可清空配置文件夹内的 history.json 并重新导入订阅，保证节点列表整洁。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 协议和混淆组合如何优化稳定性？</h5></div>
@@ -180,19 +185,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         在 Clash 中添加订阅链接时，用户需复制提供的 URL 并在客户端的配置界面中粘贴。Clash 会自动下载并更新配置文件。通过订阅，用户可以一键更新节点信息，无需手动导入，适合长期维护多个节点来源的用户。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 AEAD 加密的优势是什么？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 能否使用订阅链接？</h5></div>
     <div class="panel-body">
-        AEAD 加密提供更强的安全性和抗重放攻击能力，同时隐藏流量特征，降低被 DPI 检测风险。在高封锁环境下使用，可提升连接稳定性和长期可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 有哪些优势？</h5></div>
-    <div class="panel-body">
-        Mellow 是一个轻量化的跨平台代理客户端，采用透明代理和规则路由技术。它支持 V2Ray、Trojan 等协议，适用于 macOS、Windows 等操作系统。Mellow 运行稳定、资源占用低，非常适合后台长期使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2RayN 订阅更新后节点重复如何清理？</h5></div>
-    <div class="panel-body">
-        V2RayN 在导入订阅时有时会产生重复节点，可以点击右键菜单选择“删除重复项”。若仍存在旧节点缓存，可清空配置文件夹内的 history.json 并重新导入订阅，保证节点列表整洁。<hr />    </div>
+        Nekobox 支持通过订阅 URL 导入节点。用户在应用中选择“添加订阅”，输入链接后系统会自动更新节点数据，并支持定期刷新，确保始终使用最新线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的分流规则可以按端口分配节点吗？</h5></div>
@@ -202,7 +197,12 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 节点无法连接时应如何排查？</h5></div>
     <div class="panel-body">
-        遇到 Trojan 无法连接时，需检查服务器证书是否有效、端口是否开放、密码配置是否匹配。还应确认防火墙未阻断相关端口，并尝试切换 TLS 版本或使用 IP 地址连接。    </div>
+        遇到 Trojan 无法连接时，需检查服务器证书是否有效、端口是否开放、密码配置是否匹配。还应确认防火墙未阻断相关端口，并尝试切换 TLS 版本或使用 IP 地址连接。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏连接？</h5></div>
+    <div class="panel-body">
+        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度和网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -232,11 +232,11 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <div class="row">
             <div class="text-center">
-                <a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">
+                <a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">
                     <img src="/assets/website/img/G/xingchen.webp" class="avatar" alt="星辰机场">
                 </a>
                 <dl>
-                    <dt><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></dt>
+                    <dt><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">星辰机场</a></dt>
                     <dd>
                         <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p>                    </dd>
                 </dl>
@@ -250,16 +250,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-11-free-node-subscribe-links.htm" title="5月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接">5月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.7M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-11-hysteria-node-share.htm" title="6月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接">6月11日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-30-free-subscribe-node.htm" title="5月30日更新 | V2ray/Trojan/SSR/Hysteria2 | 18M/S免费节点订阅链接">5月30日更新 | V2ray/Trojan/SSR/Hysteria2 | 18M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-12-today-hysteria-node.htm" title="6月12日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.2M/S免费节点订阅链接">6月12日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.2M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-22-today-hysteria-node.htm" title="6月22日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接">6月22日更新 | V2ray/Trojan/SSR/Hysteria2 | 19M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-1-hysteria-node.htm" title="6月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.5M/S免费节点订阅链接">6月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 18.5M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-29-free-subscribe-node.htm" title="5月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.5M/S免费节点订阅链接">5月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.5M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-26-hysteria-github.htm" title="6月26日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.4M/S免费节点订阅链接">6月26日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.4M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-13-node-share.htm" title="5月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接">5月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.6M/S免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-6-node-share.htm" title="5月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接">5月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.8M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-3-sing-hysteria-windows.htm" title="7月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.5M/S免费节点订阅链接">7月3日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.5M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-29-free-node-subscribe-links.htm" title="6月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.4M/S免费节点订阅链接">6月29日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.4M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-13-sing-hysteria-windows.htm" title="6月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接">6月13日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.3M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-14-today-hysteria-node.htm" title="6月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.9M/S免费节点订阅链接">6月14日更新 | V2ray/Trojan/SSR/Hysteria2 | 20.9M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-1-latest-hysteria-node.htm" title="7月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.3M/S免费节点订阅链接">7月1日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.3M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-23-latest-hysteria-node.htm" title="6月23日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.3M/S免费节点订阅链接">6月23日更新 | V2ray/Trojan/SSR/Hysteria2 | 22.3M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-8-hysteria-node.htm" title="7月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.9M/S免费节点订阅链接">7月8日更新 | V2ray/Trojan/SSR/Hysteria2 | 19.9M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-19-free-high-speed-nodes.htm" title="6月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.3M/S免费节点订阅链接">6月19日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.3M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-6-hysteria-node.htm" title="7月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.3M/S免费节点订阅链接">7月6日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.3M/S免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-5-latest-hysteria-node.htm" title="7月5日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接">7月5日更新 | V2ray/Trojan/SSR/Hysteria2 | 21.4M/S免费节点订阅链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -271,13 +271,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                     </ul>
     </div>
@@ -303,7 +300,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></b> <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p></div>
+                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">星辰机场</a></b> <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p></div>
                                 <small>Hysteria2 Node免费节点分享站 版权所有 Powered by WordPress</small>
         </div>
     </footer>
